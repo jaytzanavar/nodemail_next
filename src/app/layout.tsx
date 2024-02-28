@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { GoogleTagManager } from '@next/third-parties/google'
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Scaffold mail app",
@@ -17,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={raleway.className}>{children}</body>
       <GoogleTagManager gtmId="GTM-WCNQ8DGR" />
     </html>
   );

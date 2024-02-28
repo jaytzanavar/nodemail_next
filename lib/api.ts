@@ -9,3 +9,8 @@ export const sendMailForm = async (data: any) => {
         }
     })
 }
+
+
+export const getRatingsReviews = async (data?: any | null) => {
+    return await fetch("/api/google-info")
+}
