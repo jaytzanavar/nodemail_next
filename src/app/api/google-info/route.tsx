@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 
 
-export async function GET(filter: String) {
+export async function GET() {
 
     console.log(process.env.NEXT_PUBLIC_GOOGLE_KEY);
     try {
@@ -22,6 +22,6 @@ export async function GET(filter: String) {
         return NextResponse.json({ rating: result['rating'], reviews: result['reviews'] })
     }
     catch (error) {
-        return NextResponse.json({ error: `Fail to retreive ${filter}` }, { status: 400 })
+        return NextResponse.json({ error: `Fail to retreive ` }, { status: 400 })
     }
 }
