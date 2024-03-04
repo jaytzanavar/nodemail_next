@@ -1,5 +1,7 @@
+'use client'
 import { Formik } from "formik";
 import { sendMailForm } from "../../../lib/api";
+
 
 
 const Forms = () => {

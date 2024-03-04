@@ -1,0 +1,85 @@
+.menu_button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.menu_button,
+.menu_button span {
+    /* display: inline-block; */
+    box-sizing: border-box;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+.menu_button {
+    /* position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99992; */
+    width: 2rem;
+    height: 1.2rem;
+    /* -webkit- transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
+}
+
+.menu_button_line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+
+    border-radius: 0.2rem;
+}
+
+.menu_button_line:hover {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background: #787878ca;
+    border-radius: 0.2rem;
+}
+
+.menu_button .menu_button_line.top {
+    top: 0;
+}
+
+.menu_button .menu_button_line.mid {
+    top: .5rem;
+    /* (heght(.menu_button)  - height(.menu_button span)) / 2 */
+}
+
+.menu_button .menu_button_line.botm {
+    bottom: 0;
+}
+
+.menu_button.on_menu .menu_button_line {
+    background: #676767;
+}
+
+.on_menu_top {
+    -webkit-transform: translateY(.75rem) rotate(-45deg);
+    -moz-transform: translateY(.75rem) rotate(-45deg);
+    -ms-transform: translateY(.75rem) rotate(-45deg);
+    -o-transform: translateY(.75rem) rotate(-45deg);
+    transform: translateY(.75rem) rotate(-45deg);
+}
+
+.on_menu_mid {
+    opacity: 0;
+}
+
+.on_menu_botm {
+    -webkit-transform: translateY(-.25rem) rotate(45deg);
+    -moz-transform: translateY(-.25rem) rotate(45deg);
+    -ms-transform: translateY(-.25rem) rotate(45deg);
+    -o-transform: translateY(-.25rem) rotate(45deg);
+    transform: translateY(-.25rem) rotate(45deg);
+}
