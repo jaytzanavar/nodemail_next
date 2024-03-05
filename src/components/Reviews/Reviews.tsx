@@ -20,7 +20,7 @@ const Reviews = () => {
         try {
             const res = await getRatingsReviews()
             const data = await res.json();
-            console.log();
+
             setReviews(data.reviews)
 
 
@@ -36,14 +36,15 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     return (
-        <div className='bg-gray-600/80 min-h-[50vh]'>
-            <div className='flex flex-col justify-center items-center gap-4'>
-                <div id="divider" className="my-10 h-[0.095rem] ml-3 w-[50%] pr-10 border-t-0 bg-gray-700/50 opacity-100 dark:opacity-50"></div>
-                <h3 className='font-extrabold text-4xl text-center text-white'>
+        <div className='  bg-[url("/clients.jpg")] w-screen  bg-no-repeat bg-cover '>
+            <div className='bg-black/30 h-full flex flex-col py-10 justify-center items-center gap-4'>
+                <div id="divider" className="my-10 h-[0.155rem] ml-3 w-[8%]  pr-10 border-t-0 bg-gray-700/50 opacity-100 dark:opacity-50"></div>
+                <h3 className='font-extrabold text-4xl text-center text-white/90'>
                     Satisfied Client Stories</h3>
-                <Carousel className='w-screen px-4' showArrows={false} autoPlay={true} interval={5000} infiniteLoop={true} showStatus={false}>
+                    {/* autoPlay={true} interval={5000} infiniteLoop={true} */}
+                <Carousel className='w-[50%] px-4' showArrows={false}  showStatus={false}>
                     {reviews && reviews.map((rev: Review) =>
-                        <div className='w-full' key={rev.author_name}>
+                        <div className='w-full flex justify-center' key={rev.author_name}>
                             <RatingCard rev={rev} />
                         </div>
                     )}

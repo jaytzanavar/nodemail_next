@@ -10,7 +10,7 @@ export async function GET() {
     try {
         if (fileExists(routeStringToPathName(reqString))) {
             const file = await readFile(pathName) as any;
-            console.log(file);
+
             const currentM = new Date()
 
             if (file['date'] !== currentM.getMonth()) {

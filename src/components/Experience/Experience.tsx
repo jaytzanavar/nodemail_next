@@ -11,10 +11,10 @@ const Experience = () => {
     const [intersecting, setIntersecting] = useState(false)
 
     useEffect(() => {
-        console.log('Hello ', ref.current);
+
         if (ref.current) {
             const observer = new IntersectionObserver((entries) => {
-                console.log('ENTRIES', entries);
+
                 if (entries[0].isIntersecting) {
                     setIntersecting(true)
                 } else {
@@ -38,7 +38,7 @@ const Experience = () => {
 
 
     return (
-        <div className='bg-[url("/law2.jpg")] w-screen h-[60vh] bg-no-repeat bg-cover repea'>
+        <div className='bg-[url("/law2.jpg")] w-screen h-[60vh] bg-no-repeat bg-cover '>
             <div className='w-full h-full bg-black/50 flex flex-col justify-center items-center'>
                 <h2 className='font-extrabold text-6xl text-center text-white'>
                     20 Years Of Experience In Various Cases </h2>

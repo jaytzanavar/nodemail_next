@@ -6,7 +6,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-
+import { useTranslations } from 'next-intl';
 
 
 const lato = Playfair_Display({
@@ -31,13 +31,11 @@ export default function RootLayout({
   children,
   params: { locale }
 }: Readonly<RootLayoutProps>) {
+
   return (
     <html lang={locale}>
       <body className={`${lato.className} bg-gradient-to-t from-[#fcb2eb] to-[#a6c1ee] h-screen `}>
-        <Header />
         {children}
-        <Footer />
-
       </body>
       <GoogleTagManager gtmId="GTM-WCNQ8DGR" />
     </html>

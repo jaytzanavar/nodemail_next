@@ -12,7 +12,7 @@ export async function GET() {
 export async function POST(req: Request, res: Response) {
     const data = await req.json()
 
-    console.log(data)
+
     const { name, email, subject, message } = data;
     if (!name || !email || !subject || !message) {
         return NextResponse.json({ error: 'Missing attributes' }, { status: 400 })
