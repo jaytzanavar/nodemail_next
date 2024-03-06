@@ -1,0 +1,9 @@
+.mapContainer {
+    backdrop-filter: 'blur(10px)';
+    font: '25px';
+    color: 'white';
+    font-weight: '600';
+    width: '60px';
+    height: '60px';
+    border-radius: '20%';
+}

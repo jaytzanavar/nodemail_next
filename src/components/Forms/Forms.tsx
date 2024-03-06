@@ -53,7 +53,7 @@ const Forms = () => {
                     isSubmitting,
                 }) => (
                     <form className="w-[60%] flex flex-col items-center mt-10" onSubmit={handleSubmit}>
-                        <div className="flex w-full gap-4 mt-10">
+                        <div className="flex md:flex-row flex-col w-full gap-4 mt-10">
                             <div className="relative z-0 w-full mb-5 group">
                                 <input type="text"
                                     onChange={handleChange}

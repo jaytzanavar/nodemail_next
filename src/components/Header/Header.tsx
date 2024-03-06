@@ -8,18 +8,18 @@ import { useTranslations } from "next-intl";
 import ReactCountryFlag from 'react-country-flag'
 import { AnimatePresence, stagger, motion } from "framer-motion";
 import { useRouter } from 'next/navigation';
-import { usePathname, useSearchParams } from 'next/navigation'
+
+
 const DEFAULT_COUNTRIES = { gb: 'GB', fr: 'FR', gr: 'GR' }
 
-const Header = () => {
+const Header = ({ locale }: { locale: string }) => {
+  console.log('Locale', locale);
   const [openBurger, setOpenBurger] = useState(false)
   const [countryToggle, setCountryToggle] = useState(false)
-  const [currentLocale, setCurrentLocale] = useState(DEFAULT_COUNTRIES['gb'])
+  const [currentLocale, setCurrentLocale] = useState(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale])
   const t = useTranslations('Header')
   const keys = ['responsibilities', 'advisory', 'communication'] as const;
   const router = useRouter();
-  const pathname = usePathname();
-
 
   useEffect(() => {
     if (openBurger) {
@@ -34,43 +34,41 @@ const Header = () => {
     };
   }, [openBurger]);
 
+
+
   const selectLocale = (loc: string) => {
     setCurrentLocale(DEFAULT_COUNTRIES[loc]);
     setCountryToggle(prev => !prev)
-
-    router.push(`${loc}`)
-
-
+    router.push(`/${loc === 'gb' ? 'en' : loc}`)
   }
 
-
-  console.log(Object.keys(DEFAULT_COUNTRIES).filter(v => v !== 'gb'));
+  console.log(keys);
   return (
-
-    <header className=''>
-      <nav className='flex justify-between  relative z-50 items-center w-full bg-white px-[5%] mx-auto '>
+    <header>
+      <nav className='flex justify-between  relative z-50 items-center md:w-full bg-white px-[5%] md:mx-auto '>
         <div>
-          <Image className="w-16 cursor-pointer" src={logo} alt='logo-image' />
+          <Link href={'/' + locale}>
+            <Image className="w-16 cursor-pointer" src={logo} alt='logo-image' /></Link>
         </div>
-        <div className={` bg-white mx-auto w-full  flex justify-center items-center transform transition-transform duration-500 ease-in-out md:translate-y-[0]  md:opacity-100 md:h-auto ${openBurger ? 'translate-y-[50%] overflow-hidden h-screen ' : ' translate-y-[-100%] opacity-0'}  left-0   px-5`}>
+        <div className={` bg-white mx-auto w-full  md:flex hidden justify-center items-center transform transition-transform duration-500 ease-in-out md:translate-y-[0]  md:opacity-100 md:h-auto   ${openBurger ? ' overflow-hidden  ' : ' translate-y-[-100%] opacity-0'}  left-0   px-5`}>
           <ul className="flex md:flex-row flex-col h-full my-auto items-center gap-[4vw]">
-            {keys.map((key) => <li key={key}>
-              <Link className='hover:text-gray-500/40' href=''>{t(`${key}.title`)}</Link>
+            {keys.map((key) => <li key={locale + '/' + key}>
+              <Link className='hover:text-gray-500/40' href={`/${locale}/${key}`} locale={locale}>{t(`${key}.title`)}</Link>
             </li>
             )}
           </ul>
         </div>
-        <div className='relative z-60'>
-          <button className='relative z-50 w-[50px] h-[50px]  hover:bg-black/20 bg-slate-400/30 rounded-full' onClick={() => setCountryToggle(prev => !prev)}>
+        <div className='md:relative z-60  md:block hidden'>
+          <button className='md:relative z-50 w-[50px] h-[50px]  hover:bg-black/20 bg-slate-400/30 rounded-full' onClick={() => setCountryToggle(prev => !prev)}>
             <ReactCountryFlag
-              countryCode={currentLocale}
+              countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
               svg
               style={{
                 width: '40px',
                 height: '40px',
                 borderRadius: '3rem'
               }}
-              title={currentLocale}
+              title={'locale'}
             />
           </button>
 
@@ -88,6 +86,10 @@ const Header = () => {
           </button>
         </div>
       </nav>
+
+
+
+
       <AnimatePresence>
         {countryToggle &&
 
@@ -122,7 +124,7 @@ const Header = () => {
 
         }
       </AnimatePresence>
-    </header >
+    </header>
 
   )
 }

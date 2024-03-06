@@ -15,24 +15,23 @@ import Areas from '@/components/Areas/Areas';
 export default function Home(props) {
 
   const { params: { locale } } = props
-  const messages = useMessages()
+
 
   return (
     <>
-      <NextIntlClientProvider locale={locale} messages={messages} >
-        <Header />
-      </NextIntlClientProvider>
+  
       <main className="flex min-h-screen flex-col items-center justify-between">
         <Content />
         <Subcontent />
 
         <Experience />
+
         <Areas />
         <Reviews />
-        <Forms />
+        <Forms /> 
       </main >
-      <Footer />
-      
+     
+
     </>
 
   );
