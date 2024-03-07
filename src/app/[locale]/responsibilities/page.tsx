@@ -1,14 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
-import Content from '@/components/Content/Content'
+import Hero from '@/components/Hero/Hero'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Strategy from '@/components/Strategy/Strategy'
 
 const ResponsibilitiesPage = () => {
     return (
-        <div>
-            <Link href="/">Link to Home</Link>
-            <div className='h-[75vh]'>
-            
-            </div>
+        <div className='bg-white'>
+            <Hero />
+            <Strategy />
         </div>
     )
 }

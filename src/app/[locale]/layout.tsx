@@ -32,12 +32,13 @@ export default function RootLayout({
   params: { locale }
 }: Readonly<RootLayoutProps>) {
   const messages = useMessages()
-  
+
   return (
     <html lang={locale}>
-      <body className={`${lato.className} bg-gradient-to-t from-[#fcb2eb] to-[#a6c1ee] h-screen `}>
+      <body className={`${lato.className} bg-gradient-to-t from-[#fcb2eb] to-[#a6c1ee] h-screen overflow-x-hidden`}>
         <NextIntlClientProvider locale={locale} messages={messages} >
-          <Header locale={locale} />
+          <Header locale={locale}
+          />
         </NextIntlClientProvider>
 
         {children}

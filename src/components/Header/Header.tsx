@@ -6,7 +6,7 @@ import logo from '../../../public/logo.jpeg';
 import styles from './Header.module.css';
 import { useTranslations } from "next-intl";
 import ReactCountryFlag from 'react-country-flag'
-import { AnimatePresence, stagger, motion } from "framer-motion";
+import { AnimatePresence, useAnimation, motion } from "framer-motion";
 import { useRouter } from 'next/navigation';
 
 
@@ -20,18 +20,19 @@ const Header = ({ locale }: { locale: string }) => {
   const t = useTranslations('Header')
   const keys = ['responsibilities', 'advisory', 'communication'] as const;
   const router = useRouter();
-
+  const bugerControls = useAnimation()
   useEffect(() => {
     if (openBurger) {
+      bugerControls.start("visible")
+
       document.body.classList.add('no-scroll');
-    } else {
+    }
+    else {
+      bugerControls.start("hidden")
+
       document.body.classList.remove('no-scroll');
     }
 
-    // Clean up the className when the component unmounts
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
   }, [openBurger]);
 
 
@@ -42,9 +43,32 @@ const Header = ({ locale }: { locale: string }) => {
     router.push(`/${loc === 'gb' ? 'en' : loc}`)
   }
 
+  const listVariants = {
+    closed: {
+      x: "100vw"
+    },
+    opened: {
+      x: 0,
+      transition: {
+        staggerChildren: 0.25
+      }
+    }
+  }
+
+  const itemListVariant = {
+    closed: {
+      x: -10,
+      opacity: 0
+    },
+    opened: {
+      x: 0,
+      opacity: 1
+    }
+  }
+
   console.log(keys);
   return (
-    <header>
+    <header className=''>
       <nav className='flex justify-between  relative z-50 items-center md:w-full bg-white px-[5%] md:mx-auto '>
         <div>
           <Link href={'/' + locale}>
@@ -86,6 +110,36 @@ const Header = ({ locale }: { locale: string }) => {
           </button>
         </div>
       </nav>
+
+
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, x: 105, },
+
+          visible: { opacity: 1, x: 0 }
+        }}
+        transition={{ duration: .65 }}
+        initial="hidden"
+        animate={bugerControls}
+        className="absolute top-0 left-0 w-screen h-screen bg-white text-white flex flex-col items-center justify-center gap-8">
+        {openBurger &&
+          <motion.div
+            className='flex flex-col gap-10 font-medium'
+            variants={listVariants}
+            initial="closed"
+            animate="opened"
+            transition={{ duration: .55 }}>
+            {
+              keys.map((key) =>
+                <motion.div variants={itemListVariant} key={locale + '/' + key}>
+                  <li >
+                    <Link className='text-3xl text-black/80 hover:text-gray-900/40' href={`/${locale}/${key}`} locale={locale}>{t(`${key}.title`)}</Link>
+                  </li>
+                </motion.div>
+              )
+            }
+          </motion.div>}
+      </motion.div>
 
 
 
