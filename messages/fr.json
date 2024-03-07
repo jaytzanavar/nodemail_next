@@ -11,7 +11,10 @@
         "communication": {
             "title": "Communication",
             "value": "communication"
-        }
+        },
+        "en":"English",
+        "gr":"Ελληνικά",
+        "fr":"Français"
     },
     "Content": {
         "title": "hello title ",

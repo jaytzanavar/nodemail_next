@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation';
 
 const DEFAULT_COUNTRIES = { gb: 'GB', fr: 'FR', gr: 'GR' }
 
+
 const Header = ({ locale }: { locale: string }) => {
   console.log('Locale', locale);
   const [openBurger, setOpenBurger] = useState(false)
@@ -20,7 +21,9 @@ const Header = ({ locale }: { locale: string }) => {
   const t = useTranslations('Header')
   const keys = ['responsibilities', 'advisory', 'communication'] as const;
   const router = useRouter();
-  const bugerControls = useAnimation()
+  const bugerControls = useAnimation();
+
+
   useEffect(() => {
     if (openBurger) {
       bugerControls.start("visible")
@@ -66,7 +69,7 @@ const Header = ({ locale }: { locale: string }) => {
     }
   }
 
-  console.log(keys);
+
   return (
     <header className=''>
       <nav className='flex justify-between  relative z-50 items-center md:w-full bg-white px-[5%] md:mx-auto '>
@@ -92,7 +95,7 @@ const Header = ({ locale }: { locale: string }) => {
                 height: '40px',
                 borderRadius: '3rem'
               }}
-              title={'locale'}
+              title={t(currentLocale.toLocaleLowerCase())}
             />
           </button>
 
@@ -102,12 +105,28 @@ const Header = ({ locale }: { locale: string }) => {
 
 
 
-        <div>
-          <button onClick={() => setOpenBurger(prev => !prev)} className={` md:hidden block  ${styles.menu_button} `}>
-            <span className={`${styles.menu_button_line} ${styles.top} ${openBurger ? styles.on_menu_top : ''} bg-slate-700`}></span>
-            <span className={` ${styles.menu_button_line} ${styles.mid} ${openBurger ? styles.on_menu_mid : ''} bg-slate-700`}></span>
-            <span className={` ${styles.menu_button_line} ${styles.botm} ${openBurger ? styles.on_menu_botm : ''} bg-slate-700`}></span>
-          </button>
+        <div className='md:hidden flex'>
+          <div >
+            <button className='block z-50 w-[50px] h-[50px]  hover:bg-black/20 bg-slate-400/30 rounded-full' onClick={() => setCountryToggle(prev => !prev)}>
+              <ReactCountryFlag
+                countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
+                svg
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '3rem'
+                }}
+                title={t(currentLocale.toLocaleLowerCase())}
+              />
+            </button>
+          </div>
+          <div>
+            <button onClick={() => setOpenBurger(prev => !prev)} className={` relative top-3.5 ml-5  ${styles.menu_button} `}>
+              <span className={`${styles.menu_button_line} ${styles.top} ${openBurger ? styles.on_menu_top : ''} bg-slate-700`}></span>
+              <span className={` ${styles.menu_button_line} ${styles.mid} ${openBurger ? styles.on_menu_mid : ''} bg-slate-700`}></span>
+              <span className={` ${styles.menu_button_line} ${styles.botm} ${openBurger ? styles.on_menu_botm : ''} bg-slate-700`}></span>
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -121,7 +140,7 @@ const Header = ({ locale }: { locale: string }) => {
         transition={{ duration: .65 }}
         initial="hidden"
         animate={bugerControls}
-        className="absolute top-0 left-0 w-screen h-screen bg-white text-white flex flex-col items-center justify-center gap-8">
+        className="absolute z-10 sm:hidden top-0  left-0 w-screen h-screen bg-white text-white flex flex-col items-center justify-center gap-8">
         {openBurger &&
           <motion.div
             className='flex flex-col gap-10 font-medium'
@@ -148,7 +167,7 @@ const Header = ({ locale }: { locale: string }) => {
         {countryToggle &&
 
           <motion.div
-            initial={{ opacity: 0, translateY: "-58px", zIndex: 5 }} animate={{ opacity: 1, translateY: "0px", zIndex: 5 }} exit={{ opacity: 0, translateY: "-58px", zIndex: 5 }} transition={{ duration: 1, ease: "easeInOut" }} className={`absolute z-10 right-[3%]  w-[100px] items-center  bg-black/35 flex flex-col`}>
+            initial={{ opacity: 0, translateY: "-58px", zIndex: 5 }} animate={{ opacity: 1, translateY: "0px", zIndex: 5 }} exit={{ opacity: 0, translateY: "-58px", zIndex: 5 }} transition={{ duration: 1, ease: "easeInOut" }} className={`absolute z-10 md:right-[4%] right-[8%]  w-[100px] items-center  bg-black/35 flex flex-col`}>
             <ul>{
               Object.keys(DEFAULT_COUNTRIES).filter(ct => ct.toLocaleLowerCase() !== currentLocale.toLocaleLowerCase()).map(loc => (
                 <motion.li
@@ -164,7 +183,7 @@ const Header = ({ locale }: { locale: string }) => {
                         height: '40px',
                         borderRadius: '3rem'
                       }}
-                      title={loc}
+                      title={t(loc)}
 
                     />
                   </button>
