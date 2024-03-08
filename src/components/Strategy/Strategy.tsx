@@ -14,7 +14,7 @@ const Strategy = () => {
     return (
         <div className='bg-[url("/writing_.jpg")] w-screen md:h-[70vh] bg-no-repeat bg-cover flex flex-col gap-3'>
             <div className='w-full h-full md:py-0 py-10 flex flex-col md:gap-10   justify-center items-center'>
-                <h1 className='font-extrabold text-6xl text-center text-white'>
+                <h1 className='font-extrabold text-6xl mb-5 text-center text-white'>
                     Our Strategy Refines our Outcomes </h1>
                 <p className='text-white/70  font-montserrat text-md font-light  px-[20%] text-center  leading-[2rem]  tracking-tighter'>
 

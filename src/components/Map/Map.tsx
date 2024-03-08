@@ -161,7 +161,7 @@ const Map = () => {
 
 
 
-    return <div className="md:w-[450px] rounded-lg md:h-[350px] w-[350px] h-[250px] " ref={mapRef} />;
+    return <div className="md:w-[450px] rounded-lg md:h-[350px] sm:w-[250px] w-[350px] h-[250px] " ref={mapRef} />;
 
 }
 

@@ -15,7 +15,7 @@ const Footer = () => {
   ), [])
 
   return (
-    <div className='md:h-[55vh] w- grid  md:grid-cols-3 md:grid-rows-1 grid-cols-1 grid-rows-3  md:px-[18%] px-[6%] gap-10 bg-slate-800 pt-[5%] '>
+    <div className='md:h-[35vh] px-[4vw] grid-cols-1 grid-rows-3 sm:grid sm:grid-cols-3 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-1 place-items-center gap-10 bg-slate-800 pt-[5%] '>
       <div className='flex flex-col gap-4 md:w-[15vw] w-full'>
         <div className='text-2xl  text-white flex lg:flex-row flex-col justify-center items-center gap-4'>
           <Image className=" rounded-full w-[100px] cursor-pointer" src={logo} alt='logo-image' />
