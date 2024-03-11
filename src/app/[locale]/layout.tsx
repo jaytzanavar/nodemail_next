@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Raleway } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 // Poppins
 import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 const lato = Playfair_Display({
   weight: ["400", "700"],

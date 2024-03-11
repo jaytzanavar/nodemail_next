@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 
 const Experience = ({ title, subtitle, est, cases_won, business_partners, trusting_clients }: { title: string, subtitle: string, est: string, cases_won: string, business_partners: string, trusting_clients: string }) => {
 
-    const ref = useRef(null)
+    const ref = useRef<any>(null)
     const [intersecting, setIntersecting] = useState(false)
     const [obs, setObserver] = useState<IntersectionObserver | null>(null)
 

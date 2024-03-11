@@ -15,7 +15,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
     useEffect(() => {
         if (isInView)
             mainControls.start("stop")
-    }, [isInView])
+    }, [isInView, mainControls])
 
     console.log(card1);
 

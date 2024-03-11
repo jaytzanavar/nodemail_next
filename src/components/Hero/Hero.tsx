@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../Button/Button'
 import Link from 'next/link'
 
-const Hero = ({ heroTitle, heroSub, return_btn, heroText, linkEnabled = true }: { heroTitle: string, heroSub: string, heroText: string, linkEnabled: boolean }) => {
+const Hero = ({ heroTitle, heroSub, return_btn, heroText, linkEnabled = true }: { heroTitle: string, heroSub: string, return_btn: string, heroText: string, linkEnabled: boolean }) => {
 
 
     return (

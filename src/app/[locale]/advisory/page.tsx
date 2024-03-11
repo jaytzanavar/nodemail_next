@@ -2,8 +2,15 @@ import React from 'react'
 import Hero from '@/components/Hero/Hero'
 import Areas from '@/components/Areas/Areas'
 import { getTranslations } from 'next-intl/server'
+import { PropsInterface } from '@/app/common/PropsInterface'
 
-const AdvisoryPage = async ({ locale }) => {
+
+
+export default async function AdvisoryPage(props: PropsInterface) {
+
+    console.log(props)
+
+    const { locale } = props.params
     const ar = await getTranslations({ locale, namespace: 'Areas' });
     const adv = await getTranslations({ locale, namespace: 'Advisory' });
 
@@ -19,8 +26,7 @@ const AdvisoryPage = async ({ locale }) => {
 
             <Areas title={ar('title')} card1={{ title: ar('card1.title'), text: ar('card1.text') }} card2={{ title: ar('card2.title'), text: ar('card2.text') }} card3={{ title: ar('card3.title'), text: ar('card3.text') }} card4={{ title: ar('card4.title'), text: ar('card4.text') }} card5={{ title: ar('card5.title'), text: ar('card5.text') }} card6={{ title: ar('card6.title'), text: ar('card6.text') }} cardStyle="'green'" />
 
-        </div>
+        </div >
     )
 }
 
-export default AdvisoryPage

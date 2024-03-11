@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 
 
 
-const Forms = ({ title, name, email, phone, message, btn }) => {
+const Forms = ({ title, name, email, phone, message, btn }: { title: string, name: string, email: string, phone: string, message: string, btn: string }) => {
     return (
         <div className="flex flex-col justify-center items-center w-screen bg-white py-10">
             <div id="divider" className="my-10 mb-3 h-[0.155rem] ml-3 w-[8%]  pr-10 border-t-0 bg-gray-700/50 opacity-100 dark:opacity-50"></div>

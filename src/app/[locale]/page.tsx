@@ -7,6 +7,7 @@ import Reviews from "../../components/Reviews/Reviews";
 import Subcontent from "../../components/SubContent/Subcontent";
 import Areas from '@/components/Areas/Areas';
 import { getTranslations } from 'next-intl/server';
+import { PropsInterface } from "../common/PropsInterface";
 
 
 export async function generateMetadata({ params: { locale } }: any) {
@@ -23,8 +24,8 @@ export async function generateMetadata({ params: { locale } }: any) {
 
 
 
-export default async function Home({ locale }) {
-
+export default async function Home(props: PropsInterface) {
+  const { locale } = props.params
   const reviews = await getData()
   const exp = await getTranslations({ locale, namespace: 'Experience' });
   const ar = await getTranslations({ locale, namespace: 'Areas' });
@@ -52,7 +53,8 @@ export default async function Home({ locale }) {
 }
 
 
-export async function getData() {
+
+async function getData() {
 
   const res = await fetch(`${process.env.SERVER_API_ENDPOINT}/api/google-info`, { cache: 'force-cache' });
   const data = await res.json();

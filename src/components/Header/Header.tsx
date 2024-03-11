@@ -17,7 +17,7 @@ const Header = ({ locale }: { locale: string }) => {
 
   const [openBurger, setOpenBurger] = useState(false)
   const [countryToggle, setCountryToggle] = useState(false)
-  const [currentLocale, setCurrentLocale] = useState(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale])
+  const [currentLocale, setCurrentLocale] = useState<any>(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale] )
   const t = useTranslations('Header')
   const keys = ['responsibilities', 'advisory', 'communication'] as const;
   const router = useRouter();

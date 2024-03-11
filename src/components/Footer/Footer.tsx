@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import React, { useMemo } from 'react'
 import logo from '../../../public/logo.jpeg';
-import Map from '../Map/Map';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 
@@ -22,7 +20,7 @@ const Footer = () => {
       <div className=' px-[4vw] grid-cols-1 grid-rows-3 sm:grid sm:grid-cols-3 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-1 place-items-center gap-10 bg-slate-800 pt-[5%] '>
         <div className='flex flex-col gap-4 md:w-[15vw] w-full'>
           <div className='text-2xl  text-white flex lg:flex-row flex-col justify-center items-center gap-4'>
-            <Image alt="the logo for damouli law firm" className="rounded-full w-[100px] cursor-pointer" src={logo} alt='logo-image' />
+            <Image alt="the logo for damouli law firm" className="rounded-full w-[100px] cursor-pointer" src={logo} />
             <h2>{t('brand')}</h2>
           </div>
           <div className='  md:max-w-[300px]  sm:w-full w-[75vw]  text-wrap text-center  font-normal text-white/70 dark:text-gray-400'>{t('text')}</div>
