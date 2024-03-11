@@ -1,5 +1,5 @@
 export const sendMailForm = async (data: any) => {
-    
+
     return await fetch("/api/mail", {
         method: "POST",
         body: JSON.stringify(data),
@@ -12,5 +12,5 @@ export const sendMailForm = async (data: any) => {
 
 
 export const getRatingsReviews = async (data?: any | null) => {
-    return await fetch("/api/google-info")
+    return await fetch("/api/google-info", { cache: 'force-cache' })
 }

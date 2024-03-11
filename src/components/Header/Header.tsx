@@ -14,7 +14,7 @@ const DEFAULT_COUNTRIES = { gb: 'GB', fr: 'FR', gr: 'GR' }
 
 
 const Header = ({ locale }: { locale: string }) => {
-  console.log('Locale', locale);
+
   const [openBurger, setOpenBurger] = useState(false)
   const [countryToggle, setCountryToggle] = useState(false)
   const [currentLocale, setCurrentLocale] = useState(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale])
@@ -167,7 +167,7 @@ const Header = ({ locale }: { locale: string }) => {
         {countryToggle &&
 
           <motion.div
-            initial={{ opacity: 0, translateY: "-58px", zIndex: 5 }} animate={{ opacity: 1, translateY: "0px", zIndex: 5 }} exit={{ opacity: 0, translateY: "-58px", zIndex: 5 }} transition={{ duration: 1, ease: "easeInOut" }} className={`absolute z-10 md:right-[4%] right-[8%]  w-[100px] items-center  bg-black/35 flex flex-col`}>
+            initial={{ opacity: 0, translateY: "-58px", zIndex: 15 }} animate={{ opacity: 1, translateY: "0px", zIndex: 15 }} exit={{ opacity: 0, translateY: "-58px", zIndex: 5 }} transition={{ duration: 1, ease: "easeInOut" }} className={`absolute z-10 md:right-[4%] right-[8%]  w-[100px] items-center  bg-black/35 flex flex-col`}>
             <ul>{
               Object.keys(DEFAULT_COUNTRIES).filter(ct => ct.toLocaleLowerCase() !== currentLocale.toLocaleLowerCase()).map(loc => (
                 <motion.li

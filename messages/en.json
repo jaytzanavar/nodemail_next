@@ -12,10 +12,13 @@
             "title": "Communication",
             "value": "communication"
         },
-        "gb":"English",
-        "gr":"Ελληνικά",
-        "fr":"Français"
-
+        "gb": "English",
+        "gr": "Ελληνικά",
+        "fr": "Français"
+    },
+    "Metadata": {
+        "title": "Damouli law firm title from metadata",
+        "subtitle": "This is the subtitle from metadata"
     },
     "Content": {
         "title": "hello title ",
@@ -23,5 +26,94 @@
         "hero": "We know what is to defend rights. We work with people, for people and with the full respect to the law. Contact for more details!",
         "sub": "",
         "button-c": "Get a free Consultation"
+    },
+    "SubContent": {
+        "title": "Why You Can Trust Legalor,",
+        "title_strong": "Our Values",
+        "description": "We value justice, honesty and time. We are always at your service as we are in charge of your defence. Any detail will be noticed and it can be essential for your case. During our work we gathered a team of devoted experts with rich experience in juridical help. We put a great emphasis on business law, because in today’s rapidly-changing environment, people require assistance in business spheres. Our experience allows us to be confident and stand by our words. Our company was established in 2004. We started as a small legal consultancy. We have proved our competence and had many satisfied clients. We expanded our activity and started providing many other juridical services to meet wider clients needs.",
+        "card1": {
+            "title": "Business Law",
+            "text": "Business requires strong legislative background to operate well."
+        },
+        "card2": {
+            "title": "Civil Litigation",
+            "text": "We advocate for our clients, seeking a fair resolution within a timeframe.'"
+        },
+        "card3": {
+            "title": "Insurance Defence",
+            "text": "Insurance issues require excellent knowledge and great intuition."
+        },
+        "read_more": "Read more"
+    },
+    "Experience": {
+        "title": "20 Years Of Experience In Various Cases ",
+        "subtitle": "We’re proud that our law firm offers top-notch legal services for a nationwide affordable pricing! With us you’ll never feel like the lawyers are just robbers in suits, besides, we win 98% of all cases. So with us, your chances of winning are as high as they possibly can be!",
+        "est": "Company Established ",
+        "cases_won": "Cases won",
+        "business_partners": "Business Partners",
+        "trusting_clients": "Trusting clients"
+    },
+    "Areas": {
+        "title": "Our Legal Practice Areas",
+        "card1": {
+            "title": "Business Law",
+            "text": "Business requires strong legislative background to operate well."
+        },
+        "card2": {
+            "title": "Civil Litigation",
+            "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
+        },
+        "card3": {
+            "title": "Insurance Defence",
+            "text": "Insurance issues require excellent knowledge and great intuition."
+        },
+        "card4": {
+            "title": "Civil Litigation",
+            "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
+        },
+        "card5": {
+            "title": "Insurance Defence",
+            "text": "Insurance issues require excellent knowledge and great intuition.."
+        },
+        "card6": {
+            "title": "Business Law",
+            "text": "Business requires strong legislative background to operate well."
+        }
+    },
+    "Reviews": {
+        "title": " Satisfied Client Stories",
+        "userR": "User Rating",
+        "gvu": "Google Verified User"
+    },
+    "Communication": {
+        "title": "Request a free Legal Consultation",
+        "name": "Your Name",
+        "email": "Email",
+        "phone": "Phone",
+        "message": "Message",
+        "btn": "Send",
+        "hero": {
+            "title": "Share your inquiry us, we respond",
+            "title_b": "instantly",
+            "return_btn": "Return to home",
+            "text": "Want to Learn More About How We Help Clients in Risk? Attract thousands of individuals and businesses, all of whom (98%) have successfully dealt with their legal conundrums with our timely…"
+        }
+    },
+    "Footer": {
+        "brand": "Damouli Law Firm",
+        "text": "Your reliable protection in jurisprudence. Our qualification provides the opportunity solve the problems of any complexity.",
+        "contact": "Contact Info",
+        "wh": "Working Hours",
+        "days": "Mon-Tue",
+        "address": "Address:",
+        "addr_name": " Karystou & Iteas 3"
+    },
+    "Advisory": {
+        "hero": {
+            "title": "Your Trusted Advocate Always",
+            "title_b": "Your Protector",
+            "return_btn": "Return Home",
+            "text": "While the yearly number of cases which we take totals to an insurmountable number, unparalleled by any other Athens law firm, our percentage of wins is record-breaking too… Just to drop some statistics here, in more than 9000 cases that we have ever taken on, a whopping 98% of those (which is 9800+) were the cases which we eventually won…"
+        }
     }
 }

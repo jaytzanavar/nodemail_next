@@ -7,7 +7,7 @@ import './globals.css'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl';
-
+import { getTranslations } from 'next-intl/server';
 
 const lato = Playfair_Display({
   weight: ["400", "700"],
@@ -16,8 +16,22 @@ const lato = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Scaffold mail app",
-  description: "This is the base of a website",
+  title: "Damouli Law Firm Website",
+  description: "This is the landing page of Damouli Law Firm official website",
+  // openGraph: {
+  //   title: "Damouli Law Firm Website",
+  //   description: "All kinds of law and attorney services is our strength",
+  //   url: "damoulilawfirm.com",
+  //   siteName: "damoulilawfirm athens",
+  //   images: [
+  //     {
+  //       url: "/public.png",
+  //       width: 1200,
+  //       height: 800
+  //     }
+  //   ]
+
+  // }
 };
 
 interface RootLayoutProps {
@@ -34,7 +48,7 @@ export default function RootLayout({
   const messages = useMessages()
 
   return (
-    <html lang={locale}>
+    <html className="scroll-smooth" lang={locale}>
       <body className={`${lato.className} bg-gradient-to-t from-[#fcb2eb] to-[#a6c1ee] h-screen overflow-x-hidden`}>
         <NextIntlClientProvider locale={locale} messages={messages} >
           <Header locale={locale}

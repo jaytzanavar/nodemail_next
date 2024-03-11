@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 
-const RatingCard = ({ rev }: { rev: Review }) => {
+const RatingCard = ({ rev, gvu, ur }: { rev: Review }) => {
     const { author_name, author_url, profile_photo_url, rating, text }: Review = rev;
 
     return (
@@ -24,7 +24,7 @@ const RatingCard = ({ rev }: { rev: Review }) => {
 
                         <p className="text-white/80">
                             <a className='hover:text-white/90' href={author_url}>
-                                Google Verified User
+                                {gvu}
                             </a></p>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ const RatingCard = ({ rev }: { rev: Review }) => {
                 <div className="my-6 md:px-[20%] text-white/90">
                     <p>{text}</p>
                     <div className="mt-2 text-white/70">
-                        User Rating :
+                        {ur} :
                         {[...Array(rating)].map((_, index) => (
                             <FontAwesomeIcon
                                 className='text-[#faec1b] drop-shadow-xl '

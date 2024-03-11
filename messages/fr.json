@@ -1,26 +1,114 @@
 {
     "Header": {
         "responsibilities": {
-            "title": "Responsibilities",
-            "value": "responsibilities"
+            "title": "Responsabilités",
+            "value": "responsabilités"
         },
         "advisory": {
-            "title": "Advisory",
-            "value": "advisory"
+            "title": "Conseil",
+            "value": "conseil"
         },
         "communication": {
             "title": "Communication",
             "value": "communication"
         },
-        "en":"English",
-        "gr":"Ελληνικά",
-        "fr":"Français"
+        "gb": "Anglais",
+        "gr": "Ελληνικά",
+        "fr": "Français"
+    },
+    "Metadata": {
+        "title": "Titre du cabinet d'avocats Damouli à partir des métadonnées",
+        "subtitle": "Il s'agit du sous-titre des métadonnées"
     },
     "Content": {
-        "title": "hello title ",
-        "prompt": "Reputation. Respect. Result.",
-        "hero": "We know what is to defend rights. We work with people, for people and with the full respect to the law. Contact for more details!",
+        "title": "Bonjour titre",
+        "prompt": "Réputation. Respect. Résultat.",
+        "hero": "Nous savons ce que signifie défendre des droits. Nous travaillons avec des gens, pour des gens et avec un total respect de la loi. Contactez-nous pour plus de détails!",
         "sub": "",
-        "button-c": "Get a free Consultation"
+        "button-c": "Obtenez une consultation gratuite"
+    },
+    "SubContent": {
+        "title": "Pourquoi vous pouvez faire confiance à Legalor,",
+        "title_strong": "Nos Valeurs",
+        "description": "Nous apprécions la justice, l'honnêteté et le temps. Nous sommes toujours à votre service car nous sommes chargés de votre défense. Chaque détail sera remarqué et peut être essentiel pour votre cas. Au cours de notre travail, nous avons rassemblé une équipe d'experts dévoués avec une riche expérience en aide juridique. Nous mettons un grand accent sur le droit des affaires, car dans l'environnement en évolution rapide d'aujourd'hui, les gens ont besoin d'aide dans les domaines commerciaux. Notre expérience nous permet d'être confiants et de tenir nos promesses. Notre entreprise a été fondée en 2004. Nous avons commencé comme une petite consultation juridique. Nous avons prouvé notre compétence et avons eu de nombreux clients satisfaits. Nous avons élargi notre activité et avons commencé à fournir de nombreux autres services juridiques pour répondre aux besoins de clients plus vastes.",
+        "card1": {
+            "title": "Droit des Affaires",
+            "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
+        },
+        "card2": {
+            "title": "Contentieux Civil",
+            "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
+        },
+        "card3": {
+            "title": "Défense en Assurance",
+            "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
+        },
+        "read_more": "En savoir plus"
+    },
+    "Experience": {
+        "title": "20 Ans d'Expérience Dans Diverses Affaires ",
+        "subtitle": "Nous sommes fiers que notre cabinet d'avocats propose des services juridiques de première classe à des tarifs abordables à l'échelle nationale! Avec nous, vous ne vous sentirez jamais comme si les avocats étaient simplement des voleurs en costume, d'ailleurs, nous gagnons 98% de toutes les affaires. Donc avec nous, vos chances de gagner sont aussi élevées qu'elles peuvent l'être!",
+        "est": "Société Fondée",
+        "cases_won": "Affaires Gagnées",
+        "business_partners": "Partenaires Commerciaux",
+        "trusting_clients": "Clients de Confiance"
+    },
+    "Areas": {
+        "title": "Nos Domaines de Pratique Juridique",
+        "card1": {
+            "title": "Droit des Affaires",
+            "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
+        },
+        "card2": {
+            "title": "Contentieux Civil",
+            "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
+        },
+        "card3": {
+            "title": "Défense en Assurance",
+            "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
+        },
+        "card4": {
+            "title": "Contentieux Civil",
+            "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
+        },
+        "card5": {
+            "title": "Défense en Assurance",
+            "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
+        },
+        "card6": {
+            "title": "Droit des Affaires",
+            "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
+        }
+    },
+    "Communication": {
+        "title": "Demandez une Consultation Juridique Gratuite",
+        "name": "Votre Nom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "message": "Message",
+        "btn": "Envoyer",
+        "hero": {
+            "title": "Partagez votre demande avec nous, nous répondons",
+            "title_b": "instantanément",
+            "return_btn": "Retour à la maison",
+            "text": "Vous voulez en savoir plus sur la manière dont nous aidons les clients en situation de risque ? Attirez des milliers d'individus et d'entreprises, tous (98%) ayant résolu avec succès leurs énigmes juridiques grâce à notre aide opportune..."
+        }
+    },
+    "Footer": {
+        "brand": "Cabinet d'Avocats Damouli",
+        "text": "Votre protection fiable en jurisprudence. Notre qualification offre la possibilité de résoudre des problèmes de toute complexité.",
+        "contact": "Coordonnées",
+        "wh": "Heures de Travail",
+        "days": "Lun-Mar",
+        "address": "Adresse :",
+        "addr_name": "Karystou & Iteas 3"
+    },
+    "Advisory": {
+        "hero": {
+            "title": "Votre Conseiller de Confiance Toujours",
+            "title_b": "Votre Protecteur",
+            "return_btn": "Retour à la Maison",
+            "text": "Alors que le nombre annuel de cas que nous prenons totalise un nombre insurmontable, sans égal par aucun autre cabinet d'avocats d'Athènes, notre pourcentage de victoires est également record... Juste pour donner quelques statistiques ici, sur plus de 9000 cas que nous avons jamais pris en charge, un énorme 98% de ceux-ci (soit 9800+) étaient des cas que nous avons finalement remportés..."
+        }
     }
 }

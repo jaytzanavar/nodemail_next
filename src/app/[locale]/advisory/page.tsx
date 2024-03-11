@@ -1,17 +1,24 @@
 import React from 'react'
 import Hero from '@/components/Hero/Hero'
 import Areas from '@/components/Areas/Areas'
+import { getTranslations } from 'next-intl/server'
 
-const AdvisoryPage = () => {
-    const heroTitle = "Your Trusted Advocate Always"
-    const heroSub = "Your Protector"
-    const heroText = "While the yearly number of cases which we take totals to an insurmountable number, unparalleled by any other Athens law firm, our percentage of wins is record-breaking too… Just to drop some statistics here, in more than 9000 cases that we have ever taken on, a whopping 98% of those (which is 9800+) were the cases which we eventually won…"
+const AdvisoryPage = async ({ locale }) => {
+    const ar = await getTranslations({ locale, namespace: 'Areas' });
+    const adv = await getTranslations({ locale, namespace: 'Advisory' });
+
+    const heroSub = adv('hero.title_b')
+    const heroText = adv('hero.text')
+    const return_btn = adv('hero.return_btn')
+
+
+
     return (
         <div>
-            <Hero heroTitle={heroTitle} heroSub={heroSub} heroText={heroText} linkEnabled={true} />
-          
-                <Areas cardStyle={"white"} />
-          
+            <Hero return_btn={return_btn} heroTitle={adv('hero.title')} heroSub={heroSub} heroText={heroText} linkEnabled={true} />
+
+            <Areas title={ar('title')} card1={{ title: ar('card1.title'), text: ar('card1.text') }} card2={{ title: ar('card2.title'), text: ar('card2.text') }} card3={{ title: ar('card3.title'), text: ar('card3.text') }} card4={{ title: ar('card4.title'), text: ar('card4.text') }} card5={{ title: ar('card5.title'), text: ar('card5.text') }} card6={{ title: ar('card6.title'), text: ar('card6.text') }} cardStyle="'green'" />
+
         </div>
     )
 }

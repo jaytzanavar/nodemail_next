@@ -129,7 +129,7 @@ const Map = () => {
             const map = new Map(mapRef.current as HTMLDivElement, mapOptions);
 
             map.setOptions({ styles: styles });
-            console.log(map);
+
             const divcontainer = document.createElement("div");
             divcontainer.innerText = "Law Firm"
             divcontainer.style.backdropFilter = 'blur(5px)'

@@ -8,7 +8,7 @@ import Cards from '../Cards/Cards';
 import { motion, useInView, useAnimation } from "framer-motion"
 
 
-const Areas = ({ cardStyle }: { cardStyle: string }) => {
+const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: { title: string, card1: any, card2: any, card3: any, card4: any, card5: any, card6: any, cardStyle: string }) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     const mainControls = useAnimation();
@@ -17,12 +17,14 @@ const Areas = ({ cardStyle }: { cardStyle: string }) => {
             mainControls.start("stop")
     }, [isInView])
 
+    console.log(card1);
+
     return (
         <div className='w-screen bg-white py-12 px-6'>
             <div className='flex flex-col md:px-0 px-5 justify-center items-center gap-10 '>
-                <div id="divider" className="my-10 h-[0.155rem] ml-3 w-[8%] pr-10 border-t-0 bg-gray-700/50 opacity-100 dark:opacity-50"></div>
+                <div id="divider" className="my-10 mb-3 h-[0.155rem] ml-3 w-[8%] pr-10 border-t-0 bg-gray-700/50 opacity-100 dark:opacity-50"></div>
                 <h3 className='font-extrabold text-4xl text-center text-black'>
-                    Our Legal Practice Areas</h3>
+                    {title}</h3>
 
                 <div ref={ref} className='grid md:grid-cols-3  gap-4 md:grid-rows-2 grid-col-2 '>
                     <motion.div
@@ -34,7 +36,7 @@ const Areas = ({ cardStyle }: { cardStyle: string }) => {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={suitCase} title={"Business Law"} text={'Business requires strong legislative background to operate well.'}></Cards>
+                        <Cards cardColor={cardStyle} icon={suitCase} title={card1.title} text={card1.text}></Cards>
                     </motion.div>
                     <motion.div
                         variants={{
@@ -45,7 +47,7 @@ const Areas = ({ cardStyle }: { cardStyle: string }) => {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={userR} title={"Civil Litigation"} text={'We advocate for our clients, seeking a fair resolution within a timeframe.'}></Cards>
+                        <Cards cardColor={cardStyle} icon={userR} title={card2.title} text={card2.text}></Cards>
                     </motion.div>
                     <motion.div
                         variants={{
@@ -56,7 +58,7 @@ const Areas = ({ cardStyle }: { cardStyle: string }) => {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={umbrellaI} title={"Insurance Defence"} text={'Insurance issues require excellent knowledge and great intuition.'}></Cards>
+                        <Cards cardColor={cardStyle} icon={umbrellaI} title={card3.title} text={card3.text}></Cards>
                     </motion.div>
                     <motion.div
                         variants={{
@@ -67,7 +69,7 @@ const Areas = ({ cardStyle }: { cardStyle: string }) => {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={dollar} title={"Financial Law"} text={'We work in an open dialogue with you in order to devise the strategy which will best serve your interests.'}></Cards>
+                        <Cards cardColor={cardStyle} icon={dollar} title={card4.title} text={card4.text}></Cards>
                     </motion.div>
                     <motion.div
                         variants={{
@@ -78,7 +80,7 @@ const Areas = ({ cardStyle }: { cardStyle: string }) => {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={userR} title={"Civil Litigation"} text={'We advocate for our clients, seeking a fair resolution within a timeframe.'}></Cards>
+                        <Cards cardColor={cardStyle} icon={userR} title={card5.title} text={card5.text}></Cards>
                     </motion.div>
                     <motion.div
                         variants={{
@@ -89,7 +91,7 @@ const Areas = ({ cardStyle }: { cardStyle: string }) => {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={umbrellaI} title={"Insurance Defence"} text={'Insurance issues require excellent knowledge and great intuition.'}></Cards>
+                        <Cards cardColor={cardStyle} icon={umbrellaI} title={card6.title} text={card6.text}></Cards>
                     </motion.div>
                 </div>
             </div>
