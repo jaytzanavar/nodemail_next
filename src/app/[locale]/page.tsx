@@ -25,7 +25,7 @@ export async function generateMetadata({ params: { locale } }: any) {
 async function getData() {
   const apiEndpoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
-  const res = await fetch(`/api/google-info`, {
+  const res = await fetch(`${apiEndpoint}/api/google-info`, {
     cache: "no-store",
   });
 
