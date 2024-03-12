@@ -22,18 +22,18 @@ export async function generateMetadata({ params: { locale } }: any) {
 }
 
 
-async function getData() {
-  const apiEndpoint = process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT;
+// async function getData() {
+//   const apiEndpoint = process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT;
 
-  const res = await fetch(`${apiEndpoint}/api/google-info`, {
-    cache: "no-store",
-  });
+//   const res = await fetch(`${apiEndpoint}/api/google-info`, {
+//     cache: "no-store",
+//   });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+//   return res.json();
+// }
 
 
 
@@ -42,7 +42,10 @@ export default async function Home(props: PropsInterface) {
   const { locale } = props.params
   if (!process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT)
     return null;
-  const reviews = await getData()
+  const q = await await fetch(`${process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT}/api/google-info`, {
+    cache: "no-store",
+  });
+  const reviews =await q.json();
   console.log(reviews);
   const exp = await getTranslations({ locale, namespace: 'Experience' });
   const ar = await getTranslations({ locale, namespace: 'Areas' });
