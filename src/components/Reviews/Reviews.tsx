@@ -1,7 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
 import RatingCard from '../RatingCard/RatingCard'
-import { getRatingsReviews } from '../../../lib/api';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -19,7 +17,7 @@ export type G_Review = {
 }
 
 const Reviews = ({ title, googleVerUser, userReview, reviewsA }: { title: string, googleVerUser: string, userReview: string, reviewsA: G_Review }) => {
-    
+
     const { reviews } = reviewsA
     return (
         <div className='  bg-[url("/clients.jpg")] w-screen  bg-no-repeat bg-cover '>
