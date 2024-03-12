@@ -22,12 +22,26 @@ export async function generateMetadata({ params: { locale } }: any) {
 }
 
 
+async function getData() {
+  const apiEndpoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
+
+  const res = await fetch(`/api/google-info`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+
 
 
 export default async function Home(props: PropsInterface) {
   const { locale } = props.params
-  const reviews = await fetch(`${process.env.VERCEL_URL}/api/google-info`, { cache: 'force-cache' });
-  const data = await reviews.json();
+  const reviews = await getData()
+  console.log(reviews);
   const exp = await getTranslations({ locale, namespace: 'Experience' });
   const ar = await getTranslations({ locale, namespace: 'Areas' });
   const rev = await getTranslations({ locale, namespace: 'Reviews' });
@@ -43,7 +57,7 @@ export default async function Home(props: PropsInterface) {
         <Experience title={exp('title')} subtitle={exp('subtitle')} est={exp('est')} cases_won={exp('cases_won')} business_partners={exp('business_partners')} trusting_clients={exp('trusting_clients')} />
 
         <Areas title={ar('title')} card1={{ title: ar('card1.title'), text: ar('card1.text') }} card2={{ title: ar('card2.title'), text: ar('card2.text') }} card3={{ title: ar('card3.title'), text: ar('card3.text') }} card4={{ title: ar('card4.title'), text: ar('card4.text') }} card5={{ title: ar('card5.title'), text: ar('card5.text') }} card6={{ title: ar('card6.title'), text: ar('card6.text') }} cardStyle="'green'" />
-        <Reviews title={rev('title')} googleVerUser={rev('gvu')} userReview={rev('userR')} reviewsA={data} />
+        <Reviews title={rev('title')} googleVerUser={rev('gvu')} userReview={rev('userR')} reviewsA={reviews} />
         <Forms title={com('title')} name={com('name')} email={com('email')} phone={com('phone')} message={com('message')} btn={com('btn')} />
       </main >
 
