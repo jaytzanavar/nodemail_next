@@ -40,9 +40,9 @@ export async function generateMetadata({ params: { locale } }: any) {
 
 export default async function Home(props: PropsInterface) {
   const { locale } = props.params
-  if (!process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT)
+  if (!process.env.API_URL)
     return null;
-  const q = await await fetch(`${process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT}/api/google-info`, {
+  const q = await await fetch(`${process.env.API_URL}/api/google-info`, {
     cache: "no-store",
   });
   const reviews =await q.json();

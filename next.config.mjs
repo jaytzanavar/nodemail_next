@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 
 
 const nextConfig = {
+    env: { API_URL: "https://law-website-template.vercel.app"},
     images: {
         remotePatterns: [
             {
