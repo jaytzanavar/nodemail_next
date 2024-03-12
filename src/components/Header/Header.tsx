@@ -141,7 +141,7 @@ const Header = ({ locale }: { locale: string }) => {
         transition={{ duration: .65 }}
         initial="hidden"
         animate={burgerControls}
-        className="absolute z-10 sm:hidden top-0  left-0 w-screen h-screen bg-white text-white flex flex-col items-center justify-center gap-8">
+        className="absolute z-40 sm:hidden top-0  left-0 w-screen h-screen bg-white text-white flex flex-col items-center justify-center gap-8">
         {openBurger &&
           <motion.div
             className='flex flex-col gap-10 font-medium'
