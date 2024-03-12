@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
-// Poppins
+import { Analytics } from "@vercel/analytics/react"
 import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 import Header from "@/components/Header/Header";
@@ -47,6 +47,7 @@ export default function RootLayout({
 
   return (
     <html className="scroll-smooth" lang={locale}>
+
       <body className={`${lato.className} bg-gradient-to-t from-[#fcb2eb] to-[#a6c1ee] h-screen overflow-x-hidden`}>
         <NextIntlClientProvider locale={locale} messages={messages} >
           <Header locale={locale}
@@ -55,6 +56,7 @@ export default function RootLayout({
 
         {children}
         <Footer />
+        <Analytics />
       </body>
       <GoogleTagManager gtmId="GTM-WCNQ8DGR" />
     </html>
