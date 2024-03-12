@@ -40,6 +40,8 @@ async function getData() {
 
 export default async function Home(props: PropsInterface) {
   const { locale } = props.params
+  if (!process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT)
+    return null;
   const reviews = await getData()
   console.log(reviews);
   const exp = await getTranslations({ locale, namespace: 'Experience' });
