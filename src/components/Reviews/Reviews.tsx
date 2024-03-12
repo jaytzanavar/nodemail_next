@@ -18,9 +18,11 @@ export type G_Review = {
     reviews: Array<any>
 }
 
-const Reviews = ({ title, googleVerUser, userReview, reviewsA }: { title: string, googleVerUser: string, userReview: string, reviewsA: G_Review }) => {
+const Reviews = ({ title, googleVerUser, userReview }: { title: string, googleVerUser: string, userReview: string }) => {
 
-    const { reviews } = reviewsA
+    //     const reviews = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/google-info`, { cache: 'force-cache' });
+    //   const data = await reviews.json();
+
     return (
         <div className='  bg-[url("/clients.jpg")] w-screen  bg-no-repeat bg-cover '>
             <div className='bg-black/30 h-full md:px-0 px-2 flex flex-col py-10 justify-center items-center gap-4'>
@@ -30,11 +32,11 @@ const Reviews = ({ title, googleVerUser, userReview, reviewsA }: { title: string
                 </h3>
                 {/* autoPlay={true} interval={5000} infiniteLoop={true} */}
                 <Carousel className='md:w-[50%] w-[92%] px-4' showArrows={false} showStatus={false}>
-                    {reviews && reviews.map((rev: Review) =>
+                    {/* {reviews && reviews.map((rev: Review) =>
                         <div className=' w-full flex justify-center' key={rev.author_name}>
                             <RatingCard gvu={googleVerUser} ur={userReview} rev={rev} />
                         </div>
-                    )}
+                    )} */}
                 </Carousel>
             </div>
         </div>
