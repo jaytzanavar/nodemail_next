@@ -6,7 +6,7 @@ export default function Analytics() {
     const [reviews, setReviews] = useState('0')
     const fetchReviews = async () => {
         try {
-            const reviews = fetch('/api/google-place')
+            const reviews = fetch(`${process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT}/api/google-place`)
             sendGTMEvent({ event: 'buttonClicked', value: 'xyz' })
         }
 
