@@ -17,7 +17,6 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
             mainControls.start("stop")
     }, [isInView, mainControls])
 
-    console.log(card1);
 
     return (
         <div className='w-screen bg-white py-12 px-6'>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 
-const RatingCard = ({ rev, gvu, ur }: { rev: Review }) => {
+const RatingCard = ({ rev, gvu, ur }: { gvu: string, ur: string, rev: Review }) => {
     const { author_name, author_url, profile_photo_url, rating, text }: Review = rev;
 
     return (

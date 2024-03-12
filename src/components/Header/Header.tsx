@@ -9,34 +9,35 @@ import ReactCountryFlag from 'react-country-flag'
 import { AnimatePresence, useAnimation, motion } from "framer-motion";
 import { useRouter } from 'next/navigation';
 
+type countryType = { [key: string]: string }
 
-const DEFAULT_COUNTRIES = { gb: 'GB', fr: 'FR', gr: 'GR' }
+const DEFAULT_COUNTRIES: countryType = { gb: 'GB', fr: 'FR', gr: 'GR' }
 
 
 const Header = ({ locale }: { locale: string }) => {
 
   const [openBurger, setOpenBurger] = useState(false)
   const [countryToggle, setCountryToggle] = useState(false)
-  const [currentLocale, setCurrentLocale] = useState<any>(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale] )
+  const [currentLocale, setCurrentLocale] = useState<any>(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale])
   const t = useTranslations('Header')
   const keys = ['responsibilities', 'advisory', 'communication'] as const;
   const router = useRouter();
-  const bugerControls = useAnimation();
+  const burgerControls = useAnimation();
 
 
   useEffect(() => {
     if (openBurger) {
-      bugerControls.start("visible")
+      burgerControls.start("visible")
 
       document.body.classList.add('no-scroll');
     }
     else {
-      bugerControls.start("hidden")
+      burgerControls.start("hidden")
 
       document.body.classList.remove('no-scroll');
     }
 
-  }, [openBurger]);
+  }, [openBurger, burgerControls]);
 
 
 
@@ -139,7 +140,7 @@ const Header = ({ locale }: { locale: string }) => {
         }}
         transition={{ duration: .65 }}
         initial="hidden"
-        animate={bugerControls}
+        animate={burgerControls}
         className="absolute z-10 sm:hidden top-0  left-0 w-screen h-screen bg-white text-white flex flex-col items-center justify-center gap-8">
         {openBurger &&
           <motion.div

@@ -9,7 +9,6 @@ import { PropsInterface } from '@/app/common/PropsInterface'
 const CommunicationPage = async (props: PropsInterface) => {
 
     const { locale } = props.params
-    const heroText = "Want to Learn More About How We Help Clients in Risk? Attract thousands of individuals and businesses, all of whom (98%) have successfully dealt with their legal conundrums with our timely…"
 
     const com = await getTranslations({ locale, namespace: 'Communication' });
     return (

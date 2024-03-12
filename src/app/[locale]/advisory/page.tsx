@@ -8,7 +8,7 @@ import { PropsInterface } from '@/app/common/PropsInterface'
 
 export default async function AdvisoryPage(props: PropsInterface) {
 
-    console.log(props)
+
 
     const { locale } = props.params
     const ar = await getTranslations({ locale, namespace: 'Areas' });
