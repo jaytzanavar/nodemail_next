@@ -53,7 +53,7 @@ export default function RootLayout({
           />
         </NextIntlClientProvider>
 
-        {/* {children}*/}
+        {children}
         <Footer />
       </body>
       <GoogleTagManager gtmId="GTM-WCNQ8DGR" />
