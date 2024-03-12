@@ -7,6 +7,7 @@ import './globals.css'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { NextIntlClientProvider, useMessages } from 'next-intl';
+import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 
 const lato = Playfair_Display({
   weight: ["400", "700"],
@@ -50,15 +51,17 @@ export default function RootLayout({
     <html className="scroll-smooth" lang={locale}>
 
       <body className={`${lato.className} bg-gradient-to-t from-[#fcb2eb] to-[#a6c1ee] h-screen overflow-x-hidden`}>
+        <SmoothScroll />
         <NextIntlClientProvider locale={locale} messages={messages} >
           <Header locale={locale}
           />
         </NextIntlClientProvider>
-
-        {children}
+        <section>
+          {children}
+        </section>
         <Footer />
         <Analytics />
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
       <GoogleTagManager gtmId="GTM-WCNQ8DGR" />
     </html>

@@ -16,7 +16,7 @@ export default function NotFound() {
         return () => {
             clearInterval(interval)
         }
-    }, [])
+    }, [timer])
 
 
     if (timer === 1)
