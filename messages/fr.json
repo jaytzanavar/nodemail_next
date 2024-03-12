@@ -1,4 +1,8 @@
 {
+    "NotFound": {
+        "title": "Page non trouvée",
+        "text": "Le contenu que vous recherchez ne peut pas être trouvé sur cette page Web"
+    },
     "Header": {
         "responsibilities": {
             "title": "Responsabilités",

@@ -45,8 +45,8 @@ export default async function Home(props: PropsInterface) {
   const q = await await fetch(`${process.env.API_URL}/api/google-info`, {
     cache: "no-store",
   });
-  const reviews =await q.json();
-  console.log(reviews);
+  const reviews = await q.json();
+
   const exp = await getTranslations({ locale, namespace: 'Experience' });
   const ar = await getTranslations({ locale, namespace: 'Areas' });
   const rev = await getTranslations({ locale, namespace: 'Reviews' });
