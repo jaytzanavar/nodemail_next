@@ -1,6 +1,6 @@
 export const sendMailForm = async (data: any) => {
-
-    return await fetch("/api/mail", {
+    const apiEndpoint = process.env.SERVER_API_ENDPOINT;
+    return await fetch(`${apiEndpoint}/api/mail`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -12,5 +12,6 @@ export const sendMailForm = async (data: any) => {
 
 
 export const getRatingsReviews = async (data?: any | null) => {
-    return await fetch(`${process.env.NEXT_PUBLIC_CLIENT_API_ENDPOINT}/api/google-info`, { cache: 'force-cache' })
+    const apiEndpoint = process.env.SERVER_API_ENDPOINT;
+    return await fetch(`${apiEndpoint}/api/google-info`, { cache: 'force-cache' })
 }
