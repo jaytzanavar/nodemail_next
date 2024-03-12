@@ -7,8 +7,8 @@ import Image from 'next/image';
 export default function Content() {
     const t = useTranslations('Content');
     return (
-        <div className='min-h-[90vh] w-screen flex'>
-            <Image className="  z-0 relative " src={bg_img} alt="lawFirm_bg_img" layout='fill' objectFit="cover" objectPosition='cover' />
+        <div className='min-h-[90vh] w-screen flex relative z-10'>
+            <Image  quality={90} className=" z-0 relative" alt="Damouli law firm background image in content" src={bg_img} fill objectFit="cover" objectPosition='cover' />
             <div className='md:w-[50%] md:block hidden relative z-10'></div>
             <div className='md:w-[50%] w-full bg-black/50 flex flex-col gap-3 justify-center content-center items-center relative z-10'>
                 <h1 className='font-extrabold text-6xl md:text-left text-center md:px-[30%] text-white/90'>
