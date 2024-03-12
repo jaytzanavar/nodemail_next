@@ -26,7 +26,7 @@ export async function generateMetadata({ params: { locale } }: any) {
 
 export default async function Home(props: PropsInterface) {
   const { locale } = props.params
-  const reviews = await fetch(`/api/google-info`, { cache: 'force-cache' });
+  const reviews = await fetch(`${process.env.VERCEL_URL}/api/google-info`, { cache: 'force-cache' });
   const data = await reviews.json();
   const exp = await getTranslations({ locale, namespace: 'Experience' });
   const ar = await getTranslations({ locale, namespace: 'Areas' });
