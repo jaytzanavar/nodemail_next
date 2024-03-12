@@ -36,7 +36,7 @@ export default async function Home(props: PropsInterface) {
     <>
 
       <main className="flex min-h-screen flex-col items-center justify-between ">
-        <Content />
+       
         {/* <Subcontent />
 
         <Experience title={exp('title')} subtitle={exp('subtitle')} est={exp('est')} cases_won={exp('cases_won')} business_partners={exp('business_partners')} trusting_clients={exp('trusting_clients')} />

@@ -6,6 +6,7 @@ import './globals.css'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { NextIntlClientProvider, useMessages } from 'next-intl';
+import Content from "@/components/Content/Content";
 
 const lato = Playfair_Display({
   weight: ["400", "700"],
@@ -52,7 +53,7 @@ export default function RootLayout({
           <Header locale={locale}
           />
         </NextIntlClientProvider>
-
+        <Content />
         {children}
         <Footer />
       </body>
