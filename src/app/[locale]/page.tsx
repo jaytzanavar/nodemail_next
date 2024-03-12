@@ -1,6 +1,6 @@
 
 
-import Content from "../../components/Content/Content";
+import Content from "@/components/Content/Content";
 import Experience from "../../components/Experience/Experience";
 import Forms from "../../components/Forms/Forms";
 import Reviews from "../../components/Reviews/Reviews";
