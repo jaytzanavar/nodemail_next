@@ -9,8 +9,8 @@ const Cards = ({ icon, title, text, cardColor }: { icon: IconProp, title: string
             <div className='w-[1.8rem] h-[2rem] ' >
                 <FontAwesomeIcon size='2xl' icon={icon} />
             </div>
-            <div className='text-3xl text-center'>{title}</div>
-            <div className='text-lg text-center font-light  leading-[2rem]'>{text}</div>
+            <h2 className='text-3xl text-center'>{title}</h2>
+            <div className='text-md text-center font-light  leading-[1.5rem]'>{text}</div>
         </div >
     )
 }

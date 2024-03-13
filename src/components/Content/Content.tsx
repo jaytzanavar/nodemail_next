@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 
 export default function Content(props: any) {
 
-    console.log(props);
+
     const t = useTranslations('Content');
     return (
         <div className='lg:h-[90vh] md:h-[165vh] min-h-[90vh] w-screen flex relative z-10'>

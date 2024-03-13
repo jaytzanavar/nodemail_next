@@ -9,7 +9,7 @@ export default function NotFound() {
         const interval = setInterval(() => {
 
             setTimer(prev => prev - 1)
-            console.log('timer', timer);
+
 
         }, 1000)
 
