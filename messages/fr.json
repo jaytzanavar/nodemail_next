@@ -20,6 +20,11 @@
         "gr": "Ελληνικά",
         "fr": "Français"
     },
+    "Reviews": {
+        "title": "Témoignages de Clients Satisfaits",
+        "userR": "Note de l'Utilisateur",
+        "gvu": "Utilisateur Vérifié Google"
+    },
     "Metadata": {
         "title": "Titre du cabinet d'avocats Damouli à partir des métadonnées",
         "subtitle": "Il s'agit du sous-titre des métadonnées"

@@ -15,7 +15,7 @@ const RatingCard = ({ rev, gvu, ur }: { gvu: string, ur: string, rev: Review }) 
             <div className="p-4 flex flex-col ">
                 <div className="flex flex-col items-center space-x-4">
                     <div className=' bg-black/35  border-white/90 border-solid shadow-lg  p-2 rounded-full w-[105px] h-[105px]'>
-                        <Image referrerPolicy="no-referrer" src={profile_photo_url} unoptimized alt={author_name}
+                        <Image  referrerPolicy="no-referrer" src={profile_photo_url} unoptimized alt={author_name}
                             width={75} height={75} className="w-auto h-auto rounded-full" />
                     </div>
 

@@ -76,7 +76,7 @@ const Header = ({ locale }: { locale: string }) => {
       <nav className='flex justify-between relative z-20 items-center md:w-full bg-white px-[5%] md:mx-auto '>
         <div>
           <Link href={'/' + locale}>
-            <Image className="w-16 cursor-pointer" src={logo} alt='logo-image' /></Link>
+            <Image className="w-16 cursor-pointer" placeholder='blur' src={logo} alt='logo-image' /></Link>
         </div>
         <div className={` bg-white mx-auto w-full  md:flex hidden justify-center items-center transform transition-transform duration-500 ease-in-out md:translate-y-[0]  md:opacity-100 md:h-auto   ${openBurger ? ' overflow-hidden  ' : ' translate-y-[-100%] opacity-0'}  left-0   px-5`}>
           <ul className="flex md:flex-row flex-col h-full my-auto items-center gap-[4vw]">
