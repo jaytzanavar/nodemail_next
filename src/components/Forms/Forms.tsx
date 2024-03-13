@@ -90,7 +90,7 @@ const Forms = ({ title, name, email, phone, message, btn }: { title: string, nam
 
 
                         {errors.message && touched.message && errors.message}
-                        <Button type="submit" size="xl" label=
+                        <Button link={null} type="submit" size="xl" label=
                             {!isSubmitting ?
                                 <span>
                                     {btn}</span>

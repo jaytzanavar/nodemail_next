@@ -30,7 +30,7 @@ const Subcontent = () => {
                     <div className='flex flex-col justify-center items-start p-10 px-[15%]'>
                         <h4 className='text-gray-500 font-montserrat text-md font-light pt-[15%]  leading-[3rem]  tracking-tighter'>{t('description')}</h4>
 
-                        <Button type='button' disabled={false} label={t('read_more')} size='lg' />
+                        <Button link={'advisory'} type='button' disabled={false} label={t('read_more')} size='lg' />
                     </div>
 
 

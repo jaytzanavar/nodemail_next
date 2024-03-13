@@ -3,12 +3,12 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 import { usePathname } from 'next/navigation'
 
-const Button = ({ type, label = '', disabled = false, size = 'md', locale = 'en', link }: { type: "button" | "submit" | "reset" | undefined, label: any | string, disabled: boolean, size: string, locale: string, link: string }) => {
+const Button = ({ type, label = '', disabled = false, size = 'md', link }: { type: "button" | "submit" | "reset" | undefined, label: any | string, disabled: boolean, size: string, link: string | null }) => {
     const router = useRouter();
     const path = usePathname()
 
-    
-  
+
+
     const handleClick = () => {
         router.push(`${path}/${link}`)
     }

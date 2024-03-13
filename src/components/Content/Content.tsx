@@ -18,7 +18,7 @@ export default function Content(props: any) {
                     {t('prompt')}</h1>
                 <h4 className='mb-6 text-lg font-normal text-white/70 lg:text-xl sm:px-16 xl:px-48 px-10 dark:text-gray-400'>
                     {t('hero')}</h4>
-                <Button disabled={false} type="button" link='communication' locale={'en'} label={t('button-c')} size={'lg'} />
+                <Button disabled={false} type="button" link='communication' label={t('button-c')} size={'lg'} />
             </div>
 
         </div>
