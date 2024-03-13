@@ -19,6 +19,7 @@ export type G_Review = {
 const Reviews = ({ title, googleVerUser, userReview, reviewsA }: { title: string, googleVerUser: string, userReview: string, reviewsA: G_Review }) => {
 
     const { reviews } = reviewsA
+    
     return (
         <div className='  bg-[url("/clients.jpg")] w-screen  bg-no-repeat bg-cover '>
             <div className='bg-black/30 h-full md:px-0 px-2 flex flex-col py-10 justify-center items-center gap-4'>
@@ -27,8 +28,8 @@ const Reviews = ({ title, googleVerUser, userReview, reviewsA }: { title: string
                     {title}
                 </h3>
                 {/* autoPlay={true} interval={5000} infiniteLoop={true} */}
-                <Carousel className='md:w-[50%] w-[92%] px-4' showArrows={false} showStatus={false}>
-                    {reviews && reviews.map((rev: Review) =>
+                <Carousel autoPlay={true} interval={5000} infiniteLoop={true} className='md:w-[50%] w-[92%] px-4' showArrows={false} showStatus={false}>
+                    {reviews && reviews.sort((a, b) => a.author_name.localeCompare(b.author_name) ).map((rev: Review) =>
                         <div className=' w-full flex justify-center' key={rev.author_name}>
                             <RatingCard gvu={googleVerUser} ur={userReview} rev={rev} />
                         </div>

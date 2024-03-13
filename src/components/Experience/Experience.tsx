@@ -46,7 +46,7 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
 
 
     return (
-        <div className='bg-[url("/law2.jpg")] w-screen md:h-[60vh]   bg-no-repeat bg-cover '>
+        <div className='bg-[url("/law2.jpg")] w-screen lg:h-[60vh] md:h-[140vh]   bg-no-repeat bg-cover '>
             <div className='w-full h-full md:py-0 py-10 bg-black/50 flex flex-col md:gap-0 gap-5 justify-center items-center'>
                 <h2 className='font-extrabold text-6xl text-center text-white'>
                     {title} </h2>

@@ -72,8 +72,8 @@ const Header = ({ locale }: { locale: string }) => {
 
 
   return (
-    <header className=''>
-      <nav className='flex justify-between relative z-10 items-center md:w-full bg-white px-[5%] md:mx-auto '>
+    <header className='overflow-x-hidden'>
+      <nav className='flex justify-between relative z-20 items-center md:w-full bg-white px-[5%] md:mx-auto '>
         <div>
           <Link href={'/' + locale}>
             <Image className="w-16 cursor-pointer" src={logo} alt='logo-image' /></Link>
@@ -141,7 +141,7 @@ const Header = ({ locale }: { locale: string }) => {
         transition={{ duration: .65 }}
         initial="hidden"
         animate={burgerControls}
-        className="absolute  md:hidden top-[4rem] z-60  left-0 w-screen h-screen bg-white text-white flex flex-col items-center justify-center gap-8">
+        className={`absolute  md:hidden top-[4rem] z-60  left-0 ${openBurger && 'w-screen gap-8'} h-screen bg-white text-white flex flex-col items-center justify-center `}>
         {openBurger &&
           <motion.div
             className='flex flex-col gap-10 font-medium'

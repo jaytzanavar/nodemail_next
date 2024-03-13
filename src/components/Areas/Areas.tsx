@@ -35,7 +35,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={suitCase} title={card1.title} text={card1.text}></Cards>
+                        {isInView && <Cards cardColor={cardStyle} icon={suitCase} title={card1.title} text={card1.text}></Cards>}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -46,7 +46,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={userR} title={card2.title} text={card2.text}></Cards>
+                        {isInView && <Cards cardColor={cardStyle} icon={userR} title={card2.title} text={card2.text}></Cards>}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -57,7 +57,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={umbrellaI} title={card3.title} text={card3.text}></Cards>
+                        {isInView && <Cards cardColor={cardStyle} icon={umbrellaI} title={card3.title} text={card3.text}></Cards>}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -68,7 +68,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={dollar} title={card4.title} text={card4.text}></Cards>
+                        {isInView && <Cards cardColor={cardStyle} icon={dollar} title={card4.title} text={card4.text}></Cards>}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -79,7 +79,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={userR} title={card5.title} text={card5.text}></Cards>
+                        {isInView && <Cards cardColor={cardStyle} icon={userR} title={card5.title} text={card5.text}></Cards>}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -90,7 +90,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        <Cards cardColor={cardStyle} icon={umbrellaI} title={card6.title} text={card6.text}></Cards>
+                        {isInView && <Cards cardColor={cardStyle} icon={umbrellaI} title={card6.title} text={card6.text}></Cards>}
                     </motion.div>
                 </div>
             </div>
