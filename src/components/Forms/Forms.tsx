@@ -36,7 +36,7 @@ const Forms = ({ title, name, email, phone, message, btn }: { title: string, nam
                         setSubmitting(false);
                     }
                     else {
-                        console.log('Fail');
+                        console.error('Submit Fail');
                     }
 
                 }}

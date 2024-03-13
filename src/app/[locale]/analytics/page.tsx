@@ -13,7 +13,7 @@ export default function Analytics() {
 
 
         catch (error) {
-            console.log(` Error ${error}`);
+            console.error(` Error ${error}`);
         }
 
     }
