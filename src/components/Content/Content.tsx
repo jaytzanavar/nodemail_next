@@ -2,10 +2,14 @@ import React from 'react'
 import { useTranslations } from 'next-intl';
 import bg_img from '../../../public/lawWallPaper.jpg'
 import Image from 'next/image';
-import Button from '../Button/Button';
+import dynamic from 'next/dynamic';
 
 
 export default function Content(props: any) {
+
+    const DynamicButton = dynamic(() => import('../../components/Button/Button'), {
+        loading: () => <p>Loading...</p>,
+    })
 
 
     const t = useTranslations('Content');
@@ -18,7 +22,7 @@ export default function Content(props: any) {
                     {t('prompt')}</h1>
                 <h4 className='mb-6 text-lg font-normal text-white/70 lg:text-xl sm:px-16 xl:px-48 px-10 dark:text-gray-400'>
                     {t('hero')}</h4>
-                <Button disabled={false} type="button" link='communication' label={t('button-c')} size={'lg'} />
+                <DynamicButton disabled={false} type="button" link='communication' label={t('button-c')} size={'lg'} />
             </div>
 
         </div>

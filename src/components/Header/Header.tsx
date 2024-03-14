@@ -87,7 +87,7 @@ const Header = ({ locale }: { locale: string }) => {
           </ul>
         </div>
         <div className='md:relative z-60  md:block hidden'>
-          <button className='md:relative z-50 w-[50px] h-[50px]  hover:bg-black/20 bg-slate-400/30 rounded-full' onClick={() => setCountryToggle(prev => !prev)}>
+          <button className='md:relative z-50 w-[50px] h-[50px] min-h-[45px] min-w-[45px] hover:bg-black/20 bg-slate-400/30 rounded-full' onClick={() => setCountryToggle(prev => !prev)}>
             <ReactCountryFlag
               countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
               svg
@@ -122,7 +122,7 @@ const Header = ({ locale }: { locale: string }) => {
             </button>
           </div>
           <div>
-            <button onClick={() => setOpenBurger(prev => !prev)} className={` relative top-3.5 ml-5  ${styles.menu_button} `}>
+            <button onClick={() => setOpenBurger(prev => !prev)} className={` relative top-3.5 ml-5 min-h-[45px] min-w-[45px] ${styles.menu_button} `}>
               <span className={`${styles.menu_button_line} ${styles.top} ${openBurger ? styles.on_menu_top : ''} bg-slate-700`}></span>
               <span className={` ${styles.menu_button_line} ${styles.mid} ${openBurger ? styles.on_menu_mid : ''} bg-slate-700`}></span>
               <span className={` ${styles.menu_button_line} ${styles.botm} ${openBurger ? styles.on_menu_botm : ''} bg-slate-700`}></span>

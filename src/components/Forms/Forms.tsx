@@ -1,11 +1,16 @@
 'use client'
 import { Formik } from "formik";
 import { sendMailForm } from "../../../lib/api";
-import Button from "../Button/Button";
+import dynamic from "next/dynamic";
 
 
 
 const Forms = ({ title, name, email, phone, message, btn }: { title: string, name: string, email: string, phone: string, message: string, btn: string }) => {
+
+    const DynamicButton = dynamic(() => import('../../components/Button/Button'), {
+        loading: () => <p>Loading...</p>,
+    })
+
     return (
         <div className="flex flex-col justify-center items-center w-screen bg-white py-10">
             <div id="divider" className="my-10 mb-3 h-[0.155rem] ml-3 w-[8%]  pr-10 border-t-0 bg-gray-700/50 opacity-100 dark:opacity-50"></div>
@@ -90,7 +95,7 @@ const Forms = ({ title, name, email, phone, message, btn }: { title: string, nam
 
 
                         {errors.message && touched.message && errors.message}
-                        <Button link={null} type="submit" size="xl" label=
+                        <DynamicButton link={null} type="submit" size="xl" label=
                             {!isSubmitting ?
                                 <span>
                                     {btn}</span>
@@ -101,12 +106,6 @@ const Forms = ({ title, name, email, phone, message, btn }: { title: string, nam
                                 </svg>}
 
                             disabled={Object.keys(errors).length === 0 || isSubmitting} />
-                        {/* <button className={`py-2.5 w-[20rem] px-5 me-2 mb-2 text-sm font-medium ${Object.keys(errors).length > 0 || isSubmitting ? 'text-gray-500/50 bg-white/50' : ' bg-white text-gray-900 hover:bg-gray-100 hover:text-pink-400 focus:ring-gray-100 dark:focus:ring-gray-700 focus:z-10 focus:ring-4  dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 border-gray-200'} focus:outline-none  rounded-lg border  `} type="submit" disabled={Object.keys(errors).length > 0 || isSubmitting}>
-
-                            {
-
-                            }
-                        </button> */}
                     </form>
                 )}
             </Formik>

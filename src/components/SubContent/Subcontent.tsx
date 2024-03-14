@@ -4,22 +4,30 @@ import { useTranslations } from 'next-intl';
 import { faSuitcase as suitCase } from '@fortawesome/free-solid-svg-icons';
 import { faUser as userR } from '@fortawesome/free-solid-svg-icons';
 import { faUmbrella as umbrellaI } from '@fortawesome/free-solid-svg-icons';
-import Button from '../Button/Button';
+import dynamic from 'next/dynamic';
 
 
 const Subcontent = () => {
     const t = useTranslations('SubContent');
+
+    const DynamicButton = dynamic(() => import('../../components/Button/Button'), {
+        loading: () => <p>Loading...</p>,
+    })
+
+    const DynamicCards = dynamic(() => import('../../components/Cards/Cards'), {
+        loading: () => <p>Loading...</p>,
+    })
 
     return (
         <div className='min-h-[90vh] pb-[3rem] bg-slate-50 w-screen relative z-20 '>
 
             <div className='flex sm:absolute relative top-[-6.5rem] md:flex-row flex-col md:p-0 p-[5%] justify-center gap-5 min-h-[350px]  w-screen  '>
                 <div className=''>
-                    <Cards cardColor={'green'} icon={suitCase} title={t('card1.title')} text={t('card1.text')}></Cards></div>
+                    <DynamicCards cardColor={'green'} icon={suitCase} title={t('card1.title')} text={t('card1.text')} /></div>
                 <div >
-                    <Cards cardColor={'green'} icon={userR} title={t('card2.title')} text={t('card2.text')}></Cards></div>
+                    <DynamicCards cardColor={'green'} icon={userR} title={t('card2.title')} text={t('card2.text')} /></div>
                 <div>
-                    <Cards cardColor={'green'} icon={umbrellaI} title={t('card3.title')} text={t('card3.text')}></Cards></div>
+                    <DynamicCards cardColor={'green'} icon={umbrellaI} title={t('card3.title')} text={t('card3.text')} /></div>
             </div>
 
             <div className='flex md:flex-row flex-col md:mt-[350px]  justify-center px-auto relative'>
@@ -31,7 +39,7 @@ const Subcontent = () => {
                     <div className='flex flex-col justify-center items-start p-10 px-[15%]'>
                         <h4 className='text-gray-500 font-montserrat text-md font-light pt-[15%]  leading-[3rem]  tracking-tighter'>{t('description')}</h4>
 
-                        <Button link={'advisory'} type='button' disabled={false} label={t('read_more')} size='lg' />
+                        <DynamicButton link={'advisory'} type='button' disabled={false} label={t('read_more')} size='lg' />
                     </div>
 
 

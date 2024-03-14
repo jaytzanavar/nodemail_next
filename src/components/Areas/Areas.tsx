@@ -6,6 +6,7 @@ import { faUmbrella as umbrellaI } from '@fortawesome/free-solid-svg-icons';
 import { faDollar as dollar } from '@fortawesome/free-solid-svg-icons';
 import Cards from '../Cards/Cards';
 import { motion, useInView, useAnimation } from "framer-motion"
+import dynamic from 'next/dynamic';
 
 
 const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: { title: string, card1: any, card2: any, card3: any, card4: any, card5: any, card6: any, cardStyle: string }) => {
@@ -17,6 +18,9 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
             mainControls.start("stop")
     }, [isInView, mainControls])
 
+    const DynamicCards = dynamic(() => import('../../components/Cards/Cards'), {
+        loading: () => <p>Loading...</p>,
+    })
 
     return (
         <div className='w-screen bg-white py-12 px-6'>
@@ -35,7 +39,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        {isInView && <Cards cardColor={cardStyle} icon={suitCase} title={card1.title} text={card1.text}></Cards>}
+                        {isInView && <DynamicCards cardColor={cardStyle} icon={suitCase} title={card1.title} text={card1.text} />}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -46,7 +50,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        {isInView && <Cards cardColor={cardStyle} icon={userR} title={card2.title} text={card2.text}></Cards>}
+                        {isInView && <DynamicCards cardColor={cardStyle} icon={userR} title={card2.title} text={card2.text} />}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -57,7 +61,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        {isInView && <Cards cardColor={cardStyle} icon={umbrellaI} title={card3.title} text={card3.text}></Cards>}
+                        {isInView && <DynamicCards cardColor={cardStyle} icon={umbrellaI} title={card3.title} text={card3.text} />}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -68,7 +72,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        {isInView && <Cards cardColor={cardStyle} icon={dollar} title={card4.title} text={card4.text}></Cards>}
+                        {isInView && <DynamicCards cardColor={cardStyle} icon={dollar} title={card4.title} text={card4.text} />}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -79,7 +83,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        {isInView && <Cards cardColor={cardStyle} icon={userR} title={card5.title} text={card5.text}></Cards>}
+                        {isInView && <DynamicCards cardColor={cardStyle} icon={userR} title={card5.title} text={card5.text} />}
                     </motion.div>
                     <motion.div
                         variants={{
@@ -90,7 +94,7 @@ const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: {
                         animate={mainControls}
                         transition={{ duration: 0.5 }}
                     >
-                        {isInView && <Cards cardColor={cardStyle} icon={umbrellaI} title={card6.title} text={card6.text}></Cards>}
+                        {isInView && <DynamicCards cardColor={cardStyle} icon={umbrellaI} title={card6.title} text={card6.text} />}
                     </motion.div>
                 </div>
             </div>
