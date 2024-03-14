@@ -6,8 +6,10 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Head from 'next/head'
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
+import mainImage from '../../../public/lawWallPaper.jpg'
 
 const lato = Playfair_Display({
   weight: ["400", "700"],
@@ -47,8 +49,26 @@ export default function RootLayout({
 }: Readonly<RootLayoutProps>) {
   const messages = useMessages()
 
+
   return (
     <html className="scroll-smooth" lang={locale}>
+
+      <Head>
+        <link
+          rel="preload"
+          href={mainImage.src}
+          as="image"
+        />
+
+
+        <link
+          key={locale}
+          rel="alternate"
+          hrefLang={locale}
+          href={`https://${process.env.NEXT_PUBLIC_API_ENDPOINT}/${locale}`}
+        />
+
+      </Head>
 
       <body className={`${lato.className} bg-gradient-to-t  from-white to-slate-800 h-screen overflow-x-hidden`}>
         <SmoothScroll />

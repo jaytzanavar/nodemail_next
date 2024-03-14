@@ -2,13 +2,14 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import CountUp from "react-countup";
-import { useTranslations } from "next-intl";
+import bg_img from "../../../public/law2.jpg";
+import Image from 'next/image';
 
 
 
 const Experience = ({ title, subtitle, est, cases_won, business_partners, trusting_clients }: { title: string, subtitle: string, est: string, cases_won: string, business_partners: string, trusting_clients: string }) => {
 
-    const ref = useRef<null | HTMLDivElement >(null)
+    const ref = useRef<null | HTMLDivElement>(null)
     const [intersecting, setIntersecting] = useState(false)
     const [obs, setObserver] = useState<IntersectionObserver | null>(null)
 
@@ -46,8 +47,9 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
 
 
     return (
-        <div className='bg-[url("/law2.jpg")] w-screen lg:h-[60vh] md:h-[140vh]   bg-no-repeat bg-cover '>
-            <div className='w-full h-full md:py-0 py-10 bg-black/50 flex flex-col md:gap-0 gap-5 justify-center items-center'>
+        <div className=' w-screen lg:h-[60vh] md:h-[140vh]  relative z-10'>
+            <Image quality={90} sizes="100vw" placeholder='blur' className="z-0 relative" alt="Damouli law firm experience background image" src={bg_img} fill style={{ objectFit: "cover" }} />
+            <div className='w-full h-full relative z-10 md:py-0 py-10 bg-black/50 flex flex-col md:gap-0 gap-5 justify-center items-center'>
                 <h2 className='font-extrabold text-6xl text-center text-white'>
                     {title} </h2>
                 <p className='text-white/90 font-montserrat text-xl font-light  px-[20%] text-center  leading-[3rem]  tracking-tighter'>
