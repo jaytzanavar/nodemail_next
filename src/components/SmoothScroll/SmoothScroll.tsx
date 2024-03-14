@@ -13,7 +13,7 @@ const SmoothScroll: React.FC = () => {
 
             if (scrollableElement) {
 
-                const targetScroll = scrollableElement.scrollTop + delta * 550;
+                const targetScroll = scrollableElement.scrollTop + delta * 650;
 
                 scrollableElement.scrollTo({
                     top: targetScroll,

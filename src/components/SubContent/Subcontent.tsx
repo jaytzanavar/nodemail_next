@@ -13,7 +13,7 @@ const Subcontent = () => {
     return (
         <div className='min-h-[90vh] pb-[3rem] bg-slate-50 w-screen relative z-20 '>
 
-            <div className='flex absolute top-[-6.5rem] md:flex-row flex-col md:p-0 p-[5%] justify-center gap-5 min-h-[350px]  w-screen  '>
+            <div className='flex sm:absolute relative top-[-6.5rem] md:flex-row flex-col md:p-0 p-[5%] justify-center gap-5 min-h-[350px]  w-screen  '>
                 <div className=''>
                     <Cards cardColor={'green'} icon={suitCase} title={t('card1.title')} text={t('card1.text')}></Cards></div>
                 <div >
@@ -21,7 +21,8 @@ const Subcontent = () => {
                 <div>
                     <Cards cardColor={'green'} icon={umbrellaI} title={t('card3.title')} text={t('card3.text')}></Cards></div>
             </div>
-            <div className='flex md:flex-row flex-col md:mt-[350px] mt-[110vh] justify-center px-auto relative'>
+
+            <div className='flex md:flex-row flex-col md:mt-[350px]  justify-center px-auto relative'>
 
                 <div className='md:w-[35%] w-full'>
                     <div id="divider" className="my-12 mb-3 h-0.5 ml-3 w-[50%] pr-10 border-t-0 bg-black opacity-100 dark:opacity-50"></div>
