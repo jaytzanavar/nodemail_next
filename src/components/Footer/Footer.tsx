@@ -9,7 +9,7 @@ const Footer = () => {
     () => import('@/components/Map/Map'),
     {
       loading: () => <p>Map is Loading...</p>,
-      ssr: false
+      ssr: true
     }
   ), [])
 
@@ -20,7 +20,7 @@ const Footer = () => {
       <div className=' px-[4vw] grid-cols-1 grid-rows-3 sm:grid sm:grid-cols-3 sm:grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 md:grid-cols-1 place-items-center gap-10 bg-slate-800 pt-[5%] pb-[5%] '>
         <div className='flex flex-col gap-4 md:w-[15vw] w-full'>
           <div className='text-2xl  text-white flex lg:flex-row flex-col justify-center items-center gap-4'>
-            <Image alt="the logo for damouli law firm" placeholder='blur' className="rounded-full w-[100px] cursor-pointer" src={logo} />
+            <Image  alt="the logo for damouli law firm" placeholder='blur' className="rounded-full w-[100px] cursor-pointer" src={logo} />
             <h2>{t('brand')}</h2>
           </div>
           <div className='  md:max-w-[300px]  sm:w-full w-[75vw]  text-wrap text-center  font-normal text-white/70 dark:text-gray-400'>{t('text')}</div>
@@ -39,8 +39,8 @@ const Footer = () => {
           </div>
         </div>
         <div className='flex flex-col gap-4 md:w-[15vw] w-full  items-center'>
-
-          <Map />
+          {Map &&
+            <Map />}
 
         </div>
         <div>
