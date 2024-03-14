@@ -75,13 +75,13 @@ const Header = ({ locale }: { locale: string }) => {
     <header className='overflow-x-hidden'>
       <nav className='flex justify-between relative z-20 items-center md:w-full bg-white px-[5%] md:mx-auto '>
         <div>
-          <Link href={'/' + locale}>
+          <Link locale={locale} href={'/' + locale}>
             <Image className="w-16 cursor-pointer" placeholder='blur' src={logo} alt='logo-image' /></Link>
         </div>
         <div className={` bg-white mx-auto w-full  md:flex hidden justify-center items-center transform transition-transform duration-500 ease-in-out md:translate-y-[0]  md:opacity-100 md:h-auto   ${openBurger ? ' overflow-hidden  ' : ' translate-y-[-100%] opacity-0'}  left-0   px-5`}>
           <ul className="flex md:flex-row flex-col h-full my-auto items-center gap-[4vw]">
             {keys.map((key) => <li key={locale + '/' + key}>
-              <Link className='hover:text-gray-500/40' href={`/${locale}/${key}`} locale={locale}>{t(`${key}.title`)}</Link>
+              <Link locale={locale} className='hover:text-gray-500/40' href={`/${locale}/${key}`} >{t(`${key}.title`)}</Link>
             </li>
             )}
           </ul>
@@ -153,7 +153,7 @@ const Header = ({ locale }: { locale: string }) => {
               keys.map((key) =>
                 <motion.div variants={itemListVariant} key={locale + '/' + key}>
                   <li >
-                    <Link className='text-3xl text-black/80 hover:text-gray-900/40' href={`/${locale}/${key}`} locale={locale}>{t(`${key}.title`)}</Link>
+                    <Link locale={locale} className='text-3xl text-black/80 hover:text-gray-900/40' href={`/${locale}/${key}`} >{t(`${key}.title`)}</Link>
                   </li>
                 </motion.div>
               )

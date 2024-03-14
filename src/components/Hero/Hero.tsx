@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../Button/Button'
 import Link from 'next/link'
 
-const Hero = ({ heroTitle, heroSub, return_btn, heroText, linkEnabled = true }: { heroTitle: string, heroSub: string, return_btn: string, heroText: string, linkEnabled: boolean }) => {
+const Hero = ({ locale, heroTitle, heroSub, return_btn, heroText, linkEnabled = true }: { locale: string, heroTitle: string, heroSub: string, return_btn: string, heroText: string, linkEnabled: boolean }) => {
 
 
     return (
@@ -10,7 +10,7 @@ const Hero = ({ heroTitle, heroSub, return_btn, heroText, linkEnabled = true }: 
             <div className='flex md:flex-row flex-col justify-center px-auto'>
 
                 <div className='md:w-[35%] w-full pt-[2rem] flex flex-col '>
-                    {linkEnabled && <Link className='mt-[2rem] mb-[2rem] pl-[5rem] hover:text-gray-500/40 text-gray-600/90 transition-all duration-500 ease-in-out' href="/">{return_btn}</Link>}
+                    {linkEnabled && <Link locale={locale} className='mt-[2rem] mb-[2rem] pl-[5rem] hover:text-gray-500/40 text-gray-600/90 transition-all duration-500 ease-in-out' href="/">{return_btn}</Link>}
                     <div id="divider" className=" h-0.5 mb-3 ml-3 w-[50%] pr-10 border-t-0 bg-black opacity-100 dark:opacity-50"></div>
                     <h2 className='font-extrabold text-6xl px-[30%] text-black/90'> {heroTitle} <span className='text-gray-500/80'> {heroSub}</span></h2></div>
                 <div className='md:w-[65%] w-full'>

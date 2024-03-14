@@ -14,7 +14,7 @@ const CommunicationPage = async (props: PropsInterface) => {
     return (
         <div>
 
-            <Hero return_btn={com('hero.return_btn')} heroTitle={com('hero.title')} heroSub={com('hero.title_b')} heroText={com('hero.text')} linkEnabled={true} />
+            <Hero locale={locale} return_btn={com('hero.return_btn')} heroTitle={com('hero.title')} heroSub={com('hero.title_b')} heroText={com('hero.text')} linkEnabled={true} />
             <Forms title={com('title')} name={com('name')} email={com('email')} phone={com('phone')} message={com('message')} btn={com('btn')} />
 
         </div>
