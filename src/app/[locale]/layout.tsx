@@ -65,7 +65,7 @@ export default function RootLayout({
           key={locale}
           rel="alternate"
           hrefLang={locale}
-          href={`https://${process.env.NEXT_PUBLIC_API_ENDPOINT}/${locale}`}
+          href={`https://${process.env.API_ENDPOINT}/${locale}`}
         />
 
       </Head>
