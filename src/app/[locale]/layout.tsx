@@ -10,6 +10,8 @@ import Head from 'next/head'
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import mainImage from '../../../public/lawWallPaper.jpg'
+import { Suspense } from "react";
+import Loading from "@/components/Loader/Loader";
 
 const lato = Playfair_Display({
   weight: ["400", "700"],
@@ -72,14 +74,17 @@ export default function RootLayout({
 
       <body className={`${lato.className} bg-gradient-to-t  from-white to-slate-800 h-screen overflow-x-hidden`}>
         <SmoothScroll />
-        <NextIntlClientProvider locale={locale} messages={messages} >
-          <Header locale={locale}
-          />
-        </NextIntlClientProvider>
-        <section>
-          {children}
-        </section>
-        <Footer />
+
+        <Suspense fallback={<Loading />}>
+          <NextIntlClientProvider locale={locale} messages={messages} >
+            <Header locale={locale}
+            />
+          </NextIntlClientProvider>
+          <section>
+            {children}
+          </section>
+          <Footer />
+        </Suspense>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -17,6 +17,7 @@ const DEFAULT_COUNTRIES: countryType = { gb: 'GB', fr: 'FR', gr: 'GR' }
 const Header = ({ locale }: { locale: string }) => {
 
   const [openBurger, setOpenBurger] = useState(false)
+  const [hoverBurger, setBurgerHover] = useState(false)
   const [countryToggle, setCountryToggle] = useState(false)
   const [currentLocale, setCurrentLocale] = useState<any>(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale])
   const t = useTranslations('Header')
@@ -122,10 +123,10 @@ const Header = ({ locale }: { locale: string }) => {
             </button>
           </div>
           <div>
-            <button onClick={() => setOpenBurger(prev => !prev)} className={` relative top-3.5 ml-5 min-h-[45px] min-w-[45px] ${styles.menu_button} `}>
-              <span className={`${styles.menu_button_line} ${styles.top} ${openBurger ? styles.on_menu_top : ''} bg-slate-700`}></span>
-              <span className={` ${styles.menu_button_line} ${styles.mid} ${openBurger ? styles.on_menu_mid : ''} bg-slate-700`}></span>
-              <span className={` ${styles.menu_button_line} ${styles.botm} ${openBurger ? styles.on_menu_botm : ''} bg-slate-700`}></span>
+            <button onMouseOver={(e) => setBurgerHover(true)} onMouseLeave={(e) => setBurgerHover(false)} onClick={() => setOpenBurger(prev => !prev)} className={` relative top-3.5 ml-5  ${styles.menu_button} `}>
+              <span className={`${styles.menu_button_line} ${styles.top} ${openBurger ? styles.on_menu_top : ''}  ${openBurger ? 'min-h-[4px] min-w-[37px]' : 'min-h-[4px] min-w-[42.5px]'} bg-slate-700`}></span>
+              <span className={` ${styles.menu_button_line} ${styles.mid} ${openBurger ? styles.on_menu_mid : ''} ${hoverBurger && ' min-h-[4px] min-w-[42.5px]'} min-h-[4px] min-w-[25px] bg-slate-700`}></span>
+              <span className={` ${styles.menu_button_line} ${styles.botm} ${openBurger ? styles.on_menu_botm : ''}  ${openBurger ? 'min-h-[4px] min-w-[36px]' : 'min-h-[4px] min-w-[42.5px]'} bg-slate-700`}></span>
             </button>
           </div>
         </div>

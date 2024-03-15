@@ -4,6 +4,7 @@ import Content from "@/components/Content/Content";
 import { getTranslations } from 'next-intl/server';
 import { PropsInterface } from "../common/PropsInterface";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 
 export async function generateMetadata({ params: { locale } }: any) {
@@ -60,7 +61,9 @@ export default async function Home(props: PropsInterface) {
     <>
 
       <main className="flex min-h-screen flex-col items-center justify-between ">
+
         <Content />
+
         <DynamicSubcontent />
 
         <DynamicExperience title={exp('title')} subtitle={exp('subtitle')} est={exp('est')} cases_won={exp('cases_won')} business_partners={exp('business_partners')} trusting_clients={exp('trusting_clients')} />
