@@ -48,7 +48,7 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
 
     return (
         <div className=' w-screen lg:h-[60vh] md:h-[140vh]  relative z-10'>
-            <Image quality={90} sizes="100vw" placeholder='blur' className="z-0 relative" alt="Damouli law firm experience background image" src={bg_img} fill style={{ objectFit: "cover" }} />
+            <Image alt="Damouli law firm experience background image" quality={90} sizes="100vw" placeholder='blur' className="z-0 relative" src={bg_img} fill style={{ objectFit: "cover" }} />
             <div className='w-full h-full relative z-10 md:py-0 py-10 bg-black/50 flex flex-col md:gap-0 gap-5 justify-center items-center'>
                 <h2 className='font-extrabold text-6xl text-center text-white'>
                     {title} </h2>

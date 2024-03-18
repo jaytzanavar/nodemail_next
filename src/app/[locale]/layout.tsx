@@ -12,6 +12,7 @@ import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import mainImage from '../../../public/lawWallPaper.jpg'
 import { Suspense } from "react";
 import Loading from "@/components/Loader/Loader";
+import { getTranslations } from "next-intl/server";
 
 const lato = Playfair_Display({
   weight: ["400", "700"],
@@ -19,24 +20,23 @@ const lato = Playfair_Display({
   subsets: ['latin']
 })
 
-export const metadata: Metadata = {
-  title: "Damouli Law Firm Website",
-  description: "This is the landing page of Damouli Law Firm official website",
-  // openGraph: {
-  //   title: "Damouli Law Firm Website",
-  //   description: "All kinds of law and attorney services is our strength",
-  //   url: "damoulilawfirm.com",
-  //   siteName: "damoulilawfirm athens",
-  //   images: [
-  //     {
-  //       url: "/public.png",
-  //       width: 1200,
-  //       height: 800
-  //     }
-  //   ]
+// export const metadata: Metadata = {
+//   title: "Damouli Law Firm official website",
+//   description: "Discover unparalleled legal expertise and personalized solutions at Damouli Law Firm. With a legacy of excellence, our dedicated team ensures unwavering support, strategic counsel, and successful outcomes for your legal challenges. From business law to civil litigation and insurance defense, trust Damouli Law Firm to safeguard your interests with precision and integrity.",
+//   keywords: "Law firm, Legal counsel,Business law,Civil litigation,Insurance defense,Legal expertise,Legal solutions,Trusted attorneys,Client success,Damouli Law Firm"
+// };
 
-  // }
-};
+export async function generateMetadata() {
+
+  const t = await getTranslations('Metadata'); // here use your way to get translation string
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    keywords: t("keywords")
+  }
+}
+
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -62,6 +62,12 @@ export default function RootLayout({
           as="image"
         />
 
+        <link
+          rel="canonical"
+          href="https://damoulilawfirm.com"
+          key="canonical"
+        />
+
 
         <link
           key={locale}
@@ -69,6 +75,8 @@ export default function RootLayout({
           hrefLang={locale}
           href={`https://${process.env.API_ENDPOINT}/${locale}`}
         />
+
+        <link rel="icon" href="../favicon.ico" />
 
       </Head>
 

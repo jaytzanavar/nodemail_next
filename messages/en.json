@@ -21,15 +21,20 @@
         "fr": "Français"
     },
     "Metadata": {
-        "title": "Damouli law firm title from metadata",
-        "subtitle": "This is the subtitle from metadata"
+        "title": "Damouli Law Firm official website",
+        "subtitle": "We are the law firm that you are searching for when in legal trouble",
+        "description": "Discover unparalleled legal expertise and personalized solutions at Damouli Law Firm. With a legacy of excellence, our dedicated team ensures unwavering support, strategic counsel, and successful outcomes for your legal challenges. From business law to civil litigation and insurance defense, trust Damouli Law Firm to safeguard your interests with precision and integrity.",
+        "keywords": "Law firm, Legal counsel,Business law,Civil litigation,Insurance defense,Legal expertise,Legal solutions,Trusted attorneys,Client success,Damouli Law Firm"
+
+
     },
     "Content": {
         "title": "hello title ",
         "prompt": "Reputation. Respect. Result.",
         "hero": "We know what is to defend rights. We work with people, for people and with the full respect to the law. Contact for more details!",
         "sub": "",
-        "button-c": "Get a free Consultation"
+        "button-c": "Get a free Consultation",
+        "alt_img": "Damouli law firm background image in content"
     },
     "SubContent": {
         "title": "Why You Can Trust Damouli Law Firm,",

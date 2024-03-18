@@ -146,6 +146,7 @@ const Map = () => {
 
             const iconImage = document.createElement("img");
             iconImage.src = logo.src;
+            iconImage.alt="Damouli law firm logo image in map"
             iconImage.width = 50;
             iconImage.style.borderRadius = '50%'
             divcontainer.appendChild(iconImage)
