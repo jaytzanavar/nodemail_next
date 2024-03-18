@@ -2,7 +2,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import CountUp from "react-countup";
-import bg_img from "../../../public/law2.jpg";
+import bg_img from "../../../public/law2.webp";
 import Image from 'next/image';
 
 

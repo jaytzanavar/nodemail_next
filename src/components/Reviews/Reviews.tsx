@@ -2,7 +2,7 @@
 import RatingCard from '../RatingCard/RatingCard'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import client_img from '../../../public/clients.jpg';
+import client_img from '../../../public/clients.webp';
 import Image from 'next/image';
 
 export type Review = {

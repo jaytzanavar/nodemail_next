@@ -1,15 +1,13 @@
-import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
-import mainImage from '../../../public/lawWallPaper.jpg'
+import mainImage from '../../../public/lawWallPaper.webp'
 import { Suspense } from "react";
 import Loading from "@/components/Loader/Loader";
 import { getTranslations } from "next-intl/server";
@@ -96,7 +94,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
       </body>
-      <GoogleTagManager gtmId="GTM-WCNQ8DGR" />
+
     </html>
   );
 }
