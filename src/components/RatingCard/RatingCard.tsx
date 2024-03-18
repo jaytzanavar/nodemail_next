@@ -10,7 +10,7 @@ const RatingCard = ({ rev, gvu, ur }: { gvu: string, ur: string, rev: Review }) 
 
     return (
 
-        <div className="bg-black/15 min-h-[30vh] min-w-[100%] rounded-md overflow-hidden shadow-lg">
+        <div className="bg-black/15 min-h-[30vh] min-w-screen rounded-md overflow-hidden shadow-lg">
 
             <div className="p-4 flex flex-col ">
                 <div className="flex flex-col items-center space-x-4">

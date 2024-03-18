@@ -18,11 +18,6 @@ const lato = Playfair_Display({
   subsets: ['latin']
 })
 
-// export const metadata: Metadata = {
-//   title: "Damouli Law Firm official website",
-//   description: "Discover unparalleled legal expertise and personalized solutions at Damouli Law Firm. With a legacy of excellence, our dedicated team ensures unwavering support, strategic counsel, and successful outcomes for your legal challenges. From business law to civil litigation and insurance defense, trust Damouli Law Firm to safeguard your interests with precision and integrity.",
-//   keywords: "Law firm, Legal counsel,Business law,Civil litigation,Insurance defense,Legal expertise,Legal solutions,Trusted attorneys,Client success,Damouli Law Firm"
-// };
 
 export async function generateMetadata() {
 

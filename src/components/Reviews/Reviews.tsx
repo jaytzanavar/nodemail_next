@@ -23,8 +23,8 @@ const Reviews = ({ title, googleVerUser, userReview, reviewsA }: { title: string
     const { reviews } = reviewsA
     
     return (
-        <div className='relative w-screen '>
-            <Image quality={90} sizes="100vw" placeholder="blur" className="z-0 relative" alt="Damouli law firm client review image"  src={client_img} fill style={{ objectFit: "cover" }} />
+        <div className='relative  w-screen '>
+            <Image quality={90} sizes="50vw" placeholder="blur" className="z-0 relative" alt="Damouli law firm client review image"  src={client_img} fill style={{ objectFit: "cover" }} />
             <div className='bg-black/30 h-full md:px-0 px-2 flex flex-col py-10 relative justify-center items-center gap-4'>
                 <div id="divider" className="my-10 mb-3 h-[0.155rem] ml-3 w-[8%]  pr-10 border-t-0 bg-white/50 opacity-100 dark:opacity-50"></div>
                 <h3 className='font-extrabold text-4xl text-center text-white/90'>
