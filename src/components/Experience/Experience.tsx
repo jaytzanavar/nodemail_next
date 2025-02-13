@@ -59,7 +59,7 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
                     <div className='flex justify-center items-center' >
                         <div className='text-white md:border-r-2 md:border-b-0 border-b-2 border-white/60 my-2 mt-4  md:px-4 py-4 flex flex-col gap-2'>
                             <h2 className='font-extrabold text-6xl text-center text-white'>
-                                {intersecting && <CountUp duration={5} end={1992} />}</h2>
+                                {intersecting && <CountUp duration={5} end={2010} />}</h2>
                             <h4 className='font-extrabold text-xl text-center text-white/70 px-[20%] '>   {est}</h4>
 
                         </div>
