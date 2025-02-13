@@ -7,7 +7,7 @@ const Hero = ({ locale, heroTitle, heroSub, return_btn, heroText, linkEnabled = 
 
     return (
         <div className='md:h-[65vh] bg-slate-50/90 w-screen'>
-            <div className='flex md:flex-row flex-col justify-center px-auto'>
+            <div className='flex md:flex-row flex-col justify-center px-auto '>
 
                 <div className='md:w-[35%] w-full pt-[2rem] flex flex-col '>
                     {linkEnabled && <Link locale={locale} className='mt-[2rem] mb-[2rem] pl-[5rem] hover:text-gray-500/40 text-gray-600/90 transition-all duration-500 ease-in-out' href="/">{return_btn}</Link>}

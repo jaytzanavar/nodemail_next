@@ -28,7 +28,7 @@ const Footer = () => {
         <div className='flex flex-col gap-4  md:w-[15vw] w-full items-center'>
           <div className='text-2xl md:text-left text-white'>Contact info</div>
           <div>
-            <a className='text-white/70 hover:text-white/90 transition-all' href='mailto:lawfirm@gmail.com'>lawfirm@gmail.com</a>
+            <a className='text-white/70 hover:text-white/90 transition-all' href='mailto:info@damoulilawfirm.com'>info@damoulilawfirm.com</a>
           </div>
           <div>
             <ul className='text-white/70'>
