@@ -3,49 +3,38 @@ import { Review } from '../Reviews/Reviews'
 import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as solidStar, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const RatingCard = ({ rev, gvu, ur }: { gvu: string, ur: string, rev: Review }) => {
     const { author_name, author_url, profile_photo_url, rating, text }: Review = rev;
 
     return (
+        <div className="flex w-full max-w-xl flex-col items-center rounded-2xl bg-white/10 px-6 py-8 text-center shadow-xl ring-1 ring-white/15 backdrop-blur-sm sm:px-10">
 
-        <div className="bg-black/15 min-h-[30vh] min-w-screen rounded-md overflow-hidden shadow-lg">
+            <Image referrerPolicy="no-referrer" src={profile_photo_url} unoptimized alt={author_name}
+                width={64} height={64} className="h-16 w-16 rounded-full object-cover ring-2 ring-white/40" />
 
-            <div className="p-4 flex flex-col ">
-                <div className="flex flex-col items-center space-x-4">
-                    <div className=' bg-black/35  border-white/90 border-solid shadow-lg  p-2 rounded-full w-[105px] h-[105px]'>
-                        <Image referrerPolicy="no-referrer" src={profile_photo_url} unoptimized alt={author_name}
-                            width={75} height={75} className="w-auto h-auto rounded-full" />
-                    </div>
+            <h3 className="mt-4 text-base font-semibold text-white sm:text-lg">{author_name}</h3>
 
-                    <div>
-                        <h3 className="text-lg text-white/90 font-semibold">{author_name}</h3>
+            <a className="text-xs text-white/60 transition hover:text-white sm:text-sm" href={author_url} target="_blank" rel="noopener noreferrer">
+                {gvu}
+            </a>
 
-                        <p className="text-white/80">
-                            <a className='hover:text-white/90' href={author_url}>
-                                {gvu}
-                            </a></p>
-                    </div>
-                </div>
-
-
-                <div className="my-6 md:px-[20%] text-white/90">
-                    <p>{text}</p>
-                    <div className="mt-2 text-white/70">
-                        {ur} :
-                        {[...Array(rating)].map((_, index) => (
-                            <FontAwesomeIcon
-                                className='text-[#faec1b] drop-shadow-xl '
-                                key={index}
-                                icon={solidStar} />
-                        ))
-                        }
-                    </div>
-                </div>
+            <div className="mt-3 flex items-center gap-1" role="img" aria-label={`${ur}: ${rating}/5`}>
+                {[...Array(5)].map((_, index) => (
+                    <FontAwesomeIcon
+                        key={index}
+                        icon={solidStar}
+                        className={`text-sm ${index < rating ? 'text-amber-400' : 'text-white/25'}`} />
+                ))}
             </div>
-        </div>
 
+            <FontAwesomeIcon icon={faQuoteLeft} aria-hidden="true" className="mt-6 text-xl text-white/25" />
+
+            <p className="mt-3 line-clamp-6 text-sm leading-relaxed text-white/85 sm:text-base">
+                {text}
+            </p>
+        </div>
     )
 }
 

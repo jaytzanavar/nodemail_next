@@ -1,156 +1,176 @@
 {
-    "NotFound": {
-        "title": "Page not found",
-        "text": "The content you are searching cannot be found this web page"
+  "NotFound": {
+    "title": "Page not found",
+    "text": "The content you are searching cannot be found this web page"
+  },
+  "UtilityBar": {
+    "address": "3 Karystou & Iteas, Panormou Metro Station, Athens, 11523"
+  },
+  "Header": {
+    "cta": "Communication",
+    "responsibilities": {
+      "title": "Responsibilities",
+      "value": "responsibilities"
     },
-    "Header": {
-        "responsibilities": {
-            "title": "Responsibilities",
-            "value": "responsibilities"
-        },
-        "advisory": {
-            "title": "Advisory",
-            "value": "advisory"
-        },
-        "communication": {
-            "title": "Communication",
-            "value": "communication"
-        },
-        "firmName": "DAMOULI K PANAGIOTA",
-        "firmType": "Lawyer & Law Office - Firm",
-        "gb": "English",
-        "gr": "Ελληνικά",
-        "fr": "Français"
+    "advisory": {
+      "title": "Advisory",
+      "value": "advisory"
     },
-    "Metadata": {
-        "title": "Damouli Stefanopoulou Antonopoulou and associates Law Firm official website",
-        "subtitle": "We are the law firm that you are searching for when in legal trouble",
-        "description": "Discover unparalleled legal expertise and personalized solutions at Damouli Stefanopoulou Antonopoulou and associates Law Firm. With a legacy of excellence, our dedicated team ensures unwavering support, strategic counsel, and successful outcomes for your legal challenges. From business law to civil litigation and insurance defense, trust Damouli Stefanopoulou Antonopoulou and associates Law Firm to safeguard your interests with precision and integrity.",
-        "keywords": "Law firm, Legal counsel,Business law,Civil litigation,Insurance defense,Legal expertise,Legal solutions,Trusted attorneys,Client success,Damouli Stefanopoulou Antonopoulou and associates Law Firm"
-
-
+    "communication": {
+      "title": "Communication",
+      "value": "communication"
     },
-    "Content": {
-        "title": "hello title ",
-        "eyebrow": "Attorneys at Law",
-        "scroll": "Scroll down",
-        "prompt": "Reputation. Respect. Result.",
-        "hero": "We know what is to defend rights. We work with people, for people and with the full respect to the law. Contact for more details!",
-        "sub": "",
-        "button-c": "Get a free Consultation",
-        "alt_img": "Damouli Stefanopoulou Antonopoulou and associates law firm background image in content"
+    "firmName": "DAMOULI STEFANOPOULOU ANTONOPOULOU & ASSOCIATES",
+    "firmType": "Lawyer & Law Office - Firm",
+    "gb": "English",
+    "gr": "Ελληνικά",
+    "fr": "Français"
+  },
+  "Metadata": {
+    "title": "Damouli Stefanopoulou Antonopoulou and associates Law Firm official website",
+    "subtitle": "We are the law firm that you are searching for when in legal trouble",
+    "description": "Discover unparalleled legal expertise and personalized solutions at Damouli Stefanopoulou Antonopoulou and associates Law Firm. With a legacy of excellence, our dedicated team ensures unwavering support, strategic counsel, and successful outcomes for your legal challenges. From business law to civil litigation and insurance defense, trust Damouli Stefanopoulou Antonopoulou and associates Law Firm to safeguard your interests with precision and integrity.",
+    "keywords": "Law firm, Legal counsel,Business law,Civil litigation,Insurance defense,Legal expertise,Legal solutions,Trusted attorneys,Client success,Damouli Stefanopoulou Antonopoulou and associates Law Firm"
+  },
+  "Content": {
+    "title": "hello title ",
+    "eyebrow": "Attorneys at Law",
+    "scroll": "Scroll down",
+    "prompt": "Reputation. Respect. Result.",
+    "hero": "We know what is to defend rights. We work with people, for people and with the full respect to the law. Contact for more details!",
+    "sub": "",
+    "button-c": "Get a free Consultation",
+    "button-areas": "Our Practice Areas",
+    "stats": {
+      "s1_n": "20+",
+      "s1_l": "Years of counsel",
+      "s2_n": "98%",
+      "s2_l": "Cases won",
+      "s3_n": "9,000+",
+      "s3_l": "Matters handled"
     },
-    "SubContent": {
-        "title": "Why You Can Trust Damouli Stefanopoulou Antonopoulou and associates Law Firm,",
-        "title_strong": "Our Values",
-        "description": "We value justice, honesty and time. We are always at your service as we are in charge of your defence. Any detail will be noticed and it can be essential for your case. During our work we gathered a team of devoted experts with rich experience in juridical help. We put a great emphasis on business law, because in today’s rapidly-changing environment, people require assistance in business spheres. Our experience allows us to be confident and stand by our words. Our company was established in 2010. Our members and associates are litigation lawyers with extensive experience, each in their respective field, primarily in civil and administrative law. We have proved our competence and had many satisfied clients. We expanded our activity and started providing many other juridical services to meet wider clients needs.",
-        "card1": {
-            "title": "Business Law",
-            "text": "Business requires strong legislative background to operate well."
-        },
-        "card2": {
-            "title": "Civil Litigation",
-            "text": "We advocate for our clients, seeking a fair resolution within a timeframe.'"
-        },
-        "card3": {
-            "title": "Insurance Defence",
-            "text": "Insurance issues require excellent knowledge and great intuition."
-        },
-        "read_more": "Read more"
+    "alt_img": "Damouli Stefanopoulou Antonopoulou and associates law firm background image in content"
+  },
+  "SubContent": {
+    "title": "Why You Can Trust Damouli Stefanopoulou Antonopoulou and associates Law Firm,",
+    "title_strong": "Our Values",
+    "description": "We value justice, honesty and time. We are always at your service as we are in charge of your defence. Any detail will be noticed and it can be essential for your case. During our work we gathered a team of devoted experts with rich experience in juridical help. We put a great emphasis on business law, because in today’s rapidly-changing environment, people require assistance in business spheres. Our experience allows us to be confident and stand by our words. Our company was established in 2010. Our members and associates are litigation lawyers with extensive experience, each in their respective field, primarily in civil and administrative law. We have proved our competence and had many satisfied clients. We expanded our activity and started providing many other juridical services to meet wider clients needs.",
+    "card1": {
+      "title": "Business Law",
+      "text": "Business requires strong legislative background to operate well."
     },
-    "Experience": {
-        "title": "20 Years Of Experience In Various Cases ",
-        "subtitle": "We’re proud that our law firm offers top-notch legal services for a nationwide affordable pricing! With us you’ll never feel like the lawyers are just robbers in suits, besides, we win 98% of all cases. So with us, your chances of winning are as high as they possibly can be!",
-        "est": "Company Established ",
-        "cases_won": "Cases won",
-        "business_partners": "Business Partners",
-        "trusting_clients": "Trusting clients"
+    "card2": {
+      "title": "Civil Litigation",
+      "text": "We advocate for our clients, seeking a fair resolution within a timeframe.'"
     },
-    "Areas": {
-        "title": "Our Legal Practice Areas",
-        "card1": {
-            "title": "Business Law",
-            "text": "Business requires strong legislative background to operate well."
-        },
-        "card2": {
-            "title": "Civil Litigation",
-            "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
-        },
-        "card3": {
-            "title": "Insurance Defence",
-            "text": "Insurance issues require excellent knowledge and great intuition."
-        },
-        "card4": {
-            "title": "Civil Litigation",
-            "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
-        },
-        "card5": {
-            "title": "Insurance Defence",
-            "text": "Insurance issues require excellent knowledge and great intuition.."
-        },
-        "card6": {
-            "title": "Business Law",
-            "text": "Business requires strong legislative background to operate well."
-        }
+    "card3": {
+      "title": "Insurance Defence",
+      "text": "Insurance issues require excellent knowledge and great intuition."
     },
-    "Reviews": {
-        "title": " Satisfied Client Stories",
-        "userR": "User Rating",
-        "gvu": "Google Verified User"
+    "read_more": "Read more",
+    "badge_n": "Est. 2010",
+    "badge_l": "Athens, Greece",
+    "lead": "We value justice, honesty and time. Any detail will be noticed — and it can prove essential to your case. Our associates are litigation lawyers with deep experience, each in their field, primarily in civil and administrative law.",
+    "pill1": "Civil & Administrative",
+    "pill2": "Business Law",
+    "pill3": "Insurance Defence"
+  },
+  "Experience": {
+    "title": "20 Years Of Experience In Various Cases ",
+    "subtitle": "We’re proud that our law firm offers top-notch legal services for a nationwide affordable pricing! With us you’ll never feel like the lawyers are just robbers in suits, besides, we win 98% of all cases. So with us, your chances of winning are as high as they possibly can be!",
+    "est": "Company Established ",
+    "cases_won": "Cases won",
+    "business_partners": "Business Partners",
+    "trusting_clients": "Trusting clients"
+  },
+  "Areas": {
+    "title": "Our Legal Practice Areas",
+    "card1": {
+      "title": "Business Law",
+      "text": "Business requires strong legislative background to operate well."
     },
-    "Communication": {
-        "title": "Request a free Legal Consultation",
-        "name": "Your Name",
-        "email": "Email",
-        "phone": "Phone",
-        "subject": "Subject",
-        "message": "Message",
-        "btn": "Send",
-        "success": "Your message has been sent — we will get back to you shortly.",
-        "error": "Something went wrong. Please try again later.",
-        "required": "This field is required",
-        "invalid_email": "Invalid email address",
-        "why_choose": "Why Choose Us",
-        "info": {
-            "response_title": "Quick Response",
-            "response_text": "We respond to inquiries within 24 hours to ensure your legal needs are addressed promptly.",
-            "team_title": "Expert Team",
-            "team_text": "Connect with experienced attorneys who specialize in your specific legal matter.",
-            "confidential_title": "Confidential",
-            "confidential_text": "Your information is fully protected under attorney-client privilege and confidentiality laws."
-        },
-        "form_section": {
-            "title": "Get in Touch",
-            "subtitle": "Fill out the form below and our team will contact you shortly to discuss your case."
-        },
-        "cta_section": {
-            "title": "Need Immediate Assistance?",
-            "text": "For urgent matters, don't hesitate to reach out. Our team is ready to help you navigate your legal challenges.",
-            "availability": "Available Monday – Friday, 09:00 – 19:00"
-        },
-        "hero": {
-            "title": "Share your inquiry us, we respond",
-            "title_b": "instantly",
-            "return_btn": "Return to home",
-            "text": "Want to Learn More About How We Help Clients in Risk? Attract thousands of individuals and businesses, all of whom (98%) have successfully dealt with their legal conundrums with our timely…"
-        }
+    "card2": {
+      "title": "Civil Litigation",
+      "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
     },
-    "Footer": {
-        "brand": "Damouli Stefanopoulou Antonopoulou and associates Law Firm",
-        "text": "Your reliable protection in jurisprudence. Our qualification provides the opportunity solve the problems of any complexity.",
-        "contact": "Contact Info",
-        "email": "Email",
-        "wh": "Working Hours",
-        "days": "Mon – Fri",
-        "address": "Address",
-        "addr_name": "Karystou 3 & Iteas, Athens"
+    "card3": {
+      "title": "Insurance Defence",
+      "text": "Insurance issues require excellent knowledge and great intuition."
     },
-    "Advisory": {
-        "hero": {
-            "title": "Your Trusted Advocate Always",
-            "title_b": "Your Protector",
-            "return_btn": "Return Home",
-            "text": "While the yearly number of cases which we take totals to an insurmountable number, unparalleled by any other Athens law firm, our percentage of wins is record-breaking too… Just to drop some statistics here, in more than 9000 cases that we have ever taken on, a whopping 98% of those (which is 9800+) were the cases which we eventually won…"
-        }
+    "card4": {
+      "title": "Civil Litigation",
+      "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
+    },
+    "card5": {
+      "title": "Insurance Defence",
+      "text": "Insurance issues require excellent knowledge and great intuition.."
+    },
+    "card6": {
+      "title": "Business Law",
+      "text": "Business requires strong legislative background to operate well."
     }
+  },
+  "Reviews": {
+    "title": " Satisfied Client Stories",
+    "userR": "User Rating",
+    "gvu": "Google Verified User"
+  },
+  "Communication": {
+    "title": "Request a free Legal Consultation",
+    "name": "Your Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "btn": "Send",
+    "success": "Your message has been sent — we will get back to you shortly.",
+    "error": "Something went wrong. Please try again later.",
+    "required": "This field is required",
+    "invalid_email": "Invalid email address",
+    "why_choose": "Why Choose Us",
+    "info": {
+      "response_title": "Quick Response",
+      "response_text": "We respond to inquiries within 24 hours to ensure your legal needs are addressed promptly.",
+      "team_title": "Expert Team",
+      "team_text": "Connect with experienced attorneys who specialize in your specific legal matter.",
+      "confidential_title": "Confidential",
+      "confidential_text": "Your information is fully protected under attorney-client privilege and confidentiality laws."
+    },
+    "form_section": {
+      "title": "Get in Touch",
+      "subtitle": "Fill out the form below and our team will contact you shortly to discuss your case."
+    },
+    "cta_section": {
+      "title": "Need Immediate Assistance?",
+      "text": "For urgent matters, don't hesitate to reach out. Our team is ready to help you navigate your legal challenges.",
+      "availability": "Available Monday – Friday, 09:00 – 19:00"
+    },
+    "hero": {
+      "title": "Share your inquiry us, we respond",
+      "title_b": "instantly",
+      "return_btn": "Return to home",
+      "text": "Want to Learn More About How We Help Clients in Risk? Attract thousands of individuals and businesses, all of whom (98%) have successfully dealt with their legal conundrums with our timely…"
+    }
+  },
+  "Reviews": {
+    "title": "Client reviews"
+  },
+  "Footer": {
+    "brand": "Damouli Stefanopoulou Antonopoulou and associates Law Firm",
+    "text": "Your reliable protection in jurisprudence. Our qualification provides the opportunity solve the problems of any complexity.",
+    "contact": "Contact Info",
+    "email": "Email",
+    "wh": "Working Hours",
+    "days": "Mon – Fri",
+    "address": "Address",
+    "addr_name": "Karystou 3 & Iteas, Athens"
+  },
+  "Advisory": {
+    "hero": {
+      "title": "Your Trusted Advocate Always",
+      "title_b": "Your Protector",
+      "return_btn": "Return Home",
+      "text": "While the yearly number of cases which we take totals to an insurmountable number, unparalleled by any other Athens law firm, our percentage of wins is record-breaking too… Just to drop some statistics here, in more than 9000 cases that we have ever taken on, a whopping 98% of those (which is 9800+) were the cases which we eventually won…"
+    }
+  }
 }

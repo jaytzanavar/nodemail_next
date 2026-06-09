@@ -1,3 +1,7 @@
+/* Leaflet styles must load globally: the map component is lazy-loaded
+   client-side and TS rejects css side-effect imports in .tsx files. */
+@import 'leaflet/dist/leaflet.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,37 +9,27 @@
 @layer base {
   html {
     scroll-behavior: auto;
+    -webkit-text-size-adjust: 100%;
   }
 
   html.loaded {
     scroll-behavior: smooth;
   }
-}
 
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  body {
+    @apply bg-paper text-ink-700 antialiased;
+    text-rendering: optimizeLegibility;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+  ::selection {
+    @apply bg-brass-200 text-navy-950;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(176, 141, 91, 0.35);
+    border-radius: 3px;
+  }
 }
 
 @layer utilities {
@@ -43,7 +37,6 @@ body {
     text-wrap: balance;
   }
 }
-
 
 .no-scroll {
   overflow: hidden;

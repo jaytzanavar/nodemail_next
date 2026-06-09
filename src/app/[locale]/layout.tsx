@@ -1,26 +1,33 @@
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Hanken_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css'
 import Header from "@/components/Header/Header";
+import UtilityBar from "@/components/UtilityBar/UtilityBar";
 import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 import { NextIntlClientProvider, useMessages } from 'next-intl';
-import mainImage from '../../../public/lawWallPaper.webp'
+import mainImage from '../../../public/design/img-columns.jpg'
 import { Suspense } from "react";
 import Loading from "@/components/Loader/Loader";
 import { getTranslations } from "next-intl/server";
 
-// Base font — covers Latin, French accents and Greek
+// Fallback font — covers Latin, French accents and Greek
 const inter = Inter({
   subsets: ['latin', 'latin-ext', 'greek'],
   variable: '--font-inter'
 })
 
+// Design-system text face (no Greek support — Greek glyphs fall back to Inter)
+const hanken = Hanken_Grotesk({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-hanken'
+})
+
 // Display serif, opt-in via the `font-display` Tailwind utility (no Greek support)
 const playfair = Playfair_Display({
-  weight: ["400", "700"],
-  style: "normal",
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   subsets: ['latin'],
   variable: '--font-playfair'
 })
@@ -97,9 +104,10 @@ export default function RootLayout({
 
       </Head>
 
-      <body className={`${inter.className} ${inter.variable} ${playfair.variable} bg-gradient-to-t  from-white to-slate-800 min-h-screen overflow-x-hidden`}>
+      <body className={`${hanken.className} ${hanken.variable} ${inter.variable} ${playfair.variable} font-sans bg-paper min-h-screen overflow-x-hidden`}>
         <Suspense fallback={<Loading />}>
           <NextIntlClientProvider locale={locale} messages={messages} >
+            <UtilityBar />
             <Header locale={locale}
             />
           </NextIntlClientProvider>

@@ -1,115 +1,84 @@
-"use client"
-import React, { useRef } from 'react'
-import { faHandshake, faGavel, faShieldHalved, faPeopleGroup, faChartLine, faBuilding } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import React from 'react'
+import Icon, { IconName } from '@/components/Icon/Icon';
 
-const DiscCard = ({ icon, title, text, step, style }: { icon: IconProp; title: string; text: string; step: number; style: React.CSSProperties }) => {
+type AreaCard = { title: string, text: string }
+
+interface AreasProps {
+    title: string
+    card1: AreaCard
+    card2: AreaCard
+    card3: AreaCard
+    card4: AreaCard
+    card5: AreaCard
+    card6: AreaCard
+    cardStyle?: string
+    // Optional intro column (homepage). When omitted the bento spans full width.
+    eyebrow?: string
+    intro?: string
+    ctaLabel?: string
+    ctaHref?: string
+    learnMore?: string
+}
+
+const CARD_ICONS: IconName[] = ['briefcase', 'gavel', 'shield', 'building', 'file', 'users']
+
+const Areas = ({ title, card1, card2, card3, card4, card5, card6, eyebrow, intro, ctaLabel, ctaHref = '#contact', learnMore }: AreasProps) => {
+
+    const cards = [card1, card2, card3, card4, card5, card6]
+    const hasIntro = Boolean(intro)
+
+    const areaCard = (card: AreaCard, idx: number) => {
+        const feature = idx === 0
+        return (
+            <a key={card.title} href={ctaHref}
+                className={`group relative flex overflow-hidden rounded-2xl border p-6 transition-all duration-300 ease-lift hover:-translate-y-1.5
+                    before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:origin-left before:scale-x-0 before:bg-brass-rule before:transition-transform before:duration-500 before:ease-lift hover:before:scale-x-100
+                    ${feature
+                        ? 'sm:col-span-2 flex-col sm:flex-row items-start sm:items-center gap-5 border-transparent bg-navy-900 hover:shadow-card'
+                        : 'min-h-[196px] flex-col border-stone-100 bg-white hover:border-brass-200 hover:shadow-card'}`}>
+                <span className={`inline-flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-xl transition-all duration-300
+                    ${feature
+                        ? 'bg-brass-500/15 text-brass-400 group-hover:bg-brass-500 group-hover:text-navy-950'
+                        : 'bg-navy-50 text-navy-800 group-hover:bg-navy-800 group-hover:text-brass-300 group-hover:-rotate-6 group-hover:scale-105'}`}>
+                    <Icon name={CARD_ICONS[idx]} className='h-6 w-6' />
+                </span>
+                <span className={feature ? 'flex-1' : 'mt-auto pt-4'}>
+                    <h3 className={`font-display font-bold ${feature ? 'text-2xl text-[#FBF7EF]' : 'text-[19px] text-ink-900'}`}>{card.title}</h3>
+                    <p className={`mt-2 text-[14.5px] leading-relaxed ${feature ? 'text-[#EAF1F5]/80' : 'text-ink-700'}`}>{card.text}</p>
+                    {learnMore &&
+                        <span className={`mt-4 inline-flex items-center gap-[7px] text-[13px] font-semibold ${feature ? 'text-brass-400' : 'text-brass-700'}`}>
+                            {learnMore}
+                            <Icon name='arrow-right' className='h-[15px] w-[15px] transition-transform duration-300 group-hover:translate-x-1' />
+                        </span>}
+                </span>
+            </a>
+        )
+    }
+
     return (
-        <div
-            style={style}
-            className='absolute w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full bg-gradient-to-br from-[#1a3230] to-[#0f2220] border-2 border-[#2a4240] shadow-lg hover:shadow-2xl hover:scale-105 hover:z-20 transition-all duration-300 flex flex-col items-center justify-center text-center text-white p-5 cursor-pointer'
-        >
-            <div className='absolute top-4 right-4 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-cyan-600 text-white text-xs sm:text-sm font-bold flex items-center justify-center'>
-                {step}
-            </div>
-            <div className='w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-md bg-white/10 text-white/70 mb-2'>
-                <FontAwesomeIcon icon={icon} className='text-base sm:text-lg' />
-            </div>
-            <h3 className='text-xs sm:text-base font-bold leading-snug'>{title}</h3>
-            <p className='text-xs font-light leading-relaxed opacity-75 mt-1'>{text}</p>
-        </div>
-    );
-};
-
-const Areas = ({ title, card1, card2, card3, card4, card5, card6, cardStyle }: { title: string, card1: any, card2: any, card3: any, card4: any, card5: any, card6: any, cardStyle: string }) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    // Positions for 6 discs in a hexagonal layout
-    const discPositions = [
-        { top: '0%', left: '50%', transform: 'translate(-50%, 0)' },           // Top
-        { top: '25%', right: '0%', transform: 'translate(0, -50%)' },          // Top Right
-        { top: '75%', right: '0%', transform: 'translate(0, -50%)' },          // Bottom Right
-        { bottom: '0%', left: '50%', transform: 'translate(-50%, 0)' },        // Bottom
-        { top: '75%', left: '0%', transform: 'translate(0, -50%)' },           // Bottom Left
-        { top: '25%', left: '0%', transform: 'translate(0, -50%)' }            // Top Left
-    ];
-
-    const discs = [
-        { icon: faHandshake, title: card1.title, text: card1.text, step: 1 },
-        { icon: faGavel, title: card2.title, text: card2.text, step: 2 },
-        { icon: faShieldHalved, title: card3.title, text: card3.text, step: 3 },
-        { icon: faPeopleGroup, title: card4.title, text: card4.text, step: 4 },
-        { icon: faChartLine, title: card5.title, text: card5.text, step: 5 },
-        { icon: faBuilding, title: card6.title, text: card6.text, step: 6 }
-    ];
-
-    return (
-        <div className='w-full bg-gradient-to-b from-slate-50 to-white py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden'>
-            <div className='max-w-7xl mx-auto flex flex-col justify-center items-center gap-14'>
-                {/* Divider */}
-                <div className="h-1.5 w-16 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full shadow-lg shadow-cyan-500/50"></div>
-
-                {/* Title */}
-                <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-gray-900 max-w-3xl leading-tight'>
-                    {title}
-                </h2>
-
-                {/* Connected Discs Network */}
-                <div
-                    ref={containerRef}
-                    className='relative w-full max-w-3xl mx-auto'
-                    style={{
-                        aspectRatio: '1',
-                        minHeight: '600px'
-                    }}
-                >
-                    {/* SVG Lines */}
-                    <svg
-                        className='absolute inset-0 w-full h-full'
-                        style={{ pointerEvents: 'none' }}
-                        viewBox='0 0 100 100'
-                        preserveAspectRatio='none'
-                    >
-                        <defs>
-                            <linearGradient id='lineGradient' x1='0%' y1='0%' x2='100%' y2='100%'>
-                                <stop offset='0%' style={{ stopColor: 'rgba(34, 197, 94, 0.3)', stopOpacity: 1 }} />
-                                <stop offset='100%' style={{ stopColor: 'rgba(20, 184, 166, 0.3)', stopOpacity: 1 }} />
-                            </linearGradient>
-                        </defs>
-
-                        {/* Draw connections - Hexagon outline */}
-                        <line x1='50' y1='15' x2='85' y2='35' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                        <line x1='85' y1='35' x2='85' y2='65' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                        <line x1='85' y1='65' x2='50' y2='85' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                        <line x1='50' y1='85' x2='15' y2='65' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                        <line x1='15' y1='65' x2='15' y2='35' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                        <line x1='15' y1='35' x2='50' y2='15' stroke='url(#lineGradient)' strokeWidth='0.5' />
-
-                        {/* Inner connections - connecting to center */}
-                        <line x1='50' y1='15' x2='50' y2='85' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                        <line x1='85' y1='35' x2='15' y2='65' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                        <line x1='85' y1='65' x2='15' y2='35' stroke='url(#lineGradient)' strokeWidth='0.5' />
-                    </svg>
-
-                    {/* Discs */}
-                    {discs.map((disc, idx) => (
-                        <DiscCard
-                            key={idx}
-                            icon={disc.icon}
-                            title={disc.title}
-                            text={disc.text}
-                            step={disc.step}
-                            style={{
-                                ...discPositions[idx],
-                                position: 'absolute'
-                            } as React.CSSProperties}
-                        />
-                    ))}
+        <div className='w-full border-y border-stone-100 bg-white px-4 sm:px-6 lg:px-10 py-16 lg:py-24'>
+            <div className={`mx-auto max-w-[1200px] ${hasIntro ? 'grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16' : ''}`}>
+                <div className={hasIntro ? '' : 'mx-auto mb-12 max-w-2xl text-center'}>
+                    {eyebrow &&
+                        <div className={`mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-brass-700 ${hasIntro ? '' : 'justify-center'}`}>
+                            <span className='h-0.5 w-[30px] bg-brass-500'></span>
+                            {eyebrow}
+                        </div>}
+                    <h2 className='font-display text-[34px] lg:text-[44px] font-extrabold leading-[1.08] tracking-tight text-ink-900'>{title}</h2>
+                    {intro && <p className='mt-5 max-w-[420px] text-[16.5px] leading-relaxed text-ink-700'>{intro}</p>}
+                    {ctaLabel &&
+                        <a href={ctaHref}
+                            className='mt-7 inline-flex items-center gap-2 rounded-lg bg-navy-800 px-5 py-3 text-[15px] font-semibold text-brass-100 transition-all duration-200 hover:-translate-y-0.5 hover:bg-navy-900'>
+                            {ctaLabel}
+                            <Icon name='arrow-right' className='h-[17px] w-[17px]' />
+                        </a>}
+                </div>
+                <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+                    {cards.map((card, idx) => areaCard(card, idx))}
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Areas;

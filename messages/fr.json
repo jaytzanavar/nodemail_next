@@ -1,154 +1,171 @@
 {
-    "NotFound": {
-        "title": "Page non trouvée",
-        "text": "Le contenu que vous recherchez ne peut pas être trouvé sur cette page Web"
+  "NotFound": {
+    "title": "Page non trouvée",
+    "text": "Le contenu que vous recherchez ne peut pas être trouvé sur cette page Web"
+  },
+  "UtilityBar": {
+    "address": "3 Karystou & Iteas, Station de métro Panormou, Athènes, 11523"
+  },
+  "Header": {
+    "cta": "Consultation",
+    "responsibilities": {
+      "title": "Responsabilités",
+      "value": "responsabilités"
     },
-    "Header": {
-        "responsibilities": {
-            "title": "Responsabilités",
-            "value": "responsabilités"
-        },
-        "advisory": {
-            "title": "Conseil",
-            "value": "conseil"
-        },
-        "communication": {
-            "title": "Communication",
-            "value": "communication"
-        },
-        "firmName": "DAMOULI K PANAGIOTA",
-        "firmType": "Avocate & Cabinet d'Avocats, Athènes",
-        "gb": "Anglais",
-        "gr": "Ελληνικά",
-        "fr": "Français"
+    "advisory": {
+      "title": "Conseil",
+      "value": "conseil"
     },
-    "Reviews": {
-        "title": "Témoignages de Clients Satisfaits",
-        "userR": "Note de l'Utilisateur",
-        "gvu": "Utilisateur Vérifié Google"
+    "communication": {
+      "title": "Communication",
+      "value": "communication"
     },
-    "Metadata": {
-        "title": "Site Web Officiel du Cabinet d'Avocats Damouli Stefanopoulou Antonopoulou et Collaborateurs",
-        "subtitle": "Nous sommes le cabinet d'avocats que vous recherchez en cas de problèmes juridiques",
-        "description": "Découvrez une expertise juridique inégalée et des solutions personnalisées au Cabinet d'Avocats Damouli Stefanopoulou Antonopoulou et Collaborateurs. Avec un héritage d'excellence, notre équipe dévouée assure un soutien inébranlable, des conseils stratégiques et des résultats fructueux pour vos défis juridiques. Du droit des affaires au contentieux civil et à la défense en assurance, faites confiance au Cabinet d'Avocats Damouli Stefanopoulou Antonopoulou et Collaborateurs pour protéger vos intérêts avec précision et intégrité.",
-        "keywords": "Cabinet d'avocats, Conseil juridique, Droit des affaires, Contentieux civil, Défense en assurance, Expertise juridique, Solutions juridiques, Avocats de confiance, Succès du client, Cabinet d'Avocats Damouli Stefanopoulou Antonopoulou et Collaborateurs"
+    "firmName": "DAMOULI STEFANOPOULOU ANTONOPOULOU & ASSOCIÉS",
+    "firmType": "Avocat & Cabinet d'Avocats",
+    "gb": "Anglais",
+    "gr": "Grec",
+    "fr": "Français"
+  },
+  "Metadata": {
+    "title": "Site officiel du cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés",
+    "subtitle": "Nous sommes le cabinet d'avocats que vous recherchez en cas de problèmes juridiques",
+    "description": "Découvrez une expertise juridique inégalée et des solutions personnalisées au sein du cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés. Forts d'un héritage d'excellence, notre équipe dévouée vous assure un soutien indéfectible, des conseils stratégiques et des résultats fructueux pour vos défis juridiques. Du droit des affaires aux litiges civils et à la défense en matière d'assurances, faites confiance au cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés pour protéger vos intérêts avec précision et intégrité.",
+    "keywords": "Cabinet d'avocats, Conseiller juridique, Droit des affaires, Litiges civils, Défense en matière d'assurances, Expertise juridique, Solutions juridiques, Avocats de confiance, Réussite des clients, Cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés"
+  },
+  "Content": {
+    "title": "bonjour titre ",
+    "eyebrow": "Avocats",
+    "scroll": "Faire défiler vers le bas",
+    "prompt": "Réputation. Respect. Résultat.",
+    "hero": "Nous savons ce que signifie défendre des droits. Nous travaillons avec les gens, pour les gens et dans le respect total de la loi. Contactez-nous pour plus de détails !",
+    "sub": "",
+    "button-c": "Obtenez une Consultation Gratuite",
+    "button-areas": "Nos Domaines d'Expertise",
+    "stats": {
+      "s1_n": "20+",
+      "s1_l": "Années de conseil",
+      "s2_n": "98%",
+      "s2_l": "Affaires gagnées",
+      "s3_n": "9 000+",
+      "s3_l": "Dossiers traités"
     },
-    "Content": {
-        "title": "Bonjour titre",
-        "eyebrow": "Cabinet d'Avocats",
-        "scroll": "Faire défiler vers le bas",
-        "prompt": "Réputation. Respect. Résultat.",
-        "hero": "Nous savons ce que signifie défendre des droits. Nous travaillons avec des gens, pour des gens et avec un total respect de la loi. Contactez-nous pour plus de détails!",
-        "sub": "",
-        "button-c": "Obtenez une consultation gratuite",
-        "alt_img": "Damouli Stefanopoulou Antonopoulou et Collaborateurs law firm background image in content"
+    "alt_img": "Image d'arrière-plan du contenu du cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés"
+  },
+  "SubContent": {
+    "title": "Pourquoi vous pouvez faire confiance au cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés,",
+    "title_strong": "Nos Valeurs",
+    "description": "Nous valorisons la justice, l'honnêteté et le temps. Nous sommes toujours à votre service puisque nous avons la charge de votre défense. Le moindre détail sera remarqué et peut être essentiel pour votre affaire. Au cours de notre activité, nous avons réuni une équipe d'experts dévoués possédant une riche expérience en assistance juridique. Nous accordons une grande importance au droit des affaires, car dans l'environnement actuel qui évolue rapidement, les gens ont besoin d'aide dans les domaines commerciaux. Notre expérience nous permet d'être confiants et de tenir nos promesses. Notre société a été créée en 2010. Nos membres et collaborateurs sont des avocats plaidants possédant une vaste expérience, chacun dans son domaine respectif, principalement en droit civil et administratif. Nous avons prouvé nos compétences et comptons de nombreux clients satisfaits. Nous avons élargi notre activité et commencé à fournir de nombreux autres services juridiques pour répondre aux besoins plus larges de nos clients.",
+    "card1": {
+      "title": "Droit des Affaires",
+      "text": "Les affaires nécessitent de solides bases législatives pour bien fonctionner."
     },
-    "SubContent": {
-        "title": "Pourquoi vous pouvez faire confiance à Damouli Stefanopoulou Antonopoulou et Collaborateurs Law Firm,",
-        "title_strong": "Nos Valeurs",
-        "description": "Nous apprécions la justice, l'honnêteté et le temps. Nous sommes toujours à votre service car nous sommes chargés de votre défense. Chaque détail sera remarqué et peut être essentiel pour votre cas. Au cours de notre travail, nous avons rassemblé une équipe d'experts dévoués avec une riche expérience en aide juridique. Nous mettons un grand accent sur le droit des affaires, car dans l'environnement en évolution rapide d'aujourd'hui, les gens ont besoin d'aide dans les domaines commerciaux. Notre expérience nous permet d'être confiants et de tenir nos promesses. Notre entreprise a été fondée en 2010. Nos membres et collaborateurs sont des avocats plaidants ayant une vaste expérience, chacun dans son domaine, principalement en droit civil et administratif. Nous avons prouvé notre compétence et avons eu de nombreux clients satisfaits. Nous avons élargi notre activité et avons commencé à fournir de nombreux autres services juridiques pour répondre aux besoins de clients plus vastes.",
-        "card1": {
-            "title": "Droit des Affaires",
-            "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
-        },
-        "card2": {
-            "title": "Contentieux Civil",
-            "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
-        },
-        "card3": {
-            "title": "Défense en Assurance",
-            "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
-        },
-        "read_more": "En savoir plus"
+    "card2": {
+      "title": "Litiges Civils",
+      "text": "Nous défendons nos clients, en recherchant une résolution équitable dans un délai imparti."
     },
-    "Experience": {
-        "title": "20 Ans d'Expérience Dans Diverses Affaires ",
-        "subtitle": "Nous sommes fiers que notre cabinet d'avocats propose des services juridiques de première classe à des tarifs abordables à l'échelle nationale! Avec nous, vous ne vous sentirez jamais comme si les avocats étaient simplement des voleurs en costume, d'ailleurs, nous gagnons 98% de toutes les affaires. Donc avec nous, vos chances de gagner sont aussi élevées qu'elles peuvent l'être!",
-        "est": "Société Fondée",
-        "cases_won": "Affaires Gagnées",
-        "business_partners": "Partenaires Commerciaux",
-        "trusting_clients": "Clients de Confiance"
+    "card3": {
+      "title": "Défense en Matière d'Assurances",
+      "text": "Les questions d'assurance nécessitent d'excellentes connaissances et une grande intuition."
     },
-    "Areas": {
-        "title": "Nos Domaines de Pratique Juridique",
-        "card1": {
-            "title": "Droit des Affaires",
-            "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
-        },
-        "card2": {
-            "title": "Contentieux Civil",
-            "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
-        },
-        "card3": {
-            "title": "Défense en Assurance",
-            "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
-        },
-        "card4": {
-            "title": "Contentieux Civil",
-            "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
-        },
-        "card5": {
-            "title": "Défense en Assurance",
-            "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
-        },
-        "card6": {
-            "title": "Droit des Affaires",
-            "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
-        }
+    "read_more": "Lire la suite",
+    "badge_n": "Fondé en 2010",
+    "badge_l": "Athènes, Grèce",
+    "lead": "Nous valorisons la justice, l'honnêteté et le temps. Le moindre détail sera remarqué — et il peut s'avérer essentiel à votre dossier. Nos collaborateurs sont des avocats plaidants possédant une solide expérience, chacun dans son domaine, principalement en droit civil et administratif.",
+    "pill1": "Civil & Administratif",
+    "pill2": "Droit des Affaires",
+    "pill3": "Défense en Matière d'Assurances"
+  },
+  "Experience": {
+    "title": "20 Ans d'Expérience Dans Diverses Affaires ",
+    "subtitle": "Nous sommes fiers que notre cabinet d'avocats propose des services juridiques de première classe à des tarifs abordables à l'échelle nationale! Avec nous, vous ne vous sentirez jamais comme si les avocats étaient simplement des voleurs en costume, d'ailleurs, nous gagnons 98% de toutes les affaires. Donc avec nous, vos chances de gagner sont aussi élevées qu'elles peuvent l'être!",
+    "est": "Société Fondée",
+    "cases_won": "Affaires Gagnées",
+    "business_partners": "Partenaires Commerciaux",
+    "trusting_clients": "Clients de Confiance"
+  },
+  "Areas": {
+    "title": "Nos Domaines de Pratique Juridique",
+    "card1": {
+      "title": "Droit des Affaires",
+      "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
     },
-    "Communication": {
-        "title": "Demandez une Consultation Juridique Gratuite",
-        "name": "Votre Nom",
-        "email": "Email",
-        "phone": "Téléphone",
-        "subject": "Objet",
-        "message": "Message",
-        "btn": "Envoyer",
-        "success": "Votre message a été envoyé — nous vous répondrons rapidement.",
-        "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
-        "required": "Ce champ est requis",
-        "invalid_email": "Adresse e-mail invalide",
-        "why_choose": "Pourquoi Nous Choisir",
-        "info": {
-            "response_title": "Réponse Rapide",
-            "response_text": "Nous répondons aux demandes sous 24 heures afin que vos besoins juridiques soient traités rapidement.",
-            "team_title": "Équipe Expérimentée",
-            "team_text": "Échangez avec des avocats expérimentés, spécialisés dans votre affaire juridique.",
-            "confidential_title": "Confidentialité",
-            "confidential_text": "Vos informations sont entièrement protégées par le secret professionnel et les lois sur la confidentialité."
-        },
-        "form_section": {
-            "title": "Contactez-nous",
-            "subtitle": "Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement pour discuter de votre dossier."
-        },
-        "cta_section": {
-            "title": "Besoin d'une Aide Immédiate ?",
-            "text": "Pour les affaires urgentes, n'hésitez pas à nous contacter. Notre équipe est prête à vous aider à relever vos défis juridiques.",
-            "availability": "Disponibles du lundi au vendredi, 09h00 – 19h00"
-        },
-        "hero": {
-            "title": "Partagez votre demande avec nous, nous répondons",
-            "title_b": "instantanément",
-            "return_btn": "Retour à la maison",
-            "text": "Vous voulez en savoir plus sur la manière dont nous aidons les clients en situation de risque ? Attirez des milliers d'individus et d'entreprises, tous (98%) ayant résolu avec succès leurs énigmes juridiques grâce à notre aide opportune..."
-        }
+    "card2": {
+      "title": "Contentieux Civil",
+      "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
     },
-    "Footer": {
-        "brand": "Cabinet d'Avocats Damouli Stefanopoulou Antonopoulou et Collaborateurs",
-        "text": "Votre protection fiable en jurisprudence. Notre qualification offre la possibilité de résoudre des problèmes de toute complexité.",
-        "contact": "Coordonnées",
-        "email": "E-mail",
-        "wh": "Heures d'ouverture",
-        "days": "Lun – Ven",
-        "address": "Adresse",
-        "addr_name": "Karystou 3 & Iteas, Athènes"
+    "card3": {
+      "title": "Défense en Assurance",
+      "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
     },
-    "Advisory": {
-        "hero": {
-            "title": "Votre Conseiller de Confiance Toujours",
-            "title_b": "Votre Protecteur",
-            "return_btn": "Retour à la Maison",
-            "text": "Alors que le nombre annuel de cas que nous prenons totalise un nombre insurmontable, sans égal par aucun autre cabinet d'avocats d'Athènes, notre pourcentage de victoires est également record... Juste pour donner quelques statistiques ici, sur plus de 9000 cas que nous avons jamais pris en charge, un énorme 98% de ceux-ci (soit 9800+) étaient des cas que nous avons finalement remportés..."
-        }
+    "card4": {
+      "title": "Contentieux Civil",
+      "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
+    },
+    "card5": {
+      "title": "Défense en Assurance",
+      "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
+    },
+    "card6": {
+      "title": "Droit des Affaires",
+      "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
     }
+  },
+  "Communication": {
+    "title": "Demandez une Consultation Juridique Gratuite",
+    "name": "Votre Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "subject": "Objet",
+    "message": "Message",
+    "btn": "Envoyer",
+    "success": "Votre message a été envoyé — nous vous répondrons rapidement.",
+    "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "required": "Ce champ est requis",
+    "invalid_email": "Adresse e-mail invalide",
+    "why_choose": "Pourquoi Nous Choisir",
+    "info": {
+      "response_title": "Réponse Rapide",
+      "response_text": "Nous répondons aux demandes sous 24 heures afin que vos besoins juridiques soient traités rapidement.",
+      "team_title": "Équipe Expérimentée",
+      "team_text": "Échangez avec des avocats expérimentés, spécialisés dans votre affaire juridique.",
+      "confidential_title": "Confidentialité",
+      "confidential_text": "Vos informations sont entièrement protégées par le secret professionnel et les lois sur la confidentialité."
+    },
+    "form_section": {
+      "title": "Contactez-nous",
+      "subtitle": "Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement pour discuter de votre dossier."
+    },
+    "cta_section": {
+      "title": "Besoin d'une Aide Immédiate ?",
+      "text": "Pour les affaires urgentes, n'hésitez pas à nous contacter. Notre équipe est prête à vous aider à relever vos défis juridiques.",
+      "availability": "Disponibles du lundi au vendredi, 09h00 – 19h00"
+    },
+    "hero": {
+      "title": "Partagez votre demande avec nous, nous répondons",
+      "title_b": "instantanément",
+      "return_btn": "Retour à la maison",
+      "text": "Vous voulez en savoir plus sur la manière dont nous aidons les clients en situation de risque ? Attirez des milliers d'individus et d'entreprises, tous (98%) ayant résolu avec succès leurs énigmes juridiques grâce à notre aide opportune..."
+    }
+  },
+  "Reviews": {
+    "title": "Avis clients"
+  },
+  "Footer": {
+    "brand": "Cabinet d'Avocats Damouli Stefanopoulou Antonopoulou et Collaborateurs",
+    "text": "Votre protection fiable en jurisprudence. Notre qualification offre la possibilité de résoudre des problèmes de toute complexité.",
+    "contact": "Coordonnées",
+    "email": "E-mail",
+    "wh": "Heures d'ouverture",
+    "days": "Lun – Ven",
+    "address": "Adresse",
+    "addr_name": "Karystou 3 & Iteas, Athènes"
+  },
+  "Advisory": {
+    "hero": {
+      "title": "Votre Conseiller de Confiance Toujours",
+      "title_b": "Votre Protecteur",
+      "return_btn": "Retour à la Maison",
+      "text": "Alors que le nombre annuel de cas que nous prenons totalise un nombre insurmontable, sans égal par aucun autre cabinet d'avocats d'Athènes, notre pourcentage de victoires est également record... Juste pour donner quelques statistiques ici, sur plus de 9000 cas que nous avons jamais pris en charge, un énorme 98% de ceux-ci (soit 9800+) étaient des cas que nous avons finalement remportés..."
+    }
+  }
 }

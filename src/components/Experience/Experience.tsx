@@ -2,7 +2,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import CountUp from "react-countup";
-import bg_img from "../../../public/law2.webp";
+import themis_img from "../../../public/design/img-themis.jpg";
 import Image from 'next/image';
 
 
@@ -11,7 +11,6 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
 
     const ref = useRef<null | HTMLDivElement>(null)
     const [intersecting, setIntersecting] = useState(false)
-    const [obs, setObserver] = useState<IntersectionObserver | null>(null)
 
     useEffect(() => {
         let observerRefValue: null | HTMLDivElement | Element = null;
@@ -26,12 +25,11 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
                 if (entries[0].intersectionRatio > 0)
                     observer.unobserve(ref.current as Element)
             }, {
-                threshold: 0.9
+                threshold: 0.5
             })
 
             observer.observe(ref.current)
             observerRefValue = ref.current
-            setObserver(observer)
 
             return () => {
                 if (observerRefValue) {
@@ -43,52 +41,39 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
 
     }, [])
 
-
-
+    const stats = [
+        { end: 2010, suffix: '', label: est },
+        { end: 552, suffix: '', label: cases_won },
+        { end: 10, suffix: '+', label: business_partners },
+        { end: 1200, suffix: '+', label: trusting_clients },
+    ]
 
     return (
-        <div className='w-full relative z-10 min-h-screen md:min-h-[70vh]'>
-            <Image alt="Damouli law firm experience background image" quality={90} sizes="100vw" placeholder='blur' className="z-0 absolute inset-0" src={bg_img} fill style={{ objectFit: "cover" }} />
-            <div className='w-full h-full relative z-10 bg-black/55 flex flex-col py-16 md:py-24 justify-center items-center'>
-                {/* Header Section */}
-                <div className='flex flex-col gap-6 md:gap-10 items-center mb-16 md:mb-20 px-4'>
-                    <h2 className='font-extrabold text-4xl sm:text-5xl md:text-5xl text-center text-white max-w-3xl'>
+        <div className='w-full bg-navy-900 px-4 sm:px-6 lg:px-10 py-16 lg:py-24 text-[#EAF1F5]'>
+            <div className='mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16'>
+                <div>
+                    <div className='mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-brass-400'>
+                        <span className='h-0.5 w-[30px] bg-brass-500'></span>
+                        {subtitle}
+                    </div>
+                    <h2 className='font-display text-[34px] lg:text-[44px] font-extrabold leading-[1.08] tracking-tight text-[#FBF7EF]'>
                         {title}
                     </h2>
-                    <p className='text-white/85 text-base sm:text-lg text-center max-w-2xl leading-relaxed'>
-                        {subtitle}
-                    </p>
+
+                    <div ref={ref} className='mt-11 grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4'>
+                        {stats.map(stat => (
+                            <div key={stat.label}>
+                                <div className='font-display text-[40px] lg:text-[48px] font-bold leading-none text-brass-400'>
+                                    {intersecting ? <CountUp duration={4} end={stat.end} separator={stat.end > 2000 ? '' : ','} /> : 0}{stat.suffix}
+                                </div>
+                                <div className='mt-2.5 text-[13.5px] text-[#EAF1F5]/70'>{stat.label}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 w-full px-4 max-w-5xl mx-auto">
-                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6' ref={ref}>
-                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
-                            {intersecting && <CountUp duration={5} end={2010} />}
-                        </h2>
-                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{est}</h4>
-                    </div>
-
-                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6'>
-                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
-                            {intersecting && <CountUp duration={5} end={552} />}
-                        </h2>
-                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{cases_won}</h4>
-                    </div>
-
-                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6'>
-                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
-                            {intersecting && <CountUp duration={5} end={10} />}+
-                        </h2>
-                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{business_partners}</h4>
-                    </div>
-
-                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6'>
-                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
-                            {intersecting && <CountUp duration={5} end={1200} />}
-                        </h2>
-                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{trusting_clients}</h4>
-                    </div>
+                <div>
+                    <Image placeholder='blur' src={themis_img} alt='Statue of Themis, goddess of justice' sizes='(max-width: 1024px) 100vw, 40vw'
+                        className='aspect-[3/4] w-full max-h-[560px] rounded-2xl object-cover shadow-card-dark' />
                 </div>
             </div>
         </div>
