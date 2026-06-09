@@ -47,48 +47,47 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
 
 
     return (
-        <div className=' w-screen lg:h-[60vh] md:h-[140vh]  relative z-10'>
-            <Image alt="Damouli law firm experience background image" quality={90} sizes="100vw" placeholder='blur' className="z-0 relative" src={bg_img} fill style={{ objectFit: "cover" }} />
-            <div className='w-full h-full relative z-10 md:py-0 py-10 bg-black/50 flex flex-col md:gap-0 gap-5 justify-center items-center'>
-                <h2 className='font-extrabold text-6xl text-center text-white'>
-                    {title} </h2>
-                <p className='text-white/90 font-montserrat text-xl font-light  px-[20%] text-center  leading-[3rem]  tracking-tighter'>
+        <div className='w-full relative z-10 min-h-screen md:min-h-[70vh]'>
+            <Image alt="Damouli law firm experience background image" quality={90} sizes="100vw" placeholder='blur' className="z-0 absolute inset-0" src={bg_img} fill style={{ objectFit: "cover" }} />
+            <div className='w-full h-full relative z-10 bg-black/55 flex flex-col py-16 md:py-24 justify-center items-center'>
+                {/* Header Section */}
+                <div className='flex flex-col gap-6 md:gap-10 items-center mb-16 md:mb-20 px-4'>
+                    <h2 className='font-extrabold text-4xl sm:text-5xl md:text-5xl text-center text-white max-w-3xl'>
+                        {title}
+                    </h2>
+                    <p className='text-white/85 text-base sm:text-lg text-center max-w-2xl leading-relaxed'>
+                        {subtitle}
+                    </p>
+                </div>
 
-                    {subtitle}</p>
-                <div className="flex md:flex-row flex-col mx-auto" >
-                    <div className='flex justify-center items-center' >
-                        <div className='text-white md:border-r-2 md:border-b-0 border-b-2 border-white/60 my-2 mt-4  md:px-4 py-4 flex flex-col gap-2'>
-                            <h2 className='font-extrabold text-6xl text-center text-white'>
-                                {intersecting && <CountUp duration={5} end={2010} />}</h2>
-                            <h4 className='font-extrabold text-xl text-center text-white/70 px-[20%] '>   {est}</h4>
-
-                        </div>
-
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 w-full px-4 max-w-5xl mx-auto">
+                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6' ref={ref}>
+                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
+                            {intersecting && <CountUp duration={5} end={2010} />}
+                        </h2>
+                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{est}</h4>
                     </div>
-                    <div className='flex justify-center items-center'>
-                        <div className='text-white md:border-b-0  md:border-r-2 border-b-2 border-white/60 my-2 mt-4 md:px-4 py-4 flex flex-col gap-2'>
-                            <h2 className='font-extrabold text-6xl text-center text-white'>
-                                {intersecting && <CountUp duration={5} end={552} />}</h2>
-                            <h4 className='font-extrabold text-xl text-center text-white/70 px-[20%] '>{cases_won}</h4>
 
-                        </div>
-
+                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6'>
+                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
+                            {intersecting && <CountUp duration={5} end={552} />}
+                        </h2>
+                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{cases_won}</h4>
                     </div>
-                    <div className='flex justify-center items-center' ref={ref}>
-                        <div className='text-white  md:border-r-2 md:border-b-0 border-b-2  border-white/60 my-2 mt-4 md:px-4  py-4 flex flex-col gap-2'>
-                            <h2 className='font-extrabold text-6xl text-center text-white'>
-                                {intersecting && <CountUp duration={5} end={10} />}+</h2>
-                            <h4 className='font-extrabold text-xl text-center text-white/70 px-[20%] '>{business_partners}</h4>
 
-                        </div>
-
+                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6'>
+                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
+                            {intersecting && <CountUp duration={5} end={10} />}+
+                        </h2>
+                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{business_partners}</h4>
                     </div>
-                    <div className='flex justify-center items-center'>
-                        <div className='text-white  md:border-r-2 border-b-2 border-white/0 my-2 mt-4 md:px-4  py-4 flex flex-col gap-2'>
-                            <h2 className='font-extrabold text-6xl text-center text-white'>
-                                {intersecting && <CountUp duration={5} end={1200} />}</h2>
-                            <h4 className='font-extrabold text-xl text-center text-white/70Company Established px-[20%] '>{trusting_clients}</h4>
-                        </div>
+
+                    <div className='flex flex-col items-center justify-center py-6 md:py-8 px-4 md:px-6'>
+                        <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-white mb-3'>
+                            {intersecting && <CountUp duration={5} end={1200} />}
+                        </h2>
+                        <h4 className='text-sm md:text-base text-center text-white/70 font-medium'>{trusting_clients}</h4>
                     </div>
                 </div>
             </div>

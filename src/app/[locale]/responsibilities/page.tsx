@@ -5,9 +5,9 @@ import { PropsInterface } from '@/app/common/PropsInterface'
 
 const ResponsibilitiesPage = (props: PropsInterface) => {
     const { locale } = props.params
-    const heroTitle = "Get the Best Legal Service"
-    const heroSub = "Ever"
-    const heroText = " With more than 20 years of experience behind, today our Athens law firm is the #1, both when talking about the number of yearly cases dealt with and the percentage of all those cases being won. But that kind of success does not come by, just when you sit idly or do not have strict work ethic principles being put into practice…    We’ve always cherished the three pillars which our company has always stood upon"
+    const heroTitle = "Our Legal Expertise"
+    const heroSub = "Trusted & Proven"
+    const heroText = "With over 20 years of experience, we’ve earned our reputation as Athens’ leading law firm. Our success speaks for itself: we handle the highest volume of cases while maintaining a 98% win rate.\n\nOur commitment to excellence is built on three core pillars that guide every decision we make."
     return (
         <div className='bg-white'>
             <Hero locale={locale} return_btn={'Return Home'} heroTitle={heroTitle} heroSub={heroSub} heroText={heroText} linkEnabled={true} />

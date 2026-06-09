@@ -19,30 +19,29 @@ const Subcontent = () => {
     })
 
     return (
-        <div className='min-h-[90vh] pb-[3rem] bg-slate-50 w-screen relative z-20 '>
-
-            <div className='flex sm:absolute relative top-[-6.5rem] md:flex-row flex-col md:p-0 p-[5%] justify-center gap-5 min-h-[350px]  w-screen  '>
-                <div className=''>
-                    <DynamicCards cardColor={'green'} icon={suitCase} title={t('card1.title')} text={t('card1.text')} /></div>
-                <div >
-                    <DynamicCards cardColor={'green'} icon={userR} title={t('card2.title')} text={t('card2.text')} /></div>
+        <div className='bg-gradient-to-b from-white via-slate-50 to-white w-full relative z-20 px-4 sm:px-6 lg:px-8 py-16 sm:py-24 overflow-x-hidden'>
+            {/* Cards Section */}
+            <div className='grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-5 lg:gap-6 max-w-6xl mx-auto mb-20 sm:mb-24'>
                 <div>
-                    <DynamicCards cardColor={'green'} icon={umbrellaI} title={t('card3.title')} text={t('card3.text')} /></div>
+                    <DynamicCards cardColor={'green'} icon={suitCase} title={t('card1.title')} text={t('card1.text')} />
+                </div>
+                <div>
+                    <DynamicCards cardColor={'green'} icon={userR} title={t('card2.title')} text={t('card2.text')} />
+                </div>
+                <div>
+                    <DynamicCards cardColor={'green'} icon={umbrellaI} title={t('card3.title')} text={t('card3.text')} />
+                </div>
             </div>
 
-            <div className='flex md:flex-row flex-col md:mt-[350px]  justify-center px-auto relative'>
-
-                <div className='md:w-[35%] w-full'>
-                    <div id="divider" className="my-12 mb-3 h-0.5 ml-3 w-[50%] pr-10 border-t-0 bg-black opacity-100 dark:opacity-50"></div>
-                    <h2 className='font-extrabold md:text-6xl text-4xl md:px-[30%] px-[10%] text-black/90'>{t('title')} <span className='text-gray-500/80'> {t('title_strong')}</span></h2></div>
-                <div className='md:w-[65%] w-full'>
-                    <div className='flex flex-col justify-center items-start p-10 px-[15%]'>
-                        <h4 className='text-gray-500 font-montserrat text-md font-light pt-[15%]  leading-[3rem]  tracking-tighter'>{t('description')}</h4>
-
-                        <DynamicButton link={'advisory'} type='button' disabled={false} label={t('read_more')} size='lg' />
-                    </div>
-
-
+            {/* Content Section */}
+            <div className='flex flex-col lg:flex-row gap-8 lg:gap-12 justify-center max-w-6xl mx-auto'>
+                <div className='lg:w-1/2 flex flex-col justify-center'>
+                    <div id="divider" className="mb-6 h-1 w-16 bg-gradient-to-r from-cyan-700 to-teal-600 rounded-full"></div>
+                    <h2 className='font-extrabold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-4'>{t('title')} <span className='text-gray-500'>{t('title_strong')}</span></h2>
+                </div>
+                <div className='lg:w-1/2 flex flex-col justify-center'>
+                    <p className='text-gray-600 text-base sm:text-lg leading-relaxed mb-6'>{t('description')}</p>
+                    <DynamicButton link={'advisory'} type='button' disabled={false} label={t('read_more')} size='lg' />
                 </div>
             </div>
         </div>

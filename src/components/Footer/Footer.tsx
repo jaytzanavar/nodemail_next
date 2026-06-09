@@ -1,51 +1,100 @@
 import Image from 'next/image'
-import React, { useMemo } from 'react'
+import React from 'react'
 import logo from '../../../public/logo.jpeg';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 
-const Footer = () => {
-  const Map = useMemo(() => dynamic(
-    () => import('@/components/Map/Map'),
-    {
-      loading: () => <p>Map is Loading...</p>,
-      ssr: true
-    }
-  ), [])
+const Map = dynamic(() => import('@/components/Map/Map'), {
+  loading: () => <p className='text-sm text-white/50'>Map is loading...</p>,
+  ssr: true
+})
 
+const MAPS_URL = 'https://www.google.com/maps/place/%CE%94%CE%B9%CE%BA%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BA%CE%AE+%CE%95%CF%84%CE%B1%CE%B9%CF%81%CE%B5%CE%AF%CE%B1+%CE%94%CE%B1%CE%BC%CE%BF%CF%85%CE%BB%CE%AE+%CE%A3%CF%84%CE%B5%CF%86%CE%B1%CE%BD%CE%BF%CF%80%CE%BF%CF%8D%CE%BB%CE%BF%CF%85+%CE%91%CE%BD%CF%84%CF%89%CE%BD%CE%BF%CF%80%CE%BF%CF%8D%CE%BB%CE%BF%CF%85+%CE%BA%CE%B1%CE%B9+%CE%A3%CF%85%CE%BD%CE%B5%CF%81%CE%B3%CE%AC%CF%84%CE%B5%CF%82/@37.9922869,23.7598793,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1a2a9e8e91a5b:0xd3567c995783841e!8m2!3d37.9922827!4d23.7624542!16s%2Fg%2F11bzsgp_ht?entry=ttu'
+
+const Footer = () => {
   const t = useTranslations('Footer')
 
-  return (
-    <footer>
-      <div className=' px-[4vw] grid-cols-1 grid-rows-3 sm:grid sm:grid-cols-3 sm:grid-rows-1 lg:grid-cols-3 lg:grid-rows-1 md:grid-cols-1 place-items-center gap-10 bg-slate-800 pt-[5%] pb-[5%] '>
-        <div className='flex flex-col gap-4 md:w-[15vw] w-full'>
-          <div className='text-2xl  text-white flex lg:flex-row flex-col justify-center items-center gap-4'>
-            <Image alt="the logo for damouli law firm" placeholder='blur' className="rounded-full w-[100px] cursor-pointer" src={logo} />
-            <h2>{t('brand')}</h2>
-          </div>
-          <div className='  md:max-w-[300px]  sm:w-full w-[75vw]  text-wrap text-center  font-normal text-white/70 dark:text-gray-400'>{t('text')}</div>
-        </div>
-        <div className='flex flex-col gap-4  md:w-[15vw] w-full items-center'>
-          <div className='text-2xl md:text-left text-white'>Contact info</div>
-          <div>
-            <a className='text-white/70 hover:text-white/90 transition-all' href='mailto:info@damoulilawfirm.com'>info@damoulilawfirm.com</a>
-          </div>
-          <div>
-            <ul className='text-white/70'>
-              <li>{t('wh')}</li>
-              <li>{t('days')}: 9 am - 19:00 pm</li>
-            </ul>
-            <div className='text-white/70 hover:text-white/90'>{t('address')} <a href='https://www.google.com/maps/place/%CE%94%CE%B9%CE%BA%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BA%CE%AE+%CE%95%CF%84%CE%B1%CE%B9%CF%81%CE%B5%CE%AF%CE%B1+%CE%94%CE%B1%CE%BC%CE%BF%CF%85%CE%BB%CE%AE+%CE%A3%CF%84%CE%B5%CF%86%CE%B1%CE%BD%CE%BF%CF%80%CE%BF%CF%8D%CE%BB%CE%BF%CF%85+%CE%91%CE%BD%CF%84%CF%89%CE%BD%CE%BF%CF%80%CE%BF%CF%8D%CE%BB%CE%BF%CF%85+%CE%BA%CE%B1%CE%B9+%CE%A3%CF%85%CE%BD%CE%B5%CF%81%CE%B3%CE%AC%CF%84%CE%B5%CF%82/@37.9922869,23.7598793,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1a2a9e8e91a5b:0xd3567c995783841e!8m2!3d37.9922827!4d23.7624542!16s%2Fg%2F11bzsgp_ht?entry=ttu'>{t('addr_name')}</a></div>
-          </div>
-        </div>
-        <div className='flex flex-col gap-4 md:w-[15vw] w-full  items-center'>
-          {Map &&
-            <Map />}
+  const contactLines = [
+    {
+      key: 'email',
+      label: t('email'),
+      icon: (
+        <svg className='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth={1.8}>
+          <path strokeLinecap='round' strokeLinejoin='round' d='M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75' />
+        </svg>
+      ),
+      value: <a className='hover:text-white transition-colors duration-200' href='mailto:info@damoulilawfirm.com'>info@damoulilawfirm.com</a>
+    },
+    {
+      key: 'hours',
+      label: t('wh'),
+      icon: (
+        <svg className='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth={1.8}>
+          <path strokeLinecap='round' strokeLinejoin='round' d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' />
+        </svg>
+      ),
+      value: <span>{t('days')} · 09:00 – 19:00</span>
+    },
+    {
+      key: 'address',
+      label: t('address'),
+      icon: (
+        <svg className='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth={1.8}>
+          <path strokeLinecap='round' strokeLinejoin='round' d='M15 10.5a3 3 0 11-6 0 3 3 0 016 0z' />
+          <path strokeLinecap='round' strokeLinejoin='round' d='M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z' />
+        </svg>
+      ),
+      value: <a className='hover:text-white transition-colors duration-200' href={MAPS_URL} target='_blank' rel='noopener noreferrer'>{t('addr_name')}</a>
+    }
+  ]
 
+  return (
+    <footer className='bg-slate-900 text-white'>
+      <div className='max-w-7xl mx-auto px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+
+        {/* Brand */}
+        <div className='flex flex-col gap-5 items-center md:items-start text-center md:text-left'>
+          <div className='flex items-center gap-3'>
+            <Image alt='Damouli law office logo' placeholder='blur' className='h-12 w-12 rounded-full object-cover ring-1 ring-white/20' src={logo} />
+            <span className='text-sm font-semibold leading-snug max-w-[16rem]'>{t('brand')}</span>
+          </div>
+          <p className='text-sm text-white/60 leading-relaxed max-w-xs'>{t('text')}</p>
         </div>
-        <div>
+
+        {/* Contact — one distinct line per item */}
+        <div className='flex flex-col items-center md:items-start'>
+          <h3 className='text-xs font-semibold uppercase tracking-[0.25em] text-white/80 mb-2'>{t('contact')}</h3>
+          <ul className='w-full max-w-xs divide-y divide-white/10'>
+            {contactLines.map(line => (
+              <li key={line.key} className='flex items-center gap-4 py-4'>
+                <span className='flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-teal-300 ring-1 ring-white/10'>
+                  {line.icon}
+                </span>
+                <span className='flex flex-col gap-0.5 text-left'>
+                  <span className='text-[11px] font-medium uppercase tracking-wider text-white/40'>{line.label}</span>
+                  <span className='text-sm text-white/75'>{line.value}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div></footer>
+
+        {/* Map */}
+        <div className='md:col-span-2 lg:col-span-1'>
+          <div className='h-64 w-full overflow-hidden rounded-xl ring-1 ring-white/10'>
+            <Map />
+          </div>
+        </div>
+
+      </div>
+
+      {/* Bottom bar */}
+      <div className='border-t border-white/10'>
+        <p className='max-w-7xl mx-auto px-6 lg:px-8 py-5 text-center text-xs text-white/40'>
+          © {new Date().getFullYear()} {t('brand')}
+        </p>
+      </div>
+    </footer>
   )
 }
 

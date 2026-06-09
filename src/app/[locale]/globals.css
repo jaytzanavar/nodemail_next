@@ -4,7 +4,11 @@
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    scroll-behavior: auto;
+  }
+
+  html.loaded {
+    scroll-behavior: smooth;
   }
 }
 

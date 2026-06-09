@@ -3,52 +3,100 @@ import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 
 const Strategy = () => {
-
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     const mainControls = useAnimation();
+
     useEffect(() => {
         if (isInView)
             mainControls.start("visible")
     }, [isInView, mainControls])
-    return (
-        <div className='bg-[url("/writing_.jpg")] w-screen md:h-[70vh] bg-no-repeat bg-cover flex flex-col gap-3'>
-            <div className='w-full h-full md:py-0 py-10 flex flex-col md:gap-10   justify-center items-center'>
-                <h1 className='font-extrabold text-6xl mb-5 text-center text-white'>
-                    Our Strategy Refines our Outcomes </h1>
-                <p className='text-white/70  font-montserrat text-md font-light  px-[20%] text-center  leading-[2rem]  tracking-tighter'>
 
-                    We’re proud that our law firm offers top-notch legal services for a nationwide affordable pricing! With us you’ll never feel like the lawyers are just robbers in suits, besides, we win 98% of all cases. So with us, your chances of winning are as high as they possibly can be!</p>
+    const pillars = [
+        {
+            number: "01",
+            title: "Strategic Thinking",
+            description: "We analyze every case thoroughly, developing comprehensive legal strategies tailored to your unique situation and goals."
+        },
+        {
+            number: "02",
+            title: "Thorough Research",
+            description: "Our team conducts extensive legal research and investigation to build the strongest possible case for you."
+        },
+        {
+            number: "03",
+            title: "Expert Execution",
+            description: "With decades of courtroom experience, we execute our strategies with precision and professionalism at every stage."
+        }
+    ];
+
+    return (
+        <div className='w-full bg-gradient-to-b from-white to-slate-50 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-x-hidden'>
+            <div className='max-w-6xl mx-auto'>
+                {/* Header Section */}
+                <div className='mb-16 sm:mb-20'>
+                    <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-gray-900 mb-6'>
+                        Our Three Pillars
+                    </h2>
+                    <p className='text-center text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed'>
+                        Success in law is built on a foundation of strategic thinking, thorough research, and expert execution. These three principles guide everything we do.
+                    </p>
+                </div>
+
+                {/* Pillars Grid */}
                 <motion.div
-                    variants={{
-                        hidden: { opacity: 0, x: 75 },
-                        visible: { opacity: 1, x: 0 }
-                    }}
+                    ref={ref}
                     initial="hidden"
                     animate={mainControls}
-                    transition={{ duration: 0.5 }}
+                    className='grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10'
                 >
-                    <ul ref={ref} className="text-white/90 w-full  font-montserrat text-2xl font-light flex ">
-                        <li className='w-[33vw] text-center flex flex-col gap-3'>
-                            <h2 className=' text-7xl text-white/20'>01</h2>
-                            <h3>Thinking</h3>
-                            <p className='text-white/70  font-montserrat text-lg  font-light  px-[20%] text-center  leading-[2rem]  tracking-tighter'>We are devoted to providing the legal profession reasonably priced, professional and court room experience attorneys in all types of civil cases.</p>
-                        </li>
-                        <li className='w-[33vw] text-center flex flex-col gap-3'>
-                            <h2 className=' text-7xl text-white/20'>02</h2>
-                            <h3>Searching</h3>
-                            <p className='text-white/70  font-montserrat text-lg  font-light  px-[20%] text-center  leading-[2rem]  tracking-tighter'>We can provide qualified and experienced attorneys to you upon short notice for almost any court appearance, both civil and criminal.</p>
-                        </li>
-                        <li className='w-[33vw] text-center flex flex-col gap-3'>
-                            <h2 className=' text-7xl text-white/20'>03</h2>
-                            <h3>Step 3</h3>
-                            <p className='text-white/70  font-montserrat text-lg  font-light  px-[20%] text-center  leading-[2rem]  tracking-tighter'>We can find attorneys to handle depositions, inspections, trials and who can even help you write your documentation.</p>
-                        </li>
-                    </ul>
-                </motion.div>
-            </div>
+                    {pillars.map((pillar, idx) => (
+                        <motion.div
+                            key={idx}
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { delay: idx * 0.2, duration: 0.5 }
+                                }
+                            }}
+                            className='flex flex-col gap-5'
+                        >
+                            {/* Number Badge */}
+                            <div className='flex items-center gap-4'>
+                                <div className='text-5xl sm:text-6xl font-extrabold text-cyan-600/20 leading-none'>
+                                    {pillar.number}
+                                </div>
+                                <div className='h-12 w-1 bg-gradient-to-b from-cyan-600 to-teal-600 rounded-full'></div>
+                            </div>
 
-        </div >
+                            {/* Content */}
+                            <div className='flex flex-col gap-3'>
+                                <h3 className='text-xl sm:text-2xl font-bold text-gray-900'>
+                                    {pillar.title}
+                                </h3>
+                                <p className='text-gray-600 text-base leading-relaxed'>
+                                    {pillar.description}
+                                </p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+
+                {/* Bottom CTA Section */}
+                <div className='mt-16 sm:mt-20 pt-16 sm:pt-20 border-t border-gray-200'>
+                    <div className='text-center max-w-2xl mx-auto'>
+                        <h3 className='text-2xl sm:text-3xl font-bold text-gray-900 mb-4'>
+                            98% Success Rate
+                        </h3>
+                        <p className='text-gray-600 text-base sm:text-lg leading-relaxed mb-8'>
+                            We're proud to offer top-notch legal services at affordable, transparent pricing. With us, you're not just hiring a lawyer—you're gaining a dedicated partner committed to your success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 

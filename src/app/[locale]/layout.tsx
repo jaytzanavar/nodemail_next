@@ -1,4 +1,4 @@
-import { Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css'
@@ -6,16 +6,23 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Head from 'next/head'
 import { NextIntlClientProvider, useMessages } from 'next-intl';
-import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import mainImage from '../../../public/lawWallPaper.webp'
 import { Suspense } from "react";
 import Loading from "@/components/Loader/Loader";
 import { getTranslations } from "next-intl/server";
 
-const lato = Playfair_Display({
+// Base font — covers Latin, French accents and Greek
+const inter = Inter({
+  subsets: ['latin', 'latin-ext', 'greek'],
+  variable: '--font-inter'
+})
+
+// Display serif, opt-in via the `font-display` Tailwind utility (no Greek support)
+const playfair = Playfair_Display({
   weight: ["400", "700"],
   style: "normal",
-  subsets: ['latin']
+  subsets: ['latin'],
+  variable: '--font-playfair'
 })
 
 
@@ -46,9 +53,26 @@ export default function RootLayout({
 
 
   return (
-    <html className="scroll-smooth" lang={locale}>
+    <html lang={locale}>
 
       <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                  setTimeout(() => {
+                    document.documentElement.classList.add('loaded');
+                  }, 100);
+                });
+              } else {
+                setTimeout(() => {
+                  document.documentElement.classList.add('loaded');
+                }, 100);
+              }
+            `,
+          }}
+        />
         <link
           rel="preload"
           href={mainImage.src}
@@ -73,9 +97,7 @@ export default function RootLayout({
 
       </Head>
 
-      <body className={`${lato.className} bg-gradient-to-t  from-white to-slate-800 h-screen overflow-x-hidden`}>
-        <SmoothScroll />
-
+      <body className={`${inter.className} ${inter.variable} ${playfair.variable} bg-gradient-to-t  from-white to-slate-800 min-h-screen overflow-x-hidden`}>
         <Suspense fallback={<Loading />}>
           <NextIntlClientProvider locale={locale} messages={messages} >
             <Header locale={locale}

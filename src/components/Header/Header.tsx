@@ -7,7 +7,7 @@ import styles from './Header.module.css';
 import { useTranslations } from "next-intl";
 import ReactCountryFlag from 'react-country-flag'
 import { AnimatePresence, useAnimation, motion } from "framer-motion";
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 type countryType = { [key: string]: string }
 
@@ -23,7 +23,11 @@ const Header = ({ locale }: { locale: string }) => {
   const t = useTranslations('Header')
   const keys = ['responsibilities', 'advisory', 'communication'] as const;
   const router = useRouter();
+  const pathname = usePathname();
   const burgerControls = useAnimation();
+
+  const isActive = (key: string) =>
+    pathname === `/${locale}/${key}` || pathname?.startsWith(`/${locale}/${key}/`);
 
 
   useEffect(() => {
@@ -73,32 +77,47 @@ const Header = ({ locale }: { locale: string }) => {
 
 
   return (
-    <header className='overflow-x-hidden'>
-      <nav className='flex justify-between relative z-20 items-center md:w-full bg-white px-[5%] md:mx-auto '>
-        <div>
+    <header className='sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm'>
+      <nav className='flex justify-between relative z-20 items-center md:w-full bg-white px-4 sm:px-6 lg:px-8 md:mx-auto py-3'>
+        {/* Logo + Business Name */}
+        <div className='flex-shrink-0 flex items-center gap-3'>
           <Link locale={locale} href={'/' + locale}>
-            <Image width={58} height={58} className="w-16 cursor-pointer" placeholder='blur' src={logo} alt='logo-image' /></Link>
+            <Image width={52} height={52} className="w-13 h-13 cursor-pointer rounded-md hover:shadow-md transition-all duration-200 object-cover" placeholder='blur' src={logo} alt='logo-image' /></Link>
+          <div className='hidden sm:flex flex-col gap-0.5'>
+            <span className='text-sm font-bold text-gray-900 leading-none tracking-wide'>{t('firmName')}</span>
+            <span className='text-xs text-gray-500 font-light'>{t('firmType')}</span>
+          </div>
         </div>
         <div className={` bg-white mx-auto w-full  md:flex hidden justify-center items-center transform transition-transform duration-500 ease-in-out md:translate-y-[0]  md:opacity-100 md:h-auto   ${openBurger ? ' overflow-hidden  ' : ' translate-y-[-100%] opacity-0'}  left-0   px-5`}>
-          <ul className="flex md:flex-row flex-col h-full my-auto items-center gap-[4vw]">
+          <ul className="flex md:flex-row flex-col h-full my-auto items-center gap-8">
             {keys.map((key) => <li key={locale + '/' + key}>
-              <Link locale={locale} className='hover:text-gray-500/40' href={`/${locale}/${key}`} >{t(`${key}.title`)}</Link>
+              <Link locale={locale} aria-current={isActive(key) ? 'page' : undefined} className={`${isActive(key) ? 'text-cyan-700 font-semibold' : 'text-gray-700 font-medium'} text-sm relative group hover:text-cyan-700 transition-colors duration-200 pb-2`} href={`/${locale}/${key}`}>
+                {t(`${key}.title`)}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-700 to-teal-600 transition-all duration-300 ${isActive(key) ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              </Link>
             </li>
             )}
           </ul>
         </div>
-        <div className='md:relative z-60  md:block hidden'>
-          <button className='md:relative z-50 w-[50px] h-[50px] min-h-[45px] min-w-[45px] hover:bg-black/20 bg-slate-400/30 rounded-full' onClick={() => setCountryToggle(prev => !prev)}>
+        <div className='md:relative z-60 md:block hidden'>
+          <button className='md:relative z-50 px-3 py-2 h-10 min-h-[40px] hover:bg-gray-50 bg-white rounded-lg border border-gray-200 transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 font-medium text-sm text-gray-700' onClick={() => setCountryToggle(prev => !prev)}>
             <ReactCountryFlag
               countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
               svg
               style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '3rem'
+                width: '1.25rem',
+                height: '1.25rem',
+                borderRadius: '3px',
+                objectFit: 'cover'
               }}
               title={t(currentLocale.toLocaleLowerCase())}
             />
+            <span className='text-xs font-semibold uppercase tracking-wider'>
+              {currentLocale === 'EN' ? 'En' : currentLocale === 'FR' ? 'Fr' : 'El'}
+            </span>
+            <svg className='w-4 h-4 text-gray-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
+            </svg>
           </button>
 
 
@@ -107,19 +126,23 @@ const Header = ({ locale }: { locale: string }) => {
 
 
 
-        <div className='md:hidden flex'>
-          <div >
-            <button className='block z-50 w-[50px] h-[50px]  hover:bg-black/20 bg-slate-400/30 rounded-full' onClick={() => setCountryToggle(prev => !prev)}>
+        <div className='md:hidden flex items-center gap-2'>
+          <div>
+            <button className='z-50 px-3 py-2 h-10 hover:bg-gray-50 bg-white rounded-lg border border-gray-200 transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 font-medium text-sm text-gray-700' onClick={() => setCountryToggle(prev => !prev)}>
               <ReactCountryFlag
                 countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
                 svg
                 style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '3rem'
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '3px',
+                  objectFit: 'cover'
                 }}
                 title={t(currentLocale.toLocaleLowerCase())}
               />
+              <span className='text-xs font-semibold uppercase'>
+                {currentLocale === 'EN' ? 'En' : currentLocale === 'FR' ? 'Fr' : 'El'}
+              </span>
             </button>
           </div>
           <div>
@@ -154,7 +177,7 @@ const Header = ({ locale }: { locale: string }) => {
               keys.map((key) =>
                 <motion.div variants={itemListVariant} key={locale + '/' + key}>
                   <li >
-                    <Link locale={locale} className='text-3xl text-black/80 hover:text-gray-900/40' href={`/${locale}/${key}`} >{t(`${key}.title`)}</Link>
+                    <Link locale={locale} aria-current={isActive(key) ? 'page' : undefined} onClick={() => setOpenBurger(false)} className={`text-3xl ${isActive(key) ? 'text-cyan-700 font-semibold' : 'text-black/80'} hover:text-gray-900/40`} href={`/${locale}/${key}`} >{t(`${key}.title`)}</Link>
                   </li>
                 </motion.div>
               )
@@ -167,36 +190,37 @@ const Header = ({ locale }: { locale: string }) => {
 
       <AnimatePresence>
         {countryToggle &&
-
-          <motion.div
-            initial={{ opacity: 0, translateY: "-58px", zIndex: 15 }} animate={{ opacity: 1, translateY: "0px", zIndex: 15 }} exit={{ opacity: 0, translateY: "-58px", zIndex: 5 }} transition={{ duration: 1, ease: "easeInOut" }} className={`absolute z-10 md:right-[4%] right-[8%]  w-[100px] items-center  bg-black/35 flex flex-col`}>
-            <ul>{
-              Object.keys(DEFAULT_COUNTRIES).filter(ct => ct.toLocaleLowerCase() !== currentLocale.toLocaleLowerCase()).map(loc => (
-                <motion.li
-                  key={loc}
-                >
-                  <button className='w-[45px] h-[45px] bg-black/20 hover:bg-slate-400/30 rounded-full' onClick={() => selectLocale(loc)}>
-                    <ReactCountryFlag
-
-                      countryCode={loc}
-                      svg
-                      style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: '3rem'
-                      }}
-                      title={t(loc)}
-
-                    />
-                  </button>
-
-
-                </motion.li>
-              ))
-            }
-            </ul>
-          </motion.div>
-
+          <>
+            <div className='fixed inset-0 z-40' onClick={() => setCountryToggle(false)} />
+            <motion.div
+              initial={{ opacity: 0, y: -8, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.95 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              className='absolute top-full z-50 md:right-0 md:mr-0 right-0 mt-2 min-w-[9rem] origin-top-right rounded-lg border border-gray-200 bg-white py-1 shadow-lg'>
+              <ul className='w-full'>{
+                Object.keys(DEFAULT_COUNTRIES).filter(ct => ct.toLocaleLowerCase() !== currentLocale.toLocaleLowerCase()).map(loc => (
+                  <li key={loc}>
+                    <button className='flex w-full items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors duration-150' onClick={() => selectLocale(loc)}>
+                      <ReactCountryFlag
+                        countryCode={loc}
+                        svg
+                        style={{
+                          width: '1.25rem',
+                          height: '1.25rem',
+                          borderRadius: '3px',
+                          objectFit: 'cover'
+                        }}
+                        title={t(loc)}
+                      />
+                      <span>{t(loc)}</span>
+                    </button>
+                  </li>
+                ))
+              }
+              </ul>
+            </motion.div>
+          </>
         }
       </AnimatePresence>
     </header>

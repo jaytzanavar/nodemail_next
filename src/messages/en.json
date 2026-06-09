@@ -1,0 +1,82 @@
+{
+  "Header": {
+    "firmName": "Damouli",
+    "firmType": "Law Firm",
+    "responsibilities": {
+      "title": "Responsibilities"
+    },
+    "advisory": {
+      "title": "Advisory"
+    },
+    "communication": {
+      "title": "Communication"
+    },
+    "en": "English",
+    "fr": "French",
+    "gr": "Greek"
+  },
+  "Communication": {
+    "why_choose": "Why Choose Us",
+    "hero": {
+      "return_btn": "Return Home",
+      "title": "Get in Touch",
+      "title_b": "Let's Talk",
+      "text": "Have a legal question or need assistance? Contact us to discuss your case with one of our experienced attorneys."
+    },
+    "info": {
+      "response_title": "Quick Response",
+      "response_text": "We respond to inquiries within 24 hours to ensure your legal needs are addressed promptly.",
+      "team_title": "Expert Team",
+      "team_text": "Connect with experienced attorneys who specialize in your specific legal matter.",
+      "confidential_title": "Confidential",
+      "confidential_text": "Your information is fully protected under attorney-client privilege and confidentiality laws."
+    },
+    "form_section": {
+      "title": "Contact Form",
+      "subtitle": "Fill out the form below and our team will contact you shortly to discuss your case."
+    },
+    "cta_section": {
+      "title": "Need Immediate Assistance?",
+      "text": "For urgent matters, don't hesitate to reach out. Our team is ready to help you navigate your legal challenges.",
+      "availability": "Available Monday to Friday, 9:00 AM - 6:00 PM"
+    },
+    "title": "Send us a Message",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Message",
+    "btn": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "Error sending message",
+    "required": "This field is required",
+    "invalid_email": "Invalid email address"
+  },
+  "Areas": {
+    "title": "Practice Areas",
+    "card1": {
+      "title": "Business Law",
+      "text": "Strategic legal guidance for business formation, contracts, and corporate governance"
+    },
+    "card2": {
+      "title": "Civil Litigation",
+      "text": "Expert representation in civil disputes and court proceedings"
+    },
+    "card3": {
+      "title": "Insurance Defence",
+      "text": "Comprehensive defence strategies for insurance-related claims"
+    },
+    "card4": {
+      "title": "Employment Law",
+      "text": "Employment agreements, disputes, and workplace compliance solutions"
+    },
+    "card5": {
+      "title": "Corporate Transactions",
+      "text": "M&A guidance, acquisitions, and corporate restructuring expertise"
+    },
+    "card6": {
+      "title": "Real Estate Law",
+      "text": "Property transactions, leasing, and real estate dispute resolution"
+    }
+  }
+}
