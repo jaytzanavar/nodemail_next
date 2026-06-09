@@ -91,7 +91,7 @@ const Strategy = () => {
                             98% Success Rate
                         </h3>
                         <p className='text-gray-600 text-base sm:text-lg leading-relaxed mb-8'>
-                            We're proud to offer top-notch legal services at affordable, transparent pricing. With us, you're not just hiring a lawyer—you're gaining a dedicated partner committed to your success.
+                            We&apos;re proud to offer top-notch legal services at affordable, transparent pricing. With us, you&apos;re not just hiring a lawyer—you&apos;re gaining a dedicated partner committed to your success.
                         </p>
                     </div>
                 </div>

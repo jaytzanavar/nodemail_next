@@ -34,7 +34,7 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
             setObserver(observer)
 
             return () => {
-                if (ref.current && observerRefValue) {
+                if (observerRefValue) {
                     observer.unobserve(observerRefValue)
                 }
             }
