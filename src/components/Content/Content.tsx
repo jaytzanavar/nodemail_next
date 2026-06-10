@@ -20,7 +20,7 @@ export default function Content() {
 
     return (
         <div className='relative isolate w-full overflow-hidden bg-navy-950'>
-            <Image quality={90} sizes="100vw" placeholder='blur' priority className="absolute inset-0 -z-20 h-full w-full object-cover opacity-50" alt={t('alt_img')} src={bg_img} fill />
+            <Image quality={60} sizes="100vw" placeholder='blur' priority fetchPriority="high" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-50" alt={t('alt_img')} src={bg_img} fill />
 
             {/* Scrim: darkest on the left where the text sits */}
             <div className='absolute inset-0 -z-10 bg-hero-scrim'></div>

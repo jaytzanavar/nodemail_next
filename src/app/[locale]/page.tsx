@@ -25,7 +25,7 @@ async function getReviews(): Promise<{ rating?: number, reviews?: Array<any> }> 
   if (!process.env.API_ENDPOINT) return {};
   try {
     const q = await fetch(`${process.env.API_ENDPOINT}/api/google-info`, {
-      cache: "no-store",
+      next: { revalidate: 3600 },
     });
     if (!q.ok) return {};
     return await q.json();

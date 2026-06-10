@@ -76,7 +76,7 @@ const Footer = () => {
 
         {/* Map */}
         <div className='md:col-span-2 lg:col-span-1'>
-          <div className='h-72 sm:h-80 lg:h-full lg:min-h-[20rem] w-full overflow-hidden rounded-xl ring-1 ring-brass-500/20'>
+          <div className='isolate h-72 sm:h-80 lg:h-full lg:min-h-[20rem] w-full overflow-hidden rounded-xl ring-1 ring-brass-500/20'>
             <Map />
           </div>
         </div>

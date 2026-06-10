@@ -65,7 +65,7 @@ const Reviews = ({ title, googleVerUser, userReview, reviewsA }: { title: string
                     )}
                 >
                     {sortedReviews.map((rev: Review, i) =>
-                        <div className='flex w-full justify-center px-1 pb-12 md:px-16' key={`${rev.author_name}-${i}`}>
+                        <div className='flex w-full justify-center px-1 pb-12' key={`${rev.author_name}-${i}`}>
                             <RatingCard gvu={googleVerUser} ur={userReview} rev={rev} />
                         </div>
                     )}

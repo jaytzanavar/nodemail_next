@@ -52,7 +52,7 @@ const Experience = ({ title, subtitle, est, cases_won, business_partners, trusti
         <div className='w-full bg-navy-900 px-4 sm:px-6 lg:px-10 py-16 lg:py-24 text-[#EAF1F5]'>
             <div className='mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16'>
                 <div>
-                    <div className='mb-4 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-brass-400'>
+                    <div className='mb-4 flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-brass-400'>
                         <span className='h-0.5 w-[30px] bg-brass-500'></span>
                         {subtitle}
                     </div>

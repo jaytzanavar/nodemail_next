@@ -5,9 +5,7 @@ import './globals.css'
 import Header from "@/components/Header/Header";
 import UtilityBar from "@/components/UtilityBar/UtilityBar";
 import Footer from "@/components/Footer/Footer";
-import Head from 'next/head'
 import { NextIntlClientProvider, useMessages } from 'next-intl';
-import mainImage from '../../../public/design/img-columns.jpg'
 import { Suspense } from "react";
 import Loading from "@/components/Loader/Loader";
 import { getTranslations } from "next-intl/server";
@@ -26,21 +24,30 @@ const hanken = Hanken_Grotesk({
 
 // Display serif, opt-in via the `font-display` Tailwind utility (no Greek support)
 const playfair = Playfair_Display({
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700", "800"],
   style: ["normal", "italic"],
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-playfair'
 })
 
 
-export async function generateMetadata() {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
 
   const t = await getTranslations('Metadata'); // here use your way to get translation string
 
   return {
+    metadataBase: new URL('https://damoulilawfirm.com'),
     title: t("title"),
     description: t("description"),
-    keywords: t("keywords")
+    keywords: t("keywords"),
+    alternates: {
+      canonical: 'https://damoulilawfirm.com',
+      languages: {
+        [locale]: `https://${process.env.API_ENDPOINT}/${locale}`,
+      },
+    },
+    icons: { icon: '/favicon.ico' },
   }
 }
 
@@ -62,48 +69,6 @@ export default function RootLayout({
   return (
     <html lang={locale}>
 
-      <Head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function() {
-                  setTimeout(() => {
-                    document.documentElement.classList.add('loaded');
-                  }, 100);
-                });
-              } else {
-                setTimeout(() => {
-                  document.documentElement.classList.add('loaded');
-                }, 100);
-              }
-            `,
-          }}
-        />
-        <link
-          rel="preload"
-          href={mainImage.src}
-          as="image"
-        />
-
-        <link
-          rel="canonical"
-          href="https://damoulilawfirm.com"
-          key="canonical"
-        />
-
-
-        <link
-          key={locale}
-          rel="alternate"
-          hrefLang={locale}
-          href={`https://${process.env.API_ENDPOINT}/${locale}`}
-        />
-
-        <link rel="icon" href="../favicon.ico" />
-
-      </Head>
-
       <body className={`${hanken.className} ${hanken.variable} ${inter.variable} ${playfair.variable} font-sans bg-paper min-h-screen overflow-x-hidden`}>
         <Suspense fallback={<Loading />}>
           <NextIntlClientProvider locale={locale} messages={messages} >
@@ -118,6 +83,11 @@ export default function RootLayout({
         </Suspense>
         <Analytics />
         <SpeedInsights />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `requestAnimationFrame(function(){document.documentElement.classList.add('loaded');});`,
+          }}
+        />
       </body>
 
     </html>
