@@ -18,7 +18,6 @@ const DEFAULT_COUNTRIES: countryType = { gb: 'GB', fr: 'FR', gr: 'GR' }
 const Header = ({ locale }: { locale: string }) => {
 
   const [openBurger, setOpenBurger] = useState(false)
-  const [hoverBurger, setBurgerHover] = useState(false)
   const [countryToggle, setCountryToggle] = useState(false)
   const [currentLocale, setCurrentLocale] = useState<any>(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale])
   const t = useTranslations('Header')
@@ -76,15 +75,73 @@ const Header = ({ locale }: { locale: string }) => {
     }
   }
 
-  const langPillClass = 'inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-paper px-3.5 py-[7px] text-[13px] font-semibold text-ink-700 transition-colors duration-200 hover:border-stone-300 hover:bg-white'
+  const langPillClass = 'inline-flex items-center gap-2 rounded-full border border-stone-200 bg-paper px-4 py-[7px] text-[13px] font-semibold text-ink-700 transition-colors duration-200 hover:border-stone-300 hover:bg-white'
+
+  const LangDropdown = ({ flagSize }: { flagSize: string }) => (
+    <div className='relative'>
+      <button className={langPillClass} onClick={() => setCountryToggle(prev => !prev)}>
+        <ReactCountryFlag
+          countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
+          svg
+          style={{
+            width: flagSize,
+            height: flagSize,
+            borderRadius: '3px',
+            objectFit: 'cover'
+          }}
+          title={t(currentLocale.toLocaleLowerCase())}
+        />
+        <span className='uppercase'>
+          {currentLocale === 'FR' ? 'Fr' : currentLocale === 'GR' ? 'El' : 'En'}
+        </span>
+        <Icon name='chevron-down' className={`h-3 w-3 text-ink-500 transition-transform duration-200 ${countryToggle ? 'rotate-180' : ''}`} />
+      </button>
+
+      <AnimatePresence>
+        {countryToggle &&
+          <>
+            <div className='fixed inset-0 z-40' onClick={() => setCountryToggle(false)} />
+            <motion.div
+              initial={{ opacity: 0, y: -8, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.95 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
+              className='absolute top-full right-0 z-50 mt-2 min-w-[9rem] origin-top-right rounded-lg border border-stone-200 bg-white py-1 shadow-lg'>
+              <ul className='w-full'>{
+                Object.keys(DEFAULT_COUNTRIES).filter(ct => ct.toLocaleLowerCase() !== currentLocale.toLocaleLowerCase()).map(loc => (
+                  <li key={loc}>
+                    <button className='flex w-full items-center gap-2 px-5 py-2 text-sm font-medium text-ink-700 hover:bg-paper transition-colors duration-150' onClick={() => selectLocale(loc)}>
+                      <ReactCountryFlag
+                        countryCode={loc}
+                        svg
+                        style={{
+                          width: '1.25rem',
+                          height: '1.25rem',
+                          borderRadius: '3px',
+                          objectFit: 'cover'
+                        }}
+                        title={t(loc)}
+                      />
+                      <span>{t(loc)}</span>
+                    </button>
+                  </li>
+                ))
+              }
+              </ul>
+            </motion.div>
+          </>
+        }
+      </AnimatePresence>
+    </div>
+  )
 
   return (
     <header className='sticky top-0 z-50 bg-paper border-b border-stone-200 shadow-header'>
-      <nav className='relative z-20 mx-auto flex h-[78px] max-w-[1200px] items-center justify-between gap-6 px-4 sm:px-6 lg:px-10'>
+      <nav className='relative z-20 mx-auto flex h-16 md:h-[78px] max-w-[1200px] items-center justify-between gap-3 md:gap-6 px-4 sm:px-6 lg:px-10'>
         {/* Logo + Business Name */}
         <Link locale={locale} href={'/' + locale} className='flex shrink-0 items-center gap-3'>
-          <Image className='h-[42px] w-auto' placeholder='blur' src={logo} alt='Damouli & Associates logo' />
-          <span className='flex flex-col leading-none'>
+          <Image className='h-9 md:h-[42px] w-auto' placeholder='blur' src={logo} alt='Damouli & Associates logo' />
+          <span className='hidden md:flex flex-col leading-none'>
             <span className='whitespace-nowrap font-display text-lg font-bold text-navy-900'>{t('firmName')}</span>
             <span className='mt-[5px] whitespace-nowrap text-[9.5px] font-semibold uppercase tracking-[0.26em] text-brass-600'>{t('firmType')}</span>
           </span>
@@ -106,25 +163,7 @@ const Header = ({ locale }: { locale: string }) => {
 
         {/* Desktop actions: language pill + CTA */}
         <div className='hidden md:flex items-center gap-4'>
-          <div className='relative'>
-            <button className={langPillClass} onClick={() => setCountryToggle(prev => !prev)}>
-              <ReactCountryFlag
-                countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
-                svg
-                style={{
-                  width: '1.1rem',
-                  height: '1.1rem',
-                  borderRadius: '3px',
-                  objectFit: 'cover'
-                }}
-                title={t(currentLocale.toLocaleLowerCase())}
-              />
-              <span className='uppercase'>
-                {currentLocale === 'EN' ? 'En' : currentLocale === 'FR' ? 'Fr' : 'El'}
-              </span>
-              <Icon name='chevron-down' className='h-3.5 w-3.5 text-ink-500' />
-            </button>
-          </div>
+          <LangDropdown flagSize='1.1rem' />
           <Link locale={locale} href={`/${locale}/communication`}
             className='inline-flex items-center gap-2 rounded-lg bg-brass-500 px-5 py-3 text-[15px] font-semibold text-navy-950 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-brass-600 hover:shadow-[0_10px_24px_-12px_rgba(176,141,91,0.8)]'>
             <Icon name='scale' className='h-[17px] w-[17px]' />
@@ -134,26 +173,18 @@ const Header = ({ locale }: { locale: string }) => {
 
         {/* Mobile: language pill + burger */}
         <div className='md:hidden flex items-center gap-2'>
-          <button className={langPillClass} onClick={() => setCountryToggle(prev => !prev)}>
-            <ReactCountryFlag
-              countryCode={currentLocale === 'en' ? 'gb' : currentLocale}
-              svg
-              style={{
-                width: '20px',
-                height: '20px',
-                borderRadius: '3px',
-                objectFit: 'cover'
-              }}
-              title={t(currentLocale.toLocaleLowerCase())}
-            />
-            <span className='uppercase'>
-              {currentLocale === 'EN' ? 'En' : currentLocale === 'FR' ? 'Fr' : 'El'}
+          <LangDropdown flagSize='20px' />
+          <button
+            type='button'
+            aria-label='Toggle menu'
+            aria-expanded={openBurger}
+            onClick={() => setOpenBurger(prev => !prev)}
+            className='relative -mr-2 p-2 text-navy-900 transition-colors duration-200 hover:text-brass-600'>
+            <span className='relative block h-[18px] w-[26px]'>
+              <span className={`${styles.menu_button_line} ${styles.top} ${openBurger ? styles.on_menu_top : ''}`}></span>
+              <span className={`${styles.menu_button_line} ${styles.mid} ${openBurger ? styles.on_menu_mid : ''}`}></span>
+              <span className={`${styles.menu_button_line} ${styles.botm} ${openBurger ? styles.on_menu_botm : ''}`}></span>
             </span>
-          </button>
-          <button onMouseOver={(e) => setBurgerHover(true)} onMouseLeave={(e) => setBurgerHover(false)} onClick={() => setOpenBurger(prev => !prev)} className={` relative top-3.5 ml-5  ${styles.menu_button} `}>
-            <span className={`${styles.menu_button_line} ${styles.top} ${openBurger ? styles.on_menu_top : ''}  ${openBurger ? 'min-h-[4px] min-w-[37px]' : 'min-h-[4px] min-w-[42.5px]'} bg-navy-900`}></span>
-            <span className={` ${styles.menu_button_line} ${styles.mid} ${openBurger ? styles.on_menu_mid : ''} ${hoverBurger && ' min-h-[4px] min-w-[42.5px]'} min-h-[4px] min-w-[25px] bg-navy-900`}></span>
-            <span className={` ${styles.menu_button_line} ${styles.botm} ${openBurger ? styles.on_menu_botm : ''}  ${openBurger ? 'min-h-[4px] min-w-[36px]' : 'min-h-[4px] min-w-[42.5px]'} bg-navy-900`}></span>
           </button>
         </div>
       </nav>
@@ -169,7 +200,7 @@ const Header = ({ locale }: { locale: string }) => {
         transition={{ duration: .65 }}
         initial="hidden"
         animate={burgerControls}
-        className={`absolute md:hidden top-[4.9rem] z-60 left-0 ${openBurger && 'w-screen gap-8'} h-screen bg-paper flex flex-col items-center justify-center`}>
+        className={`absolute md:hidden top-16 z-60 left-0 ${openBurger && 'w-screen gap-8'} h-screen bg-paper flex flex-col items-center justify-center`}>
         {openBurger &&
           <motion.ul
             className='flex flex-col items-center gap-10 font-medium'
@@ -195,45 +226,6 @@ const Header = ({ locale }: { locale: string }) => {
             </motion.li>
           </motion.ul>}
       </motion.div>
-
-
-
-
-      <AnimatePresence>
-        {countryToggle &&
-          <>
-            <div className='fixed inset-0 z-40' onClick={() => setCountryToggle(false)} />
-            <motion.div
-              initial={{ opacity: 0, y: -8, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -8, scale: 0.95 }}
-              transition={{ duration: 0.15, ease: "easeOut" }}
-              className='absolute top-full z-50 right-0 mt-2 min-w-[9rem] origin-top-right rounded-lg border border-stone-200 bg-white py-1 shadow-lg'>
-              <ul className='w-full'>{
-                Object.keys(DEFAULT_COUNTRIES).filter(ct => ct.toLocaleLowerCase() !== currentLocale.toLocaleLowerCase()).map(loc => (
-                  <li key={loc}>
-                    <button className='flex w-full items-center gap-2 px-4 py-2 text-sm font-medium text-ink-700 hover:bg-paper transition-colors duration-150' onClick={() => selectLocale(loc)}>
-                      <ReactCountryFlag
-                        countryCode={loc}
-                        svg
-                        style={{
-                          width: '1.25rem',
-                          height: '1.25rem',
-                          borderRadius: '3px',
-                          objectFit: 'cover'
-                        }}
-                        title={t(loc)}
-                      />
-                      <span>{t(loc)}</span>
-                    </button>
-                  </li>
-                ))
-              }
-              </ul>
-            </motion.div>
-          </>
-        }
-      </AnimatePresence>
     </header>
 
   )

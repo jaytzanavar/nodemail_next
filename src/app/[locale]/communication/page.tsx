@@ -3,6 +3,7 @@ import Forms from '@/components/Forms/Forms'
 import Hero from '@/components/Hero/Hero'
 import { getTranslations } from 'next-intl/server'
 import { PropsInterface } from '@/app/common/PropsInterface'
+import { FIRM_EMAIL, FIRM_PHONE, FIRM_PHONE_HREF } from '@/lib/firm'
 
 const CommunicationPage = async (props: PropsInterface) => {
     const { locale } = props.params
@@ -130,9 +131,28 @@ const CommunicationPage = async (props: PropsInterface) => {
                     <h2 className='text-2xl sm:text-3xl font-extrabold mb-4'>
                         {com('cta_section.title')}
                     </h2>
-                    <p className='text-white/95 text-sm sm:text-base mb-6 leading-relaxed'>
+                    <p className='text-white/95 text-sm sm:text-base mb-8 leading-relaxed'>
                         {com('cta_section.text')}
                     </p>
+
+                    {/* Direct contact — phone & email of the business */}
+                    <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-6'>
+                        <a href={FIRM_PHONE_HREF}
+                            className='inline-flex items-center justify-center gap-2.5 w-full sm:w-auto rounded-full bg-white px-7 py-3.5 text-base font-bold text-cyan-700 shadow-md transition hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
+                            <svg className='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth={1.8}>
+                                <path strokeLinecap='round' strokeLinejoin='round' d='M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z' />
+                            </svg>
+                            {FIRM_PHONE}
+                        </a>
+                        <a href={`mailto:${FIRM_EMAIL}`}
+                            className='inline-flex items-center justify-center gap-2.5 w-full sm:w-auto rounded-full border border-white/70 px-7 py-3.5 text-base font-bold text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
+                            <svg className='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth={1.8}>
+                                <path strokeLinecap='round' strokeLinejoin='round' d='M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75' />
+                            </svg>
+                            {FIRM_EMAIL}
+                        </a>
+                    </div>
+
                     <p className='text-white/80 text-xs sm:text-sm font-medium'>
                         {com('cta_section.availability')}
                     </p>

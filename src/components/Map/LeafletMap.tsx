@@ -14,11 +14,11 @@ const MAPS_URL = 'https://www.google.com/maps/place/%CE%94%CE%B9%CE%BA%CE%B7%CE%
 // attributes and would render the logo at its natural size.
 const logoIcon = L.divIcon({
     className: '',
-    iconSize: [60, 60],
-    iconAnchor: [30, 30],
+    iconSize: [38, 38],
+    iconAnchor: [19, 19],
     html: `
-        <div style="display:flex;align-items:center;justify-content:center;width:60px;height:60px;overflow:hidden;border-radius:20%;background:rgba(15,23,42,0.55);backdrop-filter:blur(5px);box-shadow:0 2px 10px rgba(0,0,0,0.4);">
-            <img src="${logo.src}" alt="Damouli law firm logo in map" style="width:46px;height:46px;max-width:none;object-fit:cover;border-radius:50%;" />
+        <div style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;overflow:hidden;border-radius:50%;background:rgba(7,32,47,0.6);box-shadow:0 2px 8px rgba(7,32,47,0.45);border:2px solid rgba(176,141,91,0.9);">
+            <img src="${logo.src}" alt="Damouli law firm logo in map" style="width:28px;height:28px;max-width:none;object-fit:cover;border-radius:50%;" />
         </div>
     `
 })

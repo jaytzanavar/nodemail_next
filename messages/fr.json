@@ -73,7 +73,9 @@
     "lead": "Nous valorisons la justice, l'honnêteté et le temps. Le moindre détail sera remarqué — et il peut s'avérer essentiel à votre dossier. Nos collaborateurs sont des avocats plaidants possédant une solide expérience, chacun dans son domaine, principalement en droit civil et administratif.",
     "pill1": "Civil & Administratif",
     "pill2": "Droit des Affaires",
-    "pill3": "Défense en Matière d'Assurances"
+    "pill3": "Défense en Matière d'Assurances",
+    "eyebrow": "À Propos De Nous",
+    "alt_img": "Étagères de bibliothèque juridique au cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés"
   },
   "Experience": {
     "title": "20 Ans d'Expérience Dans Diverses Affaires ",
@@ -148,7 +150,9 @@
     }
   },
   "Reviews": {
-    "title": "Avis clients"
+    "title": "Avis clients",
+    "gvu": "Utilisateur vérifié par Google",
+    "userR": "Note de l'utilisateur"
   },
   "Footer": {
     "brand": "Cabinet d'Avocats Damouli Stefanopoulou Antonopoulou et Collaborateurs",

@@ -73,7 +73,9 @@
     "lead": "We value justice, honesty and time. Any detail will be noticed — and it can prove essential to your case. Our associates are litigation lawyers with deep experience, each in their field, primarily in civil and administrative law.",
     "pill1": "Civil & Administrative",
     "pill2": "Business Law",
-    "pill3": "Insurance Defence"
+    "pill3": "Insurance Defence",
+    "eyebrow": "About Us",
+    "alt_img": "Law library bookshelves at Damouli Stefanopoulou Antonopoulou and associates law firm office"
   },
   "Experience": {
     "title": "20 Years Of Experience In Various Cases ",
@@ -109,11 +111,6 @@
       "title": "Business Law",
       "text": "Business requires strong legislative background to operate well."
     }
-  },
-  "Reviews": {
-    "title": " Satisfied Client Stories",
-    "userR": "User Rating",
-    "gvu": "Google Verified User"
   },
   "Communication": {
     "title": "Request a free Legal Consultation",
@@ -153,7 +150,9 @@
     }
   },
   "Reviews": {
-    "title": "Client reviews"
+    "title": "Client reviews",
+    "gvu": "Google Verified User",
+    "userR": "User Rating"
   },
   "Footer": {
     "brand": "Damouli Stefanopoulou Antonopoulou and associates Law Firm",

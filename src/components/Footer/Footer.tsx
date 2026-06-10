@@ -44,25 +44,25 @@ const Footer = () => {
   ]
 
   return (
-    <footer className='bg-slate-900 text-white'>
+    <footer className='bg-navy-950 text-white'>
       <div className='max-w-7xl mx-auto px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
 
         {/* Brand */}
         <div className='flex flex-col gap-5 items-center md:items-start text-center md:text-left'>
           <div className='flex items-center gap-3'>
-            <Image alt='Damouli law office logo' placeholder='blur' className='h-12 w-12 rounded-full object-cover ring-1 ring-white/20' src={logo} />
-            <span className='text-sm font-semibold leading-snug max-w-[16rem]'>{t('brand')}</span>
+            <Image alt='Damouli law office logo' placeholder='blur' className='h-12 w-12 rounded-full object-cover ring-1 ring-brass-500/40' src={logo} />
+            <span className='font-display text-base font-semibold leading-snug max-w-[16rem]'>{t('brand')}</span>
           </div>
           <p className='text-sm text-white/60 leading-relaxed max-w-xs'>{t('text')}</p>
         </div>
 
         {/* Contact — one distinct line per item */}
         <div className='flex flex-col items-center md:items-start'>
-          <h3 className='text-xs font-semibold uppercase tracking-[0.25em] text-white/80 mb-2'>{t('contact')}</h3>
+          <h3 className='text-xs font-semibold uppercase tracking-eyebrow text-brass-300 mb-2'>{t('contact')}</h3>
           <ul className='w-full max-w-xs divide-y divide-white/10'>
             {contactLines.map(line => (
               <li key={line.key} className='flex items-center gap-4 py-4'>
-                <span className='flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-teal-300 ring-1 ring-white/10'>
+                <span className='flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-brass-300 ring-1 ring-white/10'>
                   {line.icon}
                 </span>
                 <span className='flex flex-col gap-0.5 text-left'>
@@ -76,7 +76,7 @@ const Footer = () => {
 
         {/* Map */}
         <div className='md:col-span-2 lg:col-span-1'>
-          <div className='h-64 w-full overflow-hidden rounded-xl ring-1 ring-white/10'>
+          <div className='h-72 sm:h-80 lg:h-full lg:min-h-[20rem] w-full overflow-hidden rounded-xl ring-1 ring-brass-500/20'>
             <Map />
           </div>
         </div>
