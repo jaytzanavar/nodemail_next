@@ -24,7 +24,11 @@
     "firmType": "Lawyer & Law Office - Firm",
     "gb": "English",
     "gr": "Ελληνικά",
-    "fr": "Français"
+    "fr": "Français",
+    "careers": {
+      "title": "Careers",
+      "value": "careers"
+    }
   },
   "Metadata": {
     "title": "Damouli Stefanopoulou Antonopoulou and associates Law Firm official website",
@@ -86,45 +90,40 @@
     "trusting_clients": "Trusting clients"
   },
   "Areas": {
-    "title": "Our Legal Practice Areas",
+    "title": "Practice Areas",
     "card1": {
       "title": "Business Law",
-      "text": "Business requires strong legislative background to operate well."
+      "text": "Strategic legal guidance for business formation, contracts, and corporate governance"
     },
     "card2": {
       "title": "Civil Litigation",
-      "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
+      "text": "Expert representation in civil disputes and court proceedings"
     },
     "card3": {
       "title": "Insurance Defence",
-      "text": "Insurance issues require excellent knowledge and great intuition."
+      "text": "Comprehensive defence strategies for insurance-related claims"
     },
     "card4": {
-      "title": "Civil Litigation",
-      "text": "We advocate for our clients, seeking a fair resolution within a timeframe."
+      "title": "Employment Law",
+      "text": "Employment agreements, disputes, and workplace compliance solutions"
     },
     "card5": {
-      "title": "Insurance Defence",
-      "text": "Insurance issues require excellent knowledge and great intuition.."
+      "title": "Corporate Transactions",
+      "text": "M&A guidance, acquisitions, and corporate restructuring expertise"
     },
     "card6": {
-      "title": "Business Law",
-      "text": "Business requires strong legislative background to operate well."
+      "title": "Real Estate Law",
+      "text": "Property transactions, leasing, and real estate dispute resolution"
     }
   },
   "Communication": {
-    "title": "Request a free Legal Consultation",
-    "name": "Your Name",
-    "email": "Email",
-    "phone": "Phone",
-    "subject": "Subject",
-    "message": "Message",
-    "btn": "Send",
-    "success": "Your message has been sent — we will get back to you shortly.",
-    "error": "Something went wrong. Please try again later.",
-    "required": "This field is required",
-    "invalid_email": "Invalid email address",
     "why_choose": "Why Choose Us",
+    "hero": {
+      "return_btn": "Return Home",
+      "title": "Get in Touch",
+      "title_b": "Let's Talk",
+      "text": "Have a legal question or need assistance? Contact us to discuss your case with one of our experienced attorneys."
+    },
     "info": {
       "response_title": "Quick Response",
       "response_text": "We respond to inquiries within 24 hours to ensure your legal needs are addressed promptly.",
@@ -134,20 +133,25 @@
       "confidential_text": "Your information is fully protected under attorney-client privilege and confidentiality laws."
     },
     "form_section": {
-      "title": "Get in Touch",
+      "title": "Contact Form",
       "subtitle": "Fill out the form below and our team will contact you shortly to discuss your case."
     },
     "cta_section": {
       "title": "Need Immediate Assistance?",
       "text": "For urgent matters, don't hesitate to reach out. Our team is ready to help you navigate your legal challenges.",
-      "availability": "Available Monday – Friday, 09:00 – 19:00"
+      "availability": "Available Monday to Friday, 9:00 AM - 6:00 PM"
     },
-    "hero": {
-      "title": "Share your inquiry us, we respond",
-      "title_b": "instantly",
-      "return_btn": "Return to home",
-      "text": "Want to Learn More About How We Help Clients in Risk? Attract thousands of individuals and businesses, all of whom (98%) have successfully dealt with their legal conundrums with our timely…"
-    }
+    "title": "Send us a Message",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Message",
+    "btn": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "Error sending message",
+    "required": "This field is required",
+    "invalid_email": "Invalid email address"
   },
   "Reviews": {
     "title": "Client reviews",
@@ -170,6 +174,53 @@
       "title_b": "Your Protector",
       "return_btn": "Return Home",
       "text": "While the yearly number of cases which we take totals to an insurmountable number, unparalleled by any other Athens law firm, our percentage of wins is record-breaking too… Just to drop some statistics here, in more than 9000 cases that we have ever taken on, a whopping 98% of those (which is 9800+) were the cases which we eventually won…"
+    }
+  },
+  "Careers": {
+    "hero": {
+      "return_btn": "Return Home",
+      "title": "Build Your Career",
+      "title_b": "With Us",
+      "text": "We are always looking for talented, driven people to join our team. Explore our current openings and discover what it means to grow your legal career at Damouli Law Firm."
+    },
+    "perks": {
+      "title": "Why Work With Us",
+      "subtitle": "We invest in our people and offer an environment where you can thrive professionally and personally.",
+      "items": [
+        {
+          "title": "Meaningful Work",
+          "text": "Work on complex, high-impact cases alongside experienced attorneys who care about your development."
+        },
+        {
+          "title": "Collaborative Team",
+          "text": "Join a supportive, close-knit team that values mentorship, knowledge sharing, and mutual respect."
+        },
+        {
+          "title": "Growth & Stability",
+          "text": "Clear career progression, continued legal education, and the stability of a well-established firm."
+        }
+      ]
+    },
+    "openings": {
+      "title": "Open Positions",
+      "subtitle": "Browse our current opportunities and apply for the role that fits you best.",
+      "empty": "There are no open positions at the moment, but we'd still love to hear from you."
+    },
+    "positions": [
+      {
+        "title": "Associate Lawyer — Civil & Administrative Law",
+        "type": "Full-time",
+        "location": "3 Karystou St., Athens, Greece",
+        "summary": "We are seeking a lawyer with at least 10 years of experience for in-house collaboration on civil, administrative, and commercial cases. Letters of recommendation are appreciated at the interview. Hours: 9:30 a.m. – 7:00 p.m. Applications accepted until 30/06/2026."
+      }
+    ],
+    "apply_btn": "Apply Now",
+    "apply_subject": "Application",
+    "cta": {
+      "title": "Don't See the Right Role?",
+      "text": "We're always interested in meeting talented people. Send us your CV and tell us how you can contribute to our team.",
+      "btn": "Send Your CV",
+      "subject": "Spontaneous Application"
     }
   }
 }

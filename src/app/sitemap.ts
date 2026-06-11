@@ -1,87 +1,38 @@
 import { MetadataRoute } from 'next'
 
+const BASE_URL = 'https://damoulilawfirm.com'
+const locales = ['en', 'gr', 'fr'] as const
+const pages = ['advisory', 'responsibilities', 'communication', 'careers'] as const
+
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
+    const lastModified = new Date()
+
+    const entries: MetadataRoute.Sitemap = [
         {
-            url: 'https://law-website-template.vercel.app',
-            lastModified: new Date(),
+            url: BASE_URL,
+            lastModified,
             changeFrequency: 'yearly',
             priority: 1,
         },
-        {
-            url: 'https://law-website-template.vercel.app/en',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/en/advisory',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-
-        {
-            url: 'https://law-website-template.vercel.app/en/responsibilities',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/en/communication',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-
-        {
-            url: 'https://law-website-template.vercel.app/fr',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/fr/responsibilities',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/fr/communication',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/fr/advisory',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/gr',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/gr/responsibilities',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/gr/communication',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-        {
-            url: 'https://law-website-template.vercel.app/gr/advisory',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-        },
-
     ]
+
+    for (const locale of locales) {
+        entries.push({
+            url: `${BASE_URL}/${locale}`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        })
+
+        for (const page of pages) {
+            entries.push({
+                url: `${BASE_URL}/${locale}/${page}`,
+                lastModified,
+                changeFrequency: 'weekly',
+                priority: 0.5,
+            })
+        }
+    }
+
+    return entries
 }

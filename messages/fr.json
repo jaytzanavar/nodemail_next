@@ -24,7 +24,11 @@
     "firmType": "Avocat & Cabinet d'Avocats",
     "gb": "Anglais",
     "gr": "Grec",
-    "fr": "Français"
+    "fr": "Français",
+    "careers": {
+      "title": "Carrières",
+      "value": "careers"
+    }
   },
   "Metadata": {
     "title": "Site officiel du cabinet d'avocats Damouli Stefanopoulou Antonopoulou et associés",
@@ -86,68 +90,68 @@
     "trusting_clients": "Clients de Confiance"
   },
   "Areas": {
-    "title": "Nos Domaines de Pratique Juridique",
+    "title": "Domaines de Compétence",
     "card1": {
       "title": "Droit des Affaires",
-      "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
+      "text": "Orientation juridique stratégique pour la constitution d'entreprises et les contrats"
     },
     "card2": {
       "title": "Contentieux Civil",
-      "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
+      "text": "Représentation spécialisée dans les litiges civils et procédures judiciaires"
     },
     "card3": {
-      "title": "Défense en Assurance",
-      "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
+      "title": "Défense Assurance",
+      "text": "Stratégies de défense complètes pour les réclamations d'assurance"
     },
     "card4": {
-      "title": "Contentieux Civil",
-      "text": "Nous plaidons pour nos clients, cherchant une résolution équitable dans un délai déterminé."
+      "title": "Droit du Travail",
+      "text": "Contrats de travail, litiges et solutions de conformité en milieu professionnel"
     },
     "card5": {
-      "title": "Défense en Assurance",
-      "text": "Les problèmes d'assurance nécessitent une excellente connaissance et une grande intuition."
+      "title": "Transactions Professionnelles",
+      "text": "Assistance en fusions-acquisitions et restructurations d'entreprises"
     },
     "card6": {
-      "title": "Droit des Affaires",
-      "text": "Les entreprises nécessitent une solide base législative pour fonctionner correctement."
+      "title": "Droit Immobilier",
+      "text": "Transactions immobilières et résolution des litiges immobiliers"
     }
   },
   "Communication": {
-    "title": "Demandez une Consultation Juridique Gratuite",
-    "name": "Votre Nom",
-    "email": "Email",
-    "phone": "Téléphone",
-    "subject": "Objet",
-    "message": "Message",
-    "btn": "Envoyer",
-    "success": "Votre message a été envoyé — nous vous répondrons rapidement.",
-    "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
-    "required": "Ce champ est requis",
-    "invalid_email": "Adresse e-mail invalide",
     "why_choose": "Pourquoi Nous Choisir",
+    "hero": {
+      "return_btn": "Retour à l'accueil",
+      "title": "Contactez-nous",
+      "title_b": "Parlons ensemble",
+      "text": "Avez-vous une question juridique ou besoin d'assistance? Contactez-nous pour discuter de votre affaire avec l'un de nos avocats expérimentés."
+    },
     "info": {
       "response_title": "Réponse Rapide",
-      "response_text": "Nous répondons aux demandes sous 24 heures afin que vos besoins juridiques soient traités rapidement.",
-      "team_title": "Équipe Expérimentée",
-      "team_text": "Échangez avec des avocats expérimentés, spécialisés dans votre affaire juridique.",
-      "confidential_title": "Confidentialité",
-      "confidential_text": "Vos informations sont entièrement protégées par le secret professionnel et les lois sur la confidentialité."
+      "response_text": "Nous répondons aux demandes dans les 24 heures pour assurer que vos besoins juridiques sont traités rapidement.",
+      "team_title": "Équipe Experte",
+      "team_text": "Connectez-vous avec des avocats expérimentés spécialisés dans votre domaine juridique spécifique.",
+      "confidential_title": "Confidentiel",
+      "confidential_text": "Vos informations sont complètement protégées par le secret professionnel et les lois de confidentialité."
     },
     "form_section": {
-      "title": "Contactez-nous",
-      "subtitle": "Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement pour discuter de votre dossier."
+      "title": "Formulaire de Contact",
+      "subtitle": "Remplissez le formulaire ci-dessous et notre équipe vous contactera bientôt pour discuter de votre affaire."
     },
     "cta_section": {
-      "title": "Besoin d'une Aide Immédiate ?",
-      "text": "Pour les affaires urgentes, n'hésitez pas à nous contacter. Notre équipe est prête à vous aider à relever vos défis juridiques.",
-      "availability": "Disponibles du lundi au vendredi, 09h00 – 19h00"
+      "title": "Besoin d'Assistance Immédiate?",
+      "text": "Pour les affaires urgentes, n'hésitez pas à nous contacter. Notre équipe est prête à vous aider à naviguer vos défis juridiques.",
+      "availability": "Disponibles du lundi au vendredi, 9:00 AM - 18:00"
     },
-    "hero": {
-      "title": "Partagez votre demande avec nous, nous répondons",
-      "title_b": "instantanément",
-      "return_btn": "Retour à la maison",
-      "text": "Vous voulez en savoir plus sur la manière dont nous aidons les clients en situation de risque ? Attirez des milliers d'individus et d'entreprises, tous (98%) ayant résolu avec succès leurs énigmes juridiques grâce à notre aide opportune..."
-    }
+    "title": "Envoyez-nous un Message",
+    "name": "Nom Complet",
+    "email": "Adresse Email",
+    "phone": "Numéro de Téléphone",
+    "subject": "Objet",
+    "message": "Message",
+    "btn": "Envoyer le Message",
+    "success": "Message envoyé avec succès!",
+    "error": "Erreur lors de l'envoi du message",
+    "required": "Ce champ est obligatoire",
+    "invalid_email": "Adresse email invalide"
   },
   "Reviews": {
     "title": "Avis clients",
@@ -170,6 +174,53 @@
       "title_b": "Votre Protecteur",
       "return_btn": "Retour à la Maison",
       "text": "Alors que le nombre annuel de cas que nous prenons totalise un nombre insurmontable, sans égal par aucun autre cabinet d'avocats d'Athènes, notre pourcentage de victoires est également record... Juste pour donner quelques statistiques ici, sur plus de 9000 cas que nous avons jamais pris en charge, un énorme 98% de ceux-ci (soit 9800+) étaient des cas que nous avons finalement remportés..."
+    }
+  },
+  "Careers": {
+    "hero": {
+      "return_btn": "Retour à l'accueil",
+      "title": "Construisez Votre Carrière",
+      "title_b": "Avec Nous",
+      "text": "Nous recherchons toujours des personnes talentueuses et motivées pour rejoindre notre équipe. Découvrez nos postes actuels et ce que signifie développer votre carrière juridique au sein du Cabinet Damouli."
+    },
+    "perks": {
+      "title": "Pourquoi Nous Rejoindre",
+      "subtitle": "Nous investissons dans nos collaborateurs et offrons un environnement où vous pouvez vous épanouir professionnellement et personnellement.",
+      "items": [
+        {
+          "title": "Un Travail qui a du Sens",
+          "text": "Travaillez sur des dossiers complexes et à fort impact aux côtés d'avocats expérimentés soucieux de votre développement."
+        },
+        {
+          "title": "Une Équipe Collaborative",
+          "text": "Rejoignez une équipe soudée et bienveillante qui valorise le mentorat, le partage des connaissances et le respect mutuel."
+        },
+        {
+          "title": "Évolution et Stabilité",
+          "text": "Une progression de carrière claire, une formation juridique continue et la stabilité d'un cabinet bien établi."
+        }
+      ]
+    },
+    "openings": {
+      "title": "Postes Ouverts",
+      "subtitle": "Parcourez nos opportunités actuelles et postulez au poste qui vous correspond le mieux.",
+      "empty": "Il n'y a aucun poste ouvert pour le moment, mais nous serions ravis d'échanger avec vous."
+    },
+    "positions": [
+      {
+        "title": "Avocat Collaborateur — Droit Civil et Administratif",
+        "type": "Temps plein",
+        "location": "3 rue Karystou, Athènes, Grèce",
+        "summary": "Nous recherchons un avocat justifiant d'au moins 10 ans d'expérience pour une collaboration interne sur des affaires civiles, administratives et commerciales. Lettres de recommandation appréciées lors de l'entretien. Horaires : 9h30 – 19h00. Candidatures jusqu'au 30/06/2026."
+      }
+    ],
+    "apply_btn": "Postuler",
+    "apply_subject": "Candidature",
+    "cta": {
+      "title": "Vous Ne Trouvez Pas le Bon Poste?",
+      "text": "Nous sommes toujours intéressés à rencontrer des personnes talentueuses. Envoyez-nous votre CV et dites-nous comment vous pouvez contribuer à notre équipe.",
+      "btn": "Envoyez Votre CV",
+      "subject": "Candidature Spontanée"
     }
   }
 }

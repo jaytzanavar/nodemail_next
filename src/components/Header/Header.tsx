@@ -21,7 +21,11 @@ const Header = ({ locale }: { locale: string }) => {
   const [countryToggle, setCountryToggle] = useState(false)
   const [currentLocale, setCurrentLocale] = useState<any>(DEFAULT_COUNTRIES[locale === 'en' ? 'gb' : locale])
   const t = useTranslations('Header')
-  const keys = ['responsibilities', 'advisory', 'communication'] as const;
+  const navItems: { key: string; children?: string[] }[] = [
+    { key: 'responsibilities' },
+    { key: 'advisory' },
+    { key: 'communication', children: ['careers'] },
+  ];
   const router = useRouter();
   const pathname = usePathname();
   const burgerControls = useAnimation();
@@ -149,16 +153,34 @@ const Header = ({ locale }: { locale: string }) => {
 
         {/* Desktop nav */}
         <ul className='hidden md:flex items-center gap-8'>
-          {keys.map((key) => <li key={locale + '/' + key}>
-            <Link locale={locale} aria-current={isActive(key) ? 'page' : undefined}
-              className={`relative py-1.5 text-[14.5px] transition-colors duration-200 hover:text-navy-900
-                after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:bg-brass-500 after:transition-transform after:duration-300 after:ease-lift
-                ${isActive(key) ? 'font-semibold text-navy-900 after:scale-x-100' : 'font-medium text-ink-700 after:scale-x-0 hover:after:scale-x-100'}`}
-              href={`/${locale}/${key}`}>
-              {t(`${key}.title`)}
-            </Link>
-          </li>
-          )}
+          {navItems.map((item) => (
+            <li key={locale + '/' + item.key} className='relative group'>
+              <Link locale={locale} aria-current={isActive(item.key) ? 'page' : undefined}
+                className={`relative inline-flex items-center gap-1 py-1.5 text-[14.5px] transition-colors duration-200 hover:text-navy-900
+                  after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:bg-brass-500 after:transition-transform after:duration-300 after:ease-lift
+                  ${isActive(item.key) ? 'font-semibold text-navy-900 after:scale-x-100' : 'font-medium text-ink-700 after:scale-x-0 hover:after:scale-x-100'}`}
+                href={`/${locale}/${item.key}`}>
+                {t(`${item.key}.title`)}
+                {item.children && <Icon name='chevron-down' className='h-3 w-3 text-ink-500 transition-transform duration-200 group-hover:rotate-180' />}
+              </Link>
+
+              {item.children &&
+                <div className='invisible absolute left-0 top-full z-50 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100'>
+                  <ul className='min-w-[12rem] rounded-lg border border-stone-200 bg-white py-1 shadow-lg'>
+                    {item.children.map((child) => (
+                      <li key={child}>
+                        <Link locale={locale} aria-current={isActive(child) ? 'page' : undefined}
+                          className={`block px-5 py-2.5 text-sm transition-colors duration-150 hover:bg-paper ${isActive(child) ? 'font-semibold text-navy-900' : 'font-medium text-ink-700'}`}
+                          href={`/${locale}/${child}`}>
+                          {t(`${child}.title`)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              }
+            </li>
+          ))}
         </ul>
 
         {/* Desktop actions: language pill + CTA */}
@@ -209,11 +231,16 @@ const Header = ({ locale }: { locale: string }) => {
             animate="opened"
             transition={{ duration: .55 }}>
             {
-              keys.map((key) =>
-                <motion.li variants={itemListVariant} key={locale + '/' + key}>
-                  <Link locale={locale} aria-current={isActive(key) ? 'page' : undefined} onClick={() => setOpenBurger(false)}
-                    className={`font-display text-3xl ${isActive(key) ? 'font-semibold text-navy-900' : 'text-ink-700'} hover:text-brass-600 transition-colors duration-200`}
-                    href={`/${locale}/${key}`}>{t(`${key}.title`)}</Link>
+              navItems.map((item) =>
+                <motion.li variants={itemListVariant} key={locale + '/' + item.key} className='flex flex-col items-center gap-5'>
+                  <Link locale={locale} aria-current={isActive(item.key) ? 'page' : undefined} onClick={() => setOpenBurger(false)}
+                    className={`font-display text-3xl ${isActive(item.key) ? 'font-semibold text-navy-900' : 'text-ink-700'} hover:text-brass-600 transition-colors duration-200`}
+                    href={`/${locale}/${item.key}`}>{t(`${item.key}.title`)}</Link>
+                  {item.children && item.children.map((child) =>
+                    <Link key={child} locale={locale} aria-current={isActive(child) ? 'page' : undefined} onClick={() => setOpenBurger(false)}
+                      className={`font-display text-xl ${isActive(child) ? 'font-semibold text-navy-900' : 'text-ink-500'} hover:text-brass-600 transition-colors duration-200`}
+                      href={`/${locale}/${child}`}>{t(`${child}.title`)}</Link>
+                  )}
                 </motion.li>
               )
             }

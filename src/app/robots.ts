@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: '/private'
     },
-    sitemap: "https://law-website-template.vercel.app/sitemaps.xml"
+    sitemap: "https://damoulilawfirm.com/sitemap.xml"
   }
 }
