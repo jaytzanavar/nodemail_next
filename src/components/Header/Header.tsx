@@ -51,9 +51,13 @@ const Header = ({ locale }: { locale: string }) => {
 
 
   const selectLocale = (loc: string) => {
+    const newLocale = loc === 'gb' ? 'en' : loc;
     setCurrentLocale(DEFAULT_COUNTRIES[loc]);
     setCountryToggle(prev => !prev)
-    router.push(`/${loc === 'gb' ? 'en' : loc}`)
+    // Keep the current route, only swap the locale segment
+    const segments = (pathname || `/${locale}`).split('/');
+    segments[1] = newLocale;
+    router.push(segments.join('/') || `/${newLocale}`);
   }
 
   const listVariants = {

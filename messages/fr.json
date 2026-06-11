@@ -43,7 +43,7 @@
     "prompt": "Réputation. Respect. Résultat.",
     "hero": "Nous savons ce que signifie défendre des droits. Nous travaillons avec les gens, pour les gens et dans le respect total de la loi. Contactez-nous pour plus de détails !",
     "sub": "",
-    "button-c": "Obtenez une Consultation Gratuite",
+    "button-c": "Consultez-nous",
     "button-areas": "Nos Domaines d'Expertise",
     "stats": {
       "s1_n": "20+",
@@ -167,6 +167,34 @@
     "days": "Lun – Ven",
     "address": "Adresse",
     "addr_name": "Karystou 3 & Iteas, Athènes"
+  },
+  "Responsibilities": {
+    "hero": {
+      "return_btn": "Retour à l'accueil",
+      "title": "Notre Expertise Juridique",
+      "title_b": "Fiable & Éprouvée",
+      "text": "Avec plus de 20 ans d'expérience, nous avons bâti notre réputation de premier cabinet d'avocats d'Athènes. Notre succès parle de lui-même : nous traitons le plus grand volume d'affaires tout en maintenant un taux de réussite de 98%.\n\nNotre engagement envers l'excellence repose sur trois piliers fondamentaux qui guident chacune de nos décisions."
+    },
+    "strategy": {
+      "title": "Nos Trois Piliers",
+      "subtitle": "La réussite en droit repose sur un socle de réflexion stratégique, de recherche approfondie et d'exécution experte. Ces trois principes guident tout ce que nous faisons.",
+      "pillars": [
+        {
+          "title": "Réflexion Stratégique",
+          "description": "Nous analysons chaque affaire en profondeur, en élaborant des stratégies juridiques complètes adaptées à votre situation et à vos objectifs."
+        },
+        {
+          "title": "Recherche Approfondie",
+          "description": "Notre équipe mène des recherches et des investigations juridiques approfondies pour bâtir le dossier le plus solide possible pour vous."
+        },
+        {
+          "title": "Exécution Experte",
+          "description": "Forts de décennies d'expérience au tribunal, nous exécutons nos stratégies avec précision et professionnalisme à chaque étape."
+        }
+      ],
+      "cta_title": "Taux de Réussite de 98%",
+      "cta_text": "Nous sommes fiers d'offrir des services juridiques de premier ordre à des tarifs abordables et transparents. Avec nous, vous n'engagez pas seulement un avocat — vous gagnez un partenaire dévoué et engagé pour votre réussite."
+    }
   },
   "Advisory": {
     "hero": {

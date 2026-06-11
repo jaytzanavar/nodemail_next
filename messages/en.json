@@ -43,7 +43,7 @@
     "prompt": "Reputation. Respect. Result.",
     "hero": "We know what is to defend rights. We work with people, for people and with the full respect to the law. Contact for more details!",
     "sub": "",
-    "button-c": "Get a free Consultation",
+    "button-c": "Consult us",
     "button-areas": "Our Practice Areas",
     "stats": {
       "s1_n": "20+",
@@ -167,6 +167,34 @@
     "days": "Mon – Fri",
     "address": "Address",
     "addr_name": "Karystou 3 & Iteas, Athens"
+  },
+  "Responsibilities": {
+    "hero": {
+      "return_btn": "Return Home",
+      "title": "Our Legal Expertise",
+      "title_b": "Trusted & Proven",
+      "text": "With over 20 years of experience, we’ve earned our reputation as Athens’ leading law firm. Our success speaks for itself: we handle the highest volume of cases while maintaining a 98% win rate.\n\nOur commitment to excellence is built on three core pillars that guide every decision we make."
+    },
+    "strategy": {
+      "title": "Our Three Pillars",
+      "subtitle": "Success in law is built on a foundation of strategic thinking, thorough research, and expert execution. These three principles guide everything we do.",
+      "pillars": [
+        {
+          "title": "Strategic Thinking",
+          "description": "We analyze every case thoroughly, developing comprehensive legal strategies tailored to your unique situation and goals."
+        },
+        {
+          "title": "Thorough Research",
+          "description": "Our team conducts extensive legal research and investigation to build the strongest possible case for you."
+        },
+        {
+          "title": "Expert Execution",
+          "description": "With decades of courtroom experience, we execute our strategies with precision and professionalism at every stage."
+        }
+      ],
+      "cta_title": "98% Success Rate",
+      "cta_text": "We're proud to offer top-notch legal services at affordable, transparent pricing. With us, you're not just hiring a lawyer—you're gaining a dedicated partner committed to your success."
+    }
   },
   "Advisory": {
     "hero": {

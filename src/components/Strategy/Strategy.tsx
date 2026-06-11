@@ -2,7 +2,20 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from "framer-motion"
 
-const Strategy = () => {
+type Pillar = {
+    title: string;
+    description: string;
+}
+
+type StrategyProps = {
+    title: string;
+    subtitle: string;
+    pillars: Pillar[];
+    ctaTitle: string;
+    ctaText: string;
+}
+
+const Strategy = ({ title, subtitle, pillars, ctaTitle, ctaText }: StrategyProps) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     const mainControls = useAnimation();
@@ -12,23 +25,10 @@ const Strategy = () => {
             mainControls.start("visible")
     }, [isInView, mainControls])
 
-    const pillars = [
-        {
-            number: "01",
-            title: "Strategic Thinking",
-            description: "We analyze every case thoroughly, developing comprehensive legal strategies tailored to your unique situation and goals."
-        },
-        {
-            number: "02",
-            title: "Thorough Research",
-            description: "Our team conducts extensive legal research and investigation to build the strongest possible case for you."
-        },
-        {
-            number: "03",
-            title: "Expert Execution",
-            description: "With decades of courtroom experience, we execute our strategies with precision and professionalism at every stage."
-        }
-    ];
+    const numberedPillars = pillars.map((pillar, idx) => ({
+        ...pillar,
+        number: String(idx + 1).padStart(2, "0")
+    }));
 
     return (
         <div className='w-full bg-gradient-to-b from-white to-slate-50 py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-x-hidden'>
@@ -36,10 +36,10 @@ const Strategy = () => {
                 {/* Header Section */}
                 <div className='mb-16 sm:mb-20'>
                     <h2 className='font-extrabold text-4xl sm:text-5xl text-center text-gray-900 mb-6'>
-                        Our Three Pillars
+                        {title}
                     </h2>
                     <p className='text-center text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed'>
-                        Success in law is built on a foundation of strategic thinking, thorough research, and expert execution. These three principles guide everything we do.
+                        {subtitle}
                     </p>
                 </div>
 
@@ -50,7 +50,7 @@ const Strategy = () => {
                     animate={mainControls}
                     className='grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10'
                 >
-                    {pillars.map((pillar, idx) => (
+                    {numberedPillars.map((pillar, idx) => (
                         <motion.div
                             key={idx}
                             variants={{
@@ -88,10 +88,10 @@ const Strategy = () => {
                 <div className='mt-16 sm:mt-20 pt-16 sm:pt-20 border-t border-gray-200'>
                     <div className='text-center max-w-2xl mx-auto'>
                         <h3 className='text-2xl sm:text-3xl font-bold text-gray-900 mb-4'>
-                            98% Success Rate
+                            {ctaTitle}
                         </h3>
                         <p className='text-gray-600 text-base sm:text-lg leading-relaxed mb-8'>
-                            We&apos;re proud to offer top-notch legal services at affordable, transparent pricing. With us, you&apos;re not just hiring a lawyer—you&apos;re gaining a dedicated partner committed to your success.
+                            {ctaText}
                         </p>
                     </div>
                 </div>

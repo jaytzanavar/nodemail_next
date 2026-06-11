@@ -1,17 +1,32 @@
 import React from 'react'
 import Hero from '@/components/Hero/Hero'
 import Strategy from '@/components/Strategy/Strategy'
+import { getTranslations } from 'next-intl/server'
 import { PropsInterface } from '@/app/common/PropsInterface'
 
-const ResponsibilitiesPage = (props: PropsInterface) => {
+const ResponsibilitiesPage = async (props: PropsInterface) => {
     const { locale } = props.params
-    const heroTitle = "Our Legal Expertise"
-    const heroSub = "Trusted & Proven"
-    const heroText = "With over 20 years of experience, we’ve earned our reputation as Athens’ leading law firm. Our success speaks for itself: we handle the highest volume of cases while maintaining a 98% win rate.\n\nOur commitment to excellence is built on three core pillars that guide every decision we make."
+    const res = await getTranslations({ locale, namespace: 'Responsibilities' })
+
+    const pillars = res.raw('strategy.pillars') as { title: string; description: string }[]
+
     return (
         <div className='bg-white'>
-            <Hero locale={locale} return_btn={'Return Home'} heroTitle={heroTitle} heroSub={heroSub} heroText={heroText} linkEnabled={true} />
-            <Strategy />
+            <Hero
+                locale={locale}
+                return_btn={res('hero.return_btn')}
+                heroTitle={res('hero.title')}
+                heroSub={res('hero.title_b')}
+                heroText={res('hero.text')}
+                linkEnabled={true}
+            />
+            <Strategy
+                title={res('strategy.title')}
+                subtitle={res('strategy.subtitle')}
+                pillars={pillars}
+                ctaTitle={res('strategy.cta_title')}
+                ctaText={res('strategy.cta_text')}
+            />
         </div>
     )
 }
