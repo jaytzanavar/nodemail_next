@@ -24,7 +24,7 @@ export default async function AdvisoryPage(props: PropsInterface) {
         <div>
             <Hero locale={locale} return_btn={return_btn} heroTitle={adv('hero.title')} heroSub={heroSub} heroText={heroText} linkEnabled={true} />
 
-            <Areas title={ar('title')} card1={{ title: ar('card1.title'), text: ar('card1.text') }} card2={{ title: ar('card2.title'), text: ar('card2.text') }} card3={{ title: ar('card3.title'), text: ar('card3.text') }} card4={{ title: ar('card4.title'), text: ar('card4.text') }} card5={{ title: ar('card5.title'), text: ar('card5.text') }} card6={{ title: ar('card6.title'), text: ar('card6.text') }} cardStyle="'green'" />
+            <Areas title={ar('title')} card0={{ title: ar('card0.title'), text: ar('card0.text') }} card1={{ title: ar('card1.title'), text: ar('card1.text') }} card2={{ title: ar('card2.title'), text: ar('card2.text') }} card3={{ title: ar('card3.title'), text: ar('card3.text') }} card4={{ title: ar('card4.title'), text: ar('card4.text') }} card5={{ title: ar('card5.title'), text: ar('card5.text') }} card6={{ title: ar('card6.title'), text: ar('card6.text') }} cardStyle="'green'" />
 
         </div >
     )

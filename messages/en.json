@@ -91,13 +91,17 @@
   },
   "Areas": {
     "title": "Practice Areas",
+    "card0": {
+      "title": "Civil Law",
+      "text": "Comprehensive legal support in family, contract, and property law matters, dedicated to the full protection of your rights."
+    },
     "card1": {
-      "title": "Business Law",
-      "text": "Strategic legal guidance for business formation, contracts, and corporate governance"
+      "title": "Administrative Law",
+      "text": "Effective representation and dispute resolution with the state, public bodies, local authorities, and tax authorities."
     },
     "card2": {
-      "title": "Civil Litigation",
-      "text": "Expert representation in civil disputes and court proceedings"
+      "title": "Contract Law",
+      "text": "Secure drafting, review, and negotiation of private agreements and property contracts, tailored to your interests."
     },
     "card3": {
       "title": "Insurance Defence",

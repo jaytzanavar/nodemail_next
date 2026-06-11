@@ -91,13 +91,17 @@
   },
   "Areas": {
     "title": "Domaines de Compétence",
+    "card0": {
+      "title": "Droit Civil",
+      "text": "Soutien juridique complet en matière de droit de la famille, des obligations et des biens, dédié à la pleine protection de vos droits."
+    },
     "card1": {
-      "title": "Droit des Affaires",
-      "text": "Orientation juridique stratégique pour la constitution d'entreprises et les contrats"
+      "title": "Droit Administratif",
+      "text": "Représentation efficace et résolution des litiges avec l'État, les organismes publics, les collectivités locales et les autorités fiscales."
     },
     "card2": {
-      "title": "Contentieux Civil",
-      "text": "Représentation spécialisée dans les litiges civils et procédures judiciaires"
+      "title": "Droit des Contrats",
+      "text": "Rédaction, examen et négociation sécurisés d'accords privés et de contrats immobiliers, adaptés à vos intérêts."
     },
     "card3": {
       "title": "Défense Assurance",

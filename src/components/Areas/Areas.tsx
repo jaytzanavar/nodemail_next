@@ -5,6 +5,7 @@ type AreaCard = { title: string, text: string }
 
 interface AreasProps {
     title: string
+    card0: AreaCard
     card1: AreaCard
     card2: AreaCard
     card3: AreaCard
@@ -20,11 +21,11 @@ interface AreasProps {
     learnMore?: string
 }
 
-const CARD_ICONS: IconName[] = ['briefcase', 'gavel', 'shield', 'building', 'file', 'users']
+const CARD_ICONS: IconName[] = ['scale', 'landmark', 'file', 'shield', 'users', 'briefcase', 'building']
 
-const Areas = ({ title, card1, card2, card3, card4, card5, card6, eyebrow, intro, ctaLabel, ctaHref = '#contact', learnMore }: AreasProps) => {
+const Areas = ({ title, card0, card1, card2, card3, card4, card5, card6, eyebrow, intro, ctaLabel, ctaHref = '#contact', learnMore }: AreasProps) => {
 
-    const cards = [card1, card2, card3, card4, card5, card6]
+    const cards = [card0, card1, card2, card3, card4, card5, card6]
     const hasIntro = Boolean(intro)
 
     const areaCard = (card: AreaCard, idx: number) => {
