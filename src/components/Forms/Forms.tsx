@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Formik } from "formik";
 import { sendMailForm } from "../../../lib/api";
 import dynamic from "next/dynamic";
@@ -29,6 +29,11 @@ interface FormsProps {
 const Forms = ({ title, name, email, phone, subject, message, btn, success, error, required, invalidEmail }: FormsProps) => {
 
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+    // Time-trap: remember when the form became interactive so the server can
+    // reject submissions that arrive faster than a human could plausibly type.
+    const formLoadedAt = useRef<number>(Date.now())
+    useEffect(() => { formLoadedAt.current = Date.now() }, [])
 
     return (
         <div className="w-full bg-slate-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
@@ -64,7 +69,8 @@ const Forms = ({ title, name, email, phone, subject, message, btn, success, erro
                     onSubmit={async (values, { setSubmitting, resetForm }) => {
                         setStatus('idle')
                         try {
-                            const res = await sendMailForm(values)
+                            const elapsedMs = Date.now() - formLoadedAt.current
+                            const res = await sendMailForm({ ...values, elapsedMs })
                             if (res.ok) {
                                 setStatus('success')
                                 resetForm()
